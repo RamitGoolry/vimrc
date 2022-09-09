@@ -13,7 +13,7 @@
 ⠰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ```
 
-My [Neovim](https://neovim.io/) distribution.
+[Neovim](https://neovim.io) distribution by for netrunners, cyberspace hackers and space cowboys.
 
 ## Install
 

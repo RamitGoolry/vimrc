@@ -17,16 +17,16 @@ require'nvpunk.util.keymapper'.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open 
 
 -- Alt ^ wraps selection in <sup>whatever</sup>
 -- Alt _ wraps selection in <sub>whatever</sub>
-km.vkeymap('<A-^>', 'c<sup><Esc>pa</sup><Esc>')
-km.vkeymap('<A-_>', 'c<sub><Esc>pa</sub><Esc>')
-km.inkeymap('<A-^>', '<Esc>s<sup><Esc>pa</sup>')
-km.inkeymap('<A-_>', '<Esc>s<sub><Esc>pa</sub>')
+-- km.vkeymap('<A-^>', 'c<sup><Esc>pa</sup><Esc>')
+-- km.vkeymap('<A-_>', 'c<sub><Esc>pa</sub><Esc>')
+-- km.inkeymap('<A-^>', '<Esc>s<sup><Esc>pa</sup>')
+-- km.inkeymap('<A-_>', '<Esc>s<sub><Esc>pa</sub>')
 
 -- Alt S takes a screenshot and saves in a folder called by the filename.img
 -- with the name as datetime and inserts it in the text
-local screenshot_sequence = "<Esc>:let scrotfname=@% . '.img/' . strftime('%FT%H_%M_%S') . '.png'<CR>:execute '!mkdir -p ' . @% . '.img'<CR>:execute '!gnome-screenshot -a -f \"' . scrotfname . '\"'<CR>:execute 'normal! a' . scrotfname<CR><Esc>"
+-- local screenshot_sequence = "<Esc>:let scrotfname=@% . '.img/' . strftime('%FT%H_%M_%S') . '.png'<CR>:execute '!mkdir -p ' . @% . '.img'<CR>:execute '!gnome-screenshot -a -f \"' . scrotfname . '\"'<CR>:execute 'normal! a' . scrotfname<CR><Esc>"
 
-km.inkeymap('<A-S>', screenshot_sequence, {noremap = true, silent = true})
+-- km.inkeymap('<A-S>', screenshot_sequence, {noremap = true, silent = true})
 
 ----------
 ---------- Tweaks to defaults
@@ -60,7 +60,7 @@ km.nkeymap('<leader>th', '<cmd>lua require"telescope.builtin".oldfiles(require("
 km.nkeymap('<leader>tn', '<cmd>Telescope notify<cr>', 'Notifications')
 
 ----------
----------- Gitsigns
+---------- Gitsignshttps://neovim.org
 ----------
 
 km.wk.register({ ['<leader>g'] = { name = ' Git' } }, { mode = 'n' })

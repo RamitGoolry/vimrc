@@ -1,0 +1,47 @@
+==============================================================================
+------------------------------------------------------------------------------
+*nvpunk.txt*
+*nvpunk*
+
+                                 NVPUNK MANUAL
+
+Neovim distribution by for netrunners, cyberspace hackers and space cowboys.
+
+==============================================================================
+1. Navigation                                              *nvpunk-navigation*
+
+- Use the buttons in the greeter
+- Press `<space>`, `g` and `z` to explore more functionality
+
+==============================================================================
+2. Shortcuts                                                *nvpunk-shortcuts* 
+
+Here's a non-exaustive list of shortcuts:
+
+- `ge`         Toggle the file explorer
+- `<space>A`   Open the greeter
+- `zc`, `zo`     Close, open folds
+- `<space>/h`  Open horizontal terminal
+- `<space>/v`  Open vertical terminal
+- `<C-\>`      Toggle floating terminal
+- `<space>tg`  Live grep
+- `<space>tf`  Search for a file
+- `<space>gb`  Git blame current line
+- `<space>g]`  Next git hunk
+- `<space>g[`  Previous git hunk
+- `<space>g?`  Show git diff for the current line
+- `<space>T`   Expand diagnostics
+- `<space>nd`  Dismiss notifications
+
+==============================================================================
+2. Commands                                                  *nvpunk-commands* 
+
+>
+    :NvpunkUpdate
+<
+Update Nvpunk and its plugins
+
+>
+    :NvpunkPreferences
+<
+Open the preferences menu
