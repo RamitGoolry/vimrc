@@ -51,6 +51,8 @@ packer.startup(function(use)
     use 'tanvirtin/monokai.nvim'
     use 'shaunsingh/moonlight.nvim'
     use 'NTBBloodbath/doom-one.nvim'
+    use 'sam4llis/nvim-tundra'
+    use 'EdenEast/nightfox.nvim'
 
     --------
     -------- Interface

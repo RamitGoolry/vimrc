@@ -14,6 +14,13 @@ local available_themes = {
     'monokai_ristretto',
     'monokai_soda',
     'moonlight',
+    'nightfox_carbonfox',
+    'nightfox_dawnfox',
+    'nightfox_dayfox',
+    'nightfox_duskfox',
+    'nightfox_nightfox',
+    'nightfox_nordfox',
+    'nightfox_teraforx',
     'nord',
     'onedark_cool',
     'onedark_dark',
@@ -24,6 +31,7 @@ local available_themes = {
     'tokyonight_day',
     'tokyonight_night',
     'tokyonight_storm',
+    'tundra',
 }
 
 M.change_theme = function()
