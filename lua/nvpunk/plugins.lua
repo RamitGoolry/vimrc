@@ -165,7 +165,8 @@ packer.startup(function(use)
     -- polyglot again because some languages aren't supported by treesitter
     use 'sheerun/vim-polyglot'
     -- XML, HTML tag autoclosing (requires treesitter)
-    use { 'windwp/nvim-ts-autotag', requires = 'nvim-treesitter/nvim-treesitter' }
+    -- doesn't work right now
+    -- use { 'windwp/nvim-ts-autotag', requires = 'nvim-treesitter/nvim-treesitter' }
     -- For automatic code formatting
     use 'sbdchd/neoformat'
     -- For hugo templating
