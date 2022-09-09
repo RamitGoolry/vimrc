@@ -1,0 +1,46 @@
+local M = {}
+
+local available_themes = {
+    'catppuccin_frappe',
+    'catppuccin_latte',
+    'catppuccin_macchiato',
+    'catppuccin_mocha',
+    'dracula',
+    'gruvbox_dark',
+    'gruvbox_medium',
+    'monokai',
+    'monokai_pro',
+    'monokai_ristretto',
+    'monokai_soda',
+    'moonlight',
+    'nord',
+    'onedark_cool',
+    'onedark_dark',
+    'onedark_darker',
+    'onedark_deep',
+    'onedark_warm',
+    'onedark_warmer',
+    'tokyonight_day',
+    'tokyonight_night',
+    'tokyonight_storm',
+}
+
+M.change_theme = function()
+    vim.ui.select(
+        available_themes,
+        {
+            prompt = 'Choose a theme:',
+        },
+        function(theme, _)
+            require(
+                'nvpunk.theme_manager.themes.' .. theme
+            )
+            vim.notify('Switched to theme ' .. theme, 'info', {
+                title = 'nvpunk.theme_manager.theme_chooser'
+            })
+            require'nvpunk.preferences'.set_theme(theme)
+        end
+    )
+end
+
+return M
