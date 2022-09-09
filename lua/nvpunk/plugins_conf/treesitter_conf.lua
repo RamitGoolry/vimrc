@@ -40,11 +40,11 @@ require'plenary.job':new({
     command = '/bin/bash',
     args = {
         '-c',
-        '"which gcc"'
+        'which gcc'
     },
     on_exit = function(_, res)
         if res == 0 then
-            setup_treesitter()
+            vim.schedule(setup_treesitter)
         else
             vim.notify(
                 'Treesitter is disabled\n' ..
@@ -54,4 +54,4 @@ require'plenary.job':new({
             )
         end
     end
-})
+}):start()
