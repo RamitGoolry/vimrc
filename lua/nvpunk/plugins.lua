@@ -76,7 +76,7 @@ packer.startup(function(use)
     }
 
     -- rainbow delimiters (brackets etc)
-    use 'p00f/nvim-ts-rainbow'
+    -- use 'p00f/nvim-ts-rainbow'
 
     -- better tabline
     use {
@@ -164,7 +164,7 @@ packer.startup(function(use)
     -- polyglot again because some languages aren't supported by treesitter
     use 'sheerun/vim-polyglot'
     -- XML, HTML tag autoclosing (requires treesitter)
-    use 'windwp/nvim-ts-autotag'
+    use { 'windwp/nvim-ts-autotag', requires = 'nvim-treesitter/nvim-treesitter' }
     -- For automatic code formatting
     use 'sbdchd/neoformat'
     -- For hugo templating
@@ -250,8 +250,18 @@ packer.startup(function(use)
     use 'jghauser/mkdir.nvim'
 
     if PACKER_BOOTSTRAP then
-        require'packer'.sync()
+        packer.sync()
     end
 end)
 
-require'nvpunk.plugins_conf'
+if PACKER_BOOTSTRAP then
+    local grp = vim.api.nvim_create_augroup('OnPackerComplete', { clear = true })
+    vim.api.nvim_create_autocmd(
+        { 'User PackerComplete' }, {
+            command = 'lua require"nvpunk.plugins_conf"',
+            group = grp
+        }
+    )
+else
+    require'nvpunk.plugins_conf'
+end

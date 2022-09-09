@@ -1,10 +1,9 @@
--- disable default nvimtree bindings
-require'nvim-tree'.setup{
+require'nvim-tree'.setup {
     disable_netrw = true,
     -- autoclose when it's the last window
     -- auto_close = true,
     -- open_on_tab = true,
-    hijack_cursor = true,
+    hijack_cursor = false,
     update_cwd = true,
     -- show diagnostics in file view
     diagnostics = {

@@ -1,7 +1,7 @@
 local M = {}
 
 local PREFERENCES_FILE = vim.fn.expand(
-    '$HOME/.config/nvim/org.nvpunk.nvim.preferences.json'
+    vim.fn.stdpath'config' .. '/org.gabmus.nvpunk.preferences.json'
 )
 
 local DEFAULT_PREFERENCES = {
@@ -21,6 +21,12 @@ local function conf_valid(conf)
     return false
 end
 
+--- Save conf to PREFERENCES_FILE
+-- @param conf table
+local function save_conf(conf)
+    vim.fn.writefile({vim.json.encode(conf)}, PREFERENCES_FILE)
+end
+
 local function load_conf()
     if vim.fn.filereadable(PREFERENCES_FILE) == 1 then
         local conf = vim.json.decode(table.concat(vim.fn.readfile(PREFERENCES_FILE), '\n'))
@@ -29,12 +35,6 @@ local function load_conf()
         end
     end
     return DEFAULT_PREFERENCES
-end
-
---- Save conf to PREFERENCES_FILE
--- @param conf table
-local function save_conf(conf)
-    vim.fn.writefile({vim.json.encode(conf)}, PREFERENCES_FILE)
 end
 
 --- Save theme to PREFERENCES_FILE
@@ -87,7 +87,8 @@ local preferences_menus = {
     {
         label = '  Open Config',
         func = function()
-            vim.cmd[[cd ~/.config/nvim/lua/nvpunk]]
+            local changedir = 'cd ' .. vim.fn.stdpath'config'
+            vim.cmd(changedir)
             vim.cmd[[NvimTreeOpen]]
         end
     },

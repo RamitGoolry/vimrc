@@ -8,11 +8,6 @@ require'nvim-treesitter.configs'.setup {
         use_languagetree = true,
         additional_vim_regex_highlighting = true,
     },
-    rainbow = {
-        enable = false,
-        extended_mode = true,  -- html tags, boolean or table
-        max_file_lines = nil,  -- no file size limit
-    },
     incremental_selection = {
         enable = false,
         keymaps = {
@@ -23,7 +18,7 @@ require'nvim-treesitter.configs'.setup {
         },
     },
     indent = {
-        -- gotta say, indentation seems completely broken...
+        -- indentation with treesitter isn't great
         enable = false,
         disable = {
             'html', 'scss', 'css', 'yaml', 'python'
