@@ -15,6 +15,14 @@ M.nvpunk_update = function()
                 vim.notify('Nvpunk updated', 'info', {
                     title = 'Nvpunk Update'
                 })
+                vim.schedule(function()
+                    vim.cmd(
+                        'source ' ..
+                        vim.fn.stdpath'config' ..
+                        '/lua/nvpunk/plugins.lua'
+                        )
+                    require'packer'.sync()
+                end)
             else
                 vim.notify('Nvpunk update failed', 'error', {
                     title = 'Nvpunk Update'

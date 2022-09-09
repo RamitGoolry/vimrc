@@ -5,6 +5,7 @@ local available_themes = {
     'catppuccin_latte',
     'catppuccin_macchiato',
     'catppuccin_mocha',
+    'doom_one',
     'dracula',
     'gruvbox_dark',
     'gruvbox_medium',

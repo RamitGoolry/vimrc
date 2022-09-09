@@ -50,6 +50,7 @@ packer.startup(function(use)
     use 'luisiacc/gruvbox-baby'
     use 'tanvirtin/monokai.nvim'
     use 'shaunsingh/moonlight.nvim'
+    use 'NTBBloodbath/doom-one.nvim'
 
     --------
     -------- Interface
