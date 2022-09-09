@@ -34,6 +34,16 @@ dashboard.section.buttons.val = {
         ':lua require"nvpunk.preferences".preferences_menu()<CR>'
     ),
     dashboard.button(
+        'cu',
+        '  Update Plugins',
+        ':PackerSync<CR>'
+    ),
+    dashboard.button(
+        'cU',
+        '  Update Nvpunk',
+        ':lua require"nvpunk.punk_funcs".nvpunk_update()<CR>'
+    ),
+    dashboard.button(
         'q',
         '  Quit',
         ':qa<CR>'
