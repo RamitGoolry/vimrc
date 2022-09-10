@@ -1,3 +1,5 @@
+-- lsp/buffer specific keymaps in lsp/keymaps.lua
+
 local km = require'nvpunk.util.keymapper'
 
 ----------
@@ -50,17 +52,22 @@ km.tkeymap('<Esc><Esc>', '<C-\\><C-n>')
 ---------- Telescope
 ----------
 
--- file finder without preview
 km.wk.register({ ['<leader>t'] = { name = ' Telescope' } }, { mode = 'n' })
-km.nkeymap('<leader>tf', '<cmd>lua require"telescope.builtin".find_files(require("telescope.themes").get_dropdown({ previewer = false }))<cr>', 'Open file')
--- live grep
+km.nkeymap('<leader>tf', function()
+    require'telescope.builtin'.find_files(
+        require'telescope.themes'.get_dropdown { previewer = false }
+    )
+end, 'Open file')
 km.nkeymap('<leader>tg', '<cmd>Telescope live_grep<cr>', 'Live grep')
 km.nkeymap('<leader>tr', '<cmd>Telescope lsp_references<cr>', 'Browse references')
-km.nkeymap('<leader>th', '<cmd>lua require"telescope.builtin".oldfiles(require("telescope.themes").get_dropdown({ previewer = false }))<cr>', 'Recent files')
-km.nkeymap('<leader>tn', '<cmd>Telescope notify<cr>', 'Notifications')
+km.nkeymap('<leader>th', function()
+    require'telescope.builtin'.oldfiles(
+        require'telescope.themes'.get_dropdown { previewer = false }
+    )
+end, 'Recent files')
 
 ----------
----------- Gitsignshttps://neovim.org
+---------- Gitsigns
 ----------
 
 km.wk.register({ ['<leader>g'] = { name = ' Git' } }, { mode = 'n' })
@@ -80,14 +87,6 @@ km.nkeymap('ge', '<cmd>NvimTreeToggle<CR>', 'פּ Toggle Explorer')
 ----------
 
 km.nkeymap('<leader>T', '<cmd>TroubleToggle<cr>', 'Trouble')
-
-----------
----------- Formatting
-----------
-
-km.nkeymap('<leader>F', '<cmd>lua vim.lsp.buf.formatting_sync()<cr>', 'Format Document')
--- vvv doesn't work
--- vkeymap('<leader>F', '<cmd>lua vim.lsp.buf.range_formatting()<cr>', 'Format Selection')
 
 ----------
 ---------- Notify

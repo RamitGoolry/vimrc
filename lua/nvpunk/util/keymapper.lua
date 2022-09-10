@@ -7,7 +7,7 @@ M.keymap = function(mode, kb, cmd, desc)
     vim.keymap.set(mode, kb, cmd, keymap_opts)
     if desc then
         M.wk.register({
-            [kb] = {tostring(cmd), desc}
+            [kb] = {desc}
         }, { mode = mode })
     end
 end
@@ -26,10 +26,8 @@ M.create_bufkeymapper = function(bufnr)
         vim.keymap.set(mode, kb, cmd, buf_km_opts)
         if desc then
             M.wk.register({
-                [kb] = {cmd, desc}
-            }, {
-                mode = mode, buffer = bufnr
-            })
+                [kb] = {desc}
+            }, { mode = mode, buffer = bufnr })
         end
     end
     bm.vkeymap  = function(...) bm.keymap('v', ...) end
