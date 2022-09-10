@@ -19,34 +19,77 @@
 
 Neovim distribution by for netrunners, cyberspace hackers and space cowboys.
 
+For the best experience, you'll need:
+
+- A terminal with good font rendering (|nvpunk-ref-terminals|)
+- A nerdfonts patched font (|nvpunk-ref-nerdfonts|)
+
 ==============================================================================
-1. Navigation                                              *nvpunk-navigation*
+CONTENTS                                                     *nvpunk-contents*
+
+NAVIGATION.................................................|nvpunk-navigation|
+SHORTCUTS...................................................|nvpunk-shortcuts|
+COMMANDS.....................................................|nvpunk-commands|
+REFERENCES.................................................|nvpunk-references|
+
+==============================================================================
+NAVIGATION                                                 *nvpunk-navigation*
 
 - Use the buttons in the greeter
 - Press `<space>`, `g` and `z` to explore more functionality
 
 ==============================================================================
-2. Shortcuts                                                *nvpunk-shortcuts* 
+SHORTCUTS                                                   *nvpunk-shortcuts* 
 
-Here's a non-exaustive list of shortcuts:
+Here's a non-exaustive list of shortcuts, devided into categories. You can look
+at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 
-- `ge`         Toggle the file explorer
-- `<space>A`   Open the greeter
-- `zc`, `zo`     Close, open folds
-- `<space>/h`  Open horizontal terminal
-- `<space>/v`  Open vertical terminal
-- `<C-\>`      Toggle floating terminal
-- `<space>tg`  Live grep
-- `<space>tf`  Search for a file
-- `<space>gb`  Git blame current line
-- `<space>g]`  Next git hunk
-- `<space>g[`  Previous git hunk
-- `<space>g?`  Show git diff for the current line
-- `<space>T`   Expand diagnostics
-- `<space>nd`  Dismiss notifications
+## General
+
+- `<space>A`      Open the greeter
+- `<space>T`      Toggle diagnostics panel
+- `<space>nd`     Dismiss notifications
+
+## File explorer
+
+- `ge`            Toggle the file explorer
+- `?`             Toggle help
+- `<CR>`          Open file/Expand folder
+- `i`             Open file in horizontal split
+- `s`             Open file in vertical split
+- `<F2>`          Rename file
+- `<space>fn`     New file
+- `<space>fyy`    Copy file
+- `<space>fyp`    Paste file
+- `<space>xo`     Open file/folder with system app
+
+## Terminal
+
+- `<space>/h`     Open horizontal terminal
+- `<space>/v`     Open vertical terminal
+- `<C-\>`         Toggle floating terminal
+- `<Esc><Esc>`    Get out of terminal mode
+
+## Editing
+
+- `zc`, `zo`        Close, open folds
+- `<A-k>`, `<A-j>`  Move selection up/down
+
+## Telescope
+
+- `<space>tg`     Live grep
+- `<space>tf`     Search for a file
+- `<space>th`     Recent files
+
+## Git
+
+- `<space>g?`     Show git diff for the current line
+- `<space>g]`     Next git hunk
+- `<space>g[`     Previous git hunk
+- `<space>gb`     Git blame current line
 
 ==============================================================================
-2. Commands                                                  *nvpunk-commands* 
+COMMANDS                                                     *nvpunk-commands* 
 
 >
     :NvpunkUpdate
@@ -57,3 +100,29 @@ Update Nvpunk and its plugins
     :NvpunkPreferences
 <
 Open the preferences menu
+
+==============================================================================
+REFERENCES                                                 *nvpunk-references*
+
+## Keybinds                                              *nvpunk-ref-keybinds*
+
+Global:
+>
+    :e ~/.config/nvim/lua/nvpunk/keymaps.lua
+<
+
+LSP specific:
+>
+    :e ~/.config/nvim/lua/nvpunk/lsp/keymaps.lua
+<
+
+## Terminals                                            *nvpunk-ref-terminals*
+
+- Wezterm https://wezfurlong.org/wezterm/
+- Alacritty https://github.com/alacritty/alacritty
+- Kitty https://sw.kovidgoyal.net/kitty/
+- st (for advanced users) https://st.suckless.org/
+
+## Nerdfonts                                            *nvpunk-ref-nerdfonts*
+
+https://www.nerdfonts.com/

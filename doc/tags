@@ -1,5 +1,10 @@
 nvpunk	nvpunk.txt	/*nvpunk*
 nvpunk-commands	nvpunk.txt	/*nvpunk-commands*
+nvpunk-contents	nvpunk.txt	/*nvpunk-contents*
 nvpunk-navigation	nvpunk.txt	/*nvpunk-navigation*
+nvpunk-ref-keybinds	nvpunk.txt	/*nvpunk-ref-keybinds*
+nvpunk-ref-nerdfonts	nvpunk.txt	/*nvpunk-ref-nerdfonts*
+nvpunk-ref-terminals	nvpunk.txt	/*nvpunk-ref-terminals*
+nvpunk-references	nvpunk.txt	/*nvpunk-references*
 nvpunk-shortcuts	nvpunk.txt	/*nvpunk-shortcuts*
 nvpunk.txt	nvpunk.txt	/*nvpunk.txt*
