@@ -116,8 +116,8 @@ km.nkeymap('<leader>bu', '<cmd>lua require"dapui".toggle()<cr>', ' DAP UI')
 ----------
 
 km.wk.register({ ['<leader>/'] = { name = ' Term Split' } })
-km.nkeymap('<leader>/v', '<cmd>vs term://zsh<cr>', 'ﲖ Vertical')
-km.nkeymap('<leader>/h', '<cmd>sp term://zsh<cr>', 'ﲐ Horizontal')
+km.nkeymap('<leader>/v', '<cmd>vs<cr><cmd>terminal<cr>', 'ﲖ Vertical')
+km.nkeymap('<leader>/h', '<cmd>sp<cr><cmd>terminal<cr>', 'ﲐ Horizontal')
 
 ----------
 ---------- Diff View
