@@ -46,6 +46,7 @@ at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 
 ## General
 
+- `<A-m>`         Open context menu
 - `<space>A`      Open the greeter
 - `<space>T`      Toggle diagnostics panel
 - `<space>nd`     Dismiss notifications
