@@ -1,5 +1,5 @@
 --- Set gruvbox-baby theme with specific style
--- @param style 'medium' | 'dark'
+---@param style 'medium' | 'dark'
 return function(style)
     require'nvpunk.util.try'.call(function()
         vim.g.gruvbox_baby_background_color = style

@@ -1,5 +1,5 @@
 --- Set catpuccin theme with specific style
--- @param style 'macchiato' | 'latte' | 'frappe' | 'macchiato' | 'mocha'
+---@param style 'macchiato' | 'latte' | 'frappe' | 'macchiato' | 'mocha'
 return function(style)
     require'nvpunk.util.try'.call(function()
         vim.g.catppuccin_flavour = style

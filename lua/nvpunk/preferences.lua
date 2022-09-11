@@ -10,7 +10,7 @@ local DEFAULT_PREFERENCES = {
 }
 
 --- Verify that the conf is valid and has all keys
--- @param conf table
+---@param conf table
 local function conf_valid(conf)
     if
         vim.fn.has_key(conf, 'theme') == 1 and
@@ -22,7 +22,7 @@ local function conf_valid(conf)
 end
 
 --- Save conf to PREFERENCES_FILE
--- @param conf table
+---@param conf table
 local function save_conf(conf)
     vim.fn.writefile({vim.json.encode(conf)}, PREFERENCES_FILE)
 end
@@ -38,7 +38,7 @@ local function load_conf()
 end
 
 --- Save theme to PREFERENCES_FILE
--- @param theme string
+---@param theme string
 M.set_theme = function(theme)
     local conf = load_conf()
     conf.theme = theme

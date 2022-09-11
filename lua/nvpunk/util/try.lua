@@ -1,11 +1,10 @@
 local M = {}
 
---- call a function; show a notification if it fails
--- @param func function
--- @param args table
--- @param err? string
--- @param context? string
--- @return nil
+--- Call a function; show a notification if it fails
+---@param func function
+---@param args table
+---@param err? string
+---@param context? string
 M.call = function(func, args, err, context)
     if err == nil then
         err = 'Failed to call function'
@@ -19,9 +18,8 @@ M.call = function(func, args, err, context)
     end
 end
 
---- try to call require; show a notification if it fails
--- @param module string
--- @return nil
+--- Try to call require; show a notification if it fails
+---@param module string
 M.require = function(module)
     M.call(
         require,

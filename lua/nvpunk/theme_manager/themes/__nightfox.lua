@@ -1,5 +1,5 @@
 --- Set nightfox theme with specific style
--- @param style 'nightfox' | 'dayfox' | 'dawnfox' | 'duskfox' | 'nordfox' | 'terafox' | 'carbonfox'
+---@param style 'nightfox' | 'dayfox' | 'dawnfox' | 'duskfox' | 'nordfox' | 'terafox' | 'carbonfox'
 return function(style)
     require'nvpunk.util.try'.call(function()
         require('nightfox').setup {

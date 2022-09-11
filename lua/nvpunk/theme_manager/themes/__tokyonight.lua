@@ -1,5 +1,5 @@
 --- Set tokyonight theme with specific style
--- @param style 'storm' | 'night' | 'day'
+---@param style 'storm' | 'night' | 'day'
 return function(style)
     require'nvpunk.util.try'.call(function()
         vim.g.tokyonight_style = style

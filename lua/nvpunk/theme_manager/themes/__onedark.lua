@@ -1,5 +1,5 @@
 --- Set onedark theme with specific style
--- @param style 'dark' | 'darker' | 'cool' | 'deep' | 'warm' | 'warmer'
+---@param style 'dark' | 'darker' | 'cool' | 'deep' | 'warm' | 'warmer'
 return function(style)
     require'nvpunk.util.try'.call(function()
         local t = require'onedark'
