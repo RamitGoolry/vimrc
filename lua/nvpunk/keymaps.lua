@@ -139,3 +139,59 @@ km.nkeymap(
     '<cmd>lua vim.notify("]c → next difference\\n[c → previous difference\\ndo → diff obtain\\ndp → diff put", "info", {title = "Diff View Shortcuts"})<cr>',
     'Show Shortcuts'
 )
+
+----------
+---------- Context Menu
+----------
+
+local ContextMenu = require'nvpunk.util.context_menu'
+
+local function context_menu_func()
+    ContextMenu(
+        'Choose a category',
+        {
+            'LSP',
+        },
+        {
+            function() ContextMenu(
+                'Chose an LSP action',
+                {
+                    'Code Actions              <C-f>',
+                    'Go to Declaration            gD',
+                    'Go to Definition             gd',
+                    'Go to Implementation         gI',
+                    'Signature Help            <C-k>',
+                    'Rename                <space>rn',
+                    'References                   gr',
+                    'Expand Diagnostics     <space>e',
+                    'Auto Format            <space>f',
+                },
+                {
+                    vim.lsp.buf.code_action,
+                    function()
+                        vim.cmd[[tab split]]
+                        vim.lsp.buf.declaration()
+                    end,
+                    function()
+                        vim.cmd[[tab split]]
+                        vim.lsp.buf.definition()
+                    end,
+                    vim.lsp.buf.implementation,
+                    vim.lsp.buf.signature_help,
+                    vim.lsp.buf.rename,
+                    vim.lsp.buf.references,
+                    vim.diagnostic.open_float,
+                    vim.lsp.buf.formatting,
+                }
+            ) end,
+        }
+    )
+end
+
+local context_menu_km = {
+    '<A-m>',
+    context_menu_func,
+    ' Context Menu'
+}
+km.nkeymap(unpack(context_menu_km))
+km.ikeymap(unpack(context_menu_km))
