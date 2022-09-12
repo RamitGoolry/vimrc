@@ -25,34 +25,37 @@ M.set_lsp_keymaps = function(client, bufnr)
 
     -- Mappings
 
-    bm.nkeymap('gD', '<Cmd>tab split<CR><Cmd>lua vim.lsp.buf.declaration()<CR>', 'Declaration')
-    bm.nkeymap('gd', '<Cmd>tab split<CR><Cmd>lua vim.lsp.buf.definition()<CR>', 'Definition')
-    bm.nkeymap('K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
-    bm.nkeymap('gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', 'Implementation')
-    bm.inkeymap('<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+    bm.nkeymap('gD', function()
+        vim.cmd'tab split'
+        vim.lsp.buf.declaration()
+    end, 'Declaration')
+    bm.nkeymap('gd', function()
+        vim.cmd'tab split'
+        vim.lsp.buf.definition()
+    end, 'Definition')
+    bm.nkeymap('K', vim.lsp.buf.hover)
+    bm.nkeymap('gI', vim.lsp.buf.implementation, 'Implementation')
+    bm.inkeymap('<C-k>', vim.lsp.buf.signature_help)
     km.wk.register({ ['<leader>w'] = { name = 'Workspace' } }, { mode = 'n', buffer = bufnr })
-    bm.nkeymap('<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', 'Add folder')
-    bm.nkeymap('<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', 'Remove folder')
-    bm.nkeymap('<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'List folders')
-    bm.nkeymap('<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'Open definition')
-    bm.nkeymap('<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename')
-    bm.nkeymap('gr', '<cmd>lua vim.lsp.buf.references()<CR>', 'References')
-    bm.nkeymap('<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', 'Show diagnostics')
-    -- nbufkeymap('<space>e', '<cmd>lua vim.diagnostic.show()<CR>')
-    bm.nkeymap('[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', 'Prev diagnostic')
-    bm.nkeymap('<A-E>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-    bm.nkeymap(']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', 'Next diagnostic')
-    bm.nkeymap('<A-e>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
-    bm.nkeymap('<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
-    bm.inkeymap('<C-f>', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-    bm.nkeymap('<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code actions')
+    bm.nkeymap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add folder')
+    bm.nkeymap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove folder')
+    bm.nkeymap('<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, 'List folders')
+    -- bm.nkeymap('<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'Open definition')
+    bm.nkeymap('<leader>rn', vim.lsp.buf.rename, 'Rename')
+    bm.nkeymap('gr', vim.lsp.buf.references, 'References')
+    bm.nkeymap('<leader>e', vim.diagnostic.open_float, 'Show diagnostics')
+    bm.nkeymap('[d', vim.lsp.diagnostic.goto_prev, 'Prev diagnostic')
+    bm.nkeymap(']d', vim.lsp.diagnostic.goto_next, 'Next diagnostic')
+    -- bm.nkeymap('<leader>q', vim.diagnostic.setloclist)
+    bm.inkeymap('<C-f>', vim.lsp.buf.code_action)
+    bm.nkeymap('<leader>ca', vim.lsp.buf.code_action, 'Code actions')
 
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then
-        bm.nkeymap('<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', 'Format')
+        bm.nkeymap('<space>f', vim.lsp.buf.formatting, 'Format')
     end
     if client.resolved_capabilities.document_range_formatting then
-        bm.vkeymap('<space>f', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', 'Format range')
+        bm.xkeymap('<space>f', vim.lsp.buf.range_formatting, 'Format range')
     end
 end
 
