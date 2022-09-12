@@ -15,7 +15,7 @@ vim.g.maplocalleader = ' '
 ---------- Personal shortcuts
 ----------
 
-require'nvpunk.util.keymapper'.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')
+km.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')
 
 -- Alt ^ wraps selection in <sup>whatever</sup>
 -- Alt _ wraps selection in <sub>whatever</sub>
@@ -188,10 +188,8 @@ local function context_menu_func()
     )
 end
 
-local context_menu_km = {
+km.inkeymap(
     '<A-m>',
     context_menu_func,
     ' Context Menu'
-}
-km.nkeymap(unpack(context_menu_km))
-km.ikeymap(unpack(context_menu_km))
+)
