@@ -50,6 +50,10 @@ M.set_lsp_keymaps = function(client, bufnr)
     bm.inkeymap('<C-f>', vim.lsp.buf.code_action)
     bm.nkeymap('<leader>ca', vim.lsp.buf.code_action, 'Code actions')
 
+    km.wk.register({ ['<leader>v'] = { name = 'Diagnostics Virutal Text' } }, { mode = 'n', buffer = bufnr })
+    bm.nkeymap('<leader>vd', function() vim.diagnostic.config({ virtual_text = false }) end, 'Disable')
+    bm.nkeymap('<leader>ve', function() vim.diagnostic.config({ virtual_text = true }) end, 'Enable')
+
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then
         bm.nkeymap('<space>f', vim.lsp.buf.formatting, 'Format')
