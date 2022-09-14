@@ -158,9 +158,9 @@ M.start_jdtls = function()
             require'nvpunk.lsp.keymaps'.set_lsp_keymaps(client, bufnr)
             local km = require'nvpunk.util.keymapper'
             local bm = km.create_bufkeymapper(bufnr)
-            bm.nkeymap('<leaeder>djr', '<cmd>JdtRefreshDebugConfigs<cr>', 'Refresh Java Debugger Conf')
-            bm.nkeymap('<leaeder>djc', '<cmd>lua require"jdtls".test_class()<cr>', 'Test Class')
-            bm.nkeymap('<leaeder>djn', '<cmd>lua require"jdtls".test_nearest_method()<cr>', 'Test Nearest Method')
+            bm.nkeymap('<leaeder>bjr', '<cmd>JdtRefreshDebugConfigs<cr>', 'Refresh Java Debugger Conf')
+            bm.nkeymap('<leaeder>bjc', '<cmd>lua require"jdtls".test_class()<cr>', 'Test Class')
+            bm.nkeymap('<leaeder>bjn', '<cmd>lua require"jdtls".test_nearest_method()<cr>', 'Test Nearest Method')
             require'jdtls'.setup_dap({hotcodereplace = 'auto'})
             require'jdtls.dap'.setup_dap_main_class_configs()
         end,

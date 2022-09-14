@@ -14,7 +14,6 @@ require'mason-lspconfig'.setup {
         'sumneko_lua',
         'cssls',
         'cmake',
-        'diagnosticls',
         'rust_analyzer',
         'jdtls'
     }
