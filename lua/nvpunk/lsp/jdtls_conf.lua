@@ -27,11 +27,11 @@ local java_exec = 'java'
 local Job = require'plenary.job'
 
 M.has_java_debug = function()
-    return vim.fn.isdirectory(java_debug_path) == 0
+    return vim.fn.isdirectory(java_debug_path) ~= 0
 end
 
 M.has_vscode_java_test = function()
-    return vim.fn.isdirectory(vscode_java_test_path) == 0
+    return vim.fn.isdirectory(vscode_java_test_path) ~= 0
 end
 
 M.install_java_debug = function()
