@@ -174,9 +174,6 @@ packer.startup(function(use)
     -- For hugo templating
     use 'phelipetls/vim-hugo'
 
-    -- blueprint syntax
-    use 'https://gitlab.com/gabmus/vim-blueprint'
-
     --------
     -------- LSP
     --------
