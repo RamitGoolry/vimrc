@@ -14,7 +14,7 @@ local jdtls_setup = require'jdtls.setup'
 local jdtls_dap = require'jdtls.dap'
 
 local data_dir = vim.fn.stdpath'data'
-local jdtls_install = data_dir .. '/nvim/mason/packages/jdtls'
+local jdtls_install = data_dir .. '/mason/packages/jdtls'
 local projname = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace = vim.fn.getcwd() .. '.nvpunk_jdtls_workspace'
 
