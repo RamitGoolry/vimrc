@@ -1,4 +1,4 @@
-local M
+local M = {}
 
 local function this_notif(msg, type)
     if type == nil then type = 'info' end
