@@ -1,7 +1,7 @@
 local M = {}
 local km = require'nvpunk.util.keymapper'
 
-M.set_lsp_keymaps = function(client, bufnr)
+M.set_lsp_keymaps = function(client, bufnr, extra_keymaps)
     local bm = km.create_bufkeymapper(bufnr)
     local function buf_set_option(...)
         vim.api.nvim_buf_set_option(bufnr, ...)
@@ -9,6 +9,7 @@ M.set_lsp_keymaps = function(client, bufnr)
 
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
+        -- TODO convert to lua autogroup/autocmd
         vim.api.nvim_exec(
             [[
               augroup lsp_document_highlight
@@ -61,6 +62,8 @@ M.set_lsp_keymaps = function(client, bufnr)
     if client.resolved_capabilities.document_range_formatting then
         bm.xkeymap('<space>f', vim.lsp.buf.range_formatting, 'Format range')
     end
+
+    if extra_keymaps ~= nil then extra_keymaps(bm) end
 end
 
 return M
