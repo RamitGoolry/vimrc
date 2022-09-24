@@ -13,7 +13,7 @@ end
 
 require'bufferline'.setup{
     options = {
-        mode = 'buffers',  -- 'buffers' | 'tabs'
+        mode = 'tabs',  -- 'buffers' | 'tabs'
         numbers = 'none',
         diagnostics = 'nvim_lsp',
         always_show_bufferline = true,
