@@ -160,6 +160,7 @@ M.start_jdtls = function()
             '-Declipse.product=org.eclipse.jdt.ls.core.product',
             '-Dlog.protocol=true',
             '-Dlog.level=ALL',
+            '-javaagent:' .. jdtls_install .. '/lombok.jar',
             '-Xms1g',
             '--add-modules=ALL-SYSTEM',
             '--add-opens', 'java.base/java.util=ALL-UNNAMED',
@@ -183,8 +184,17 @@ M.start_jdtls = function()
         -- for a list of options
         settings = {
             java = {
+                eclipse = { downloadSources = true },
+                maven = { downloadSources = true },
+                configuration = { updateBuildConfiguration = 'interactive' },
+                implementationCodeLens = { enabled = true },
+                referencesCodeLens = { enabled = true },
+                references = { includeDecompiledSources = true },
+                inlayHints = { parameterNames = { enabled = true } },
+                format = { enabled = false },
             },
-            extendedClientCapabilities = extendedClientCapabilities
+            signatureHelp = { enabled = true },
+            extendedClientCapabilities = extendedClientCapabilities,
         },
 
         -- Language server `initializationOptions`
@@ -194,6 +204,7 @@ M.start_jdtls = function()
         -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
         --
         -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
+        flags = { allow_incremental_sync = true },
         init_options = {
             bundles = bundles
         },
