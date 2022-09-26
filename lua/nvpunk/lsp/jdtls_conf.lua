@@ -230,8 +230,8 @@ M.start_jdtls = function()
                 )
             end
             require'nvpunk.lsp.keymaps'.set_lsp_keymaps(client, bufnr, extra_keymaps)
-            jdtls.setup_dap({hotcodereplace = 'auto'})
             jdtls_dap.setup_dap_main_class_configs()
+            jdtls.setup_dap({hotcodereplace = 'auto'})
         end,
         capabilities = require'nvpunk.lsp.capabilities'.capabilities,
     }

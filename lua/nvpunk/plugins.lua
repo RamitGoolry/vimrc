@@ -143,7 +143,7 @@ packer.startup(function(use)
     use 'mattn/emmet-vim'
 
     -- comment shortcuts
-    use 'terrortylor/nvim-comment'
+    use 'numToStr/Comment.nvim'
 
     -- auto insert matching brackets and quotes
     use 'windwp/nvim-autopairs'

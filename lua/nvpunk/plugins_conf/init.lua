@@ -11,7 +11,7 @@ local configs = {
     'nvpunk.plugins_conf.symbols_outline_conf',
     -- lualine config done by theme manager
     'nvpunk.plugins_conf.bufferline_conf',
-    'nvpunk.plugins_conf.nvim_comment_conf',
+    'nvpunk.plugins_conf.comment_conf',
     'nvpunk.plugins_conf.nvimtree_conf',
     'nvpunk.plugins_conf.whichkey_conf',
     'nvpunk.plugins_conf.telescope_conf',
