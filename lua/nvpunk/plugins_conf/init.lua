@@ -8,7 +8,7 @@ local configs = {
     'nvpunk.plugins_conf.mason_conf',
     'nvpunk.lsp',
     'nvpunk.plugins_conf.autopairs_conf',
-    'nvpunk.plugins_conf.symbols_outline_conf',
+    'nvpunk.plugins_conf.aerial_conf',
     -- lualine config done by theme manager
     'nvpunk.plugins_conf.bufferline_conf',
     'nvpunk.plugins_conf.comment_conf',

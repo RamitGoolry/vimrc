@@ -203,7 +203,7 @@ packer.startup(function(use)
     -- use 'glepnir/lspsaga.nvim'
 
     -- code outline (classes, functions, vars...)
-    use 'simrat39/symbols-outline.nvim'
+    use 'stevearc/aerial.nvim'
 
     -- step by step signature help
     use 'ray-x/lsp_signature.nvim'
