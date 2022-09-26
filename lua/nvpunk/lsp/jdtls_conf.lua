@@ -44,6 +44,7 @@ M.install_java_debug = function()
             cwd = java_debug_path,
             on_exit = function (_, ret)
                 if ret == 0 then
+                    this_notif('java-debug installed')
                     vim.schedule(function()
                         M.setup()
                     end)
@@ -85,6 +86,7 @@ M.install_vscode_java_test = function()
             cwd = vscode_java_test_path,
             on_exit = function (_, ret2)
                 if ret2 == 0 then
+                    this_notif('vscode-java-test installed')
                     vim.schedule(function()
                         M.setup()
                     end)
