@@ -1,7 +1,19 @@
 -- these are filetypes that are not actual files, but rather meta buffers
 -- created by plugins or by neovim itself
 return {
-    'TelescopePrompt', 'vim', 'NvimTree', 'alpha',
-    'Trouble', 'Outline', 'spectre_panel', 'startify', 'help',
-    'packer', 'dashboard', 'lir', 'toggleterm', 'neogitstatus'
+    'NvimTree',
+    'Outline',
+    'TelescopePrompt',
+    'Trouble',
+    'aerial',
+    'alpha',
+    'dashboard',
+    'help',
+    'lir',
+    'neogitstatus',
+    'packer',
+    'spectre_panel',
+    'startify',
+    'toggleterm',
+    'vim',
 }
