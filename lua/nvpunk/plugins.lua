@@ -126,6 +126,11 @@ packer.startup(function(use)
     -- nice diffview
     use 'sindrets/diffview.nvim'
 
+    -- information bar on top of windows (used for debug buttons)
+    if vim.fn.has('nvim-0.8') == 1 then
+        use 'fgheng/winbar.nvim'
+    end
+
     --------
     -------- Previewers
     --------

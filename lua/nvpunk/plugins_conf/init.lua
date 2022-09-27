@@ -20,6 +20,7 @@ local configs = {
     'nvpunk.plugins_conf.alpha_conf',
     'nvpunk.plugins_conf.mini_surround_conf',
     'nvpunk.plugins_conf.dressing_conf',
+    'nvpunk.plugins_conf.winbar_conf',
     'nvpunk.dap',
     'nvpunk.plugins_conf.numbertoggle_conf',
     'nvpunk.plugins_conf.ufo_conf',

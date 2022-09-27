@@ -18,7 +18,7 @@ require'nvim-web-devicons'.setup{
             name = 'Vertex'
         },
         ['frag'] = {  -- glsl fragment shader
-            icon = '',
+            icon = '',
             color = '#2ec27e',
             name = 'Fragment'
         },
