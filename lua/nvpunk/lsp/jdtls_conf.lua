@@ -214,17 +214,17 @@ M.start_jdtls = function()
         on_attach = function(client, bufnr)
             local function extra_keymaps(bm)
                 bm.nkeymap(
-                    '<leaeder>bjr',
+                    '<leader>bjr',
                     '<cmd>JdtRefreshDebugConfigs<cr>',
                     'Refresh Java Debugger Conf'
                 )
                 bm.nkeymap(
-                    '<leaeder>bjc',
+                    '<leader>bjc',
                     '<cmd>lua require"jdtls".test_class()<cr>',
                     'Test Class'
                 )
                 bm.nkeymap(
-                    '<leaeder>bjn',
+                    '<leader>bjn',
                     '<cmd>lua require"jdtls".test_nearest_method()<cr>',
                     'Test Nearest Method'
                 )
