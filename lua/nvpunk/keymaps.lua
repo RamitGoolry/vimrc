@@ -144,7 +144,7 @@ km.nkeymap(
 ---------- Context Menu
 ----------
 
-local ContextMenu = require'nvpunk.util.context_menu'
+local ContextMenu = require'nvpunk.util.context_menu'.uiselect_context_menu
 
 local function context_menu_func()
     ContextMenu(
@@ -187,6 +187,8 @@ local function context_menu_func()
         }
     )
 end
+
+require'nvpunk.util.context_menu'.clear_menu('PopUp')
 
 km.inkeymap(
     '<A-m>',

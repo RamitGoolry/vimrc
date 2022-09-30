@@ -8,7 +8,7 @@ M.set_lsp_keymaps = function(client, bufnr, extra_keymaps)
     end
 
     -- Set autocommands conditional on server_capabilities
-    if client.resolved_capabilities.document_highlight then
+    if client.server_capabilities.document_highlight then
         -- TODO convert to lua autogroup/autocmd
         vim.api.nvim_exec(
             [[
@@ -56,10 +56,10 @@ M.set_lsp_keymaps = function(client, bufnr, extra_keymaps)
     bm.nkeymap('<leader>ve', function() vim.diagnostic.config({ virtual_text = true }) end, 'Enable')
 
     -- Set some keybinds conditional on server capabilities
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.document_formatting then
         bm.nkeymap('<space>f', vim.lsp.buf.formatting, 'Format')
     end
-    if client.resolved_capabilities.document_range_formatting then
+    if client.server_capabilities.document_range_formatting then
         bm.xkeymap('<space>f', vim.lsp.buf.range_formatting, 'Format range')
     end
 
