@@ -107,6 +107,13 @@ M.set_dap_rclick_menu = function()
     }, M.buf_has_dap)
 end
 
+M.set_filetree_rclick_menu = function()
+    M.set_rclick_submenu('NvpunkFileTreeMenu', 'File        ', {
+        {'New File',                     '<space>fn'},
+        {'Rename',                       '<F2>'},
+    }, function() return vim.bo.filetype == 'NvimTree' end)
+end
+
 M.setup_rclick_menu_autocommands = function()
     return
     vim.api.nvim_create_autocmd(
@@ -115,6 +122,7 @@ M.setup_rclick_menu_autocommands = function()
             M.set_lsp_rclick_menu()
             M.set_dap_rclick_menu()
             M.set_java_rclick_menu()
+            M.set_filetree_rclick_menu()
         end
     })
 end
