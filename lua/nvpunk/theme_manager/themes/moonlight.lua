@@ -6,5 +6,5 @@ require'nvpunk.util.try'.call(function()
     vim.g.moonlight_borders = true
     vim.g.moonlight_disable_background = false
     require'moonlight'.set()
-    require'nvpunk.theme_manager.lualine'('moonlight')
+    reload'nvpunk.theme_manager.lualine'('moonlight')
 end, {}, 'Failed to load theme moonlight', 'nvpunk.theme_manager')

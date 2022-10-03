@@ -76,9 +76,7 @@ local preferences_menus = {
                 },
                 function(greeter, _)
                     M.set_greeter(greeter)
-                    require'nvpunk.util.reload'(
-                        'nvpunk.plugins_conf.alpha_conf'
-                    )
+                    reload('nvpunk.plugins_conf.alpha_conf')
                 end
             )
         end

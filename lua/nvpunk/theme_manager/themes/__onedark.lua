@@ -7,6 +7,6 @@ return function(style)
             style = style
         }
         t.load()
-        require'nvpunk.theme_manager.lualine'('onedark')
+        reload'nvpunk.theme_manager.lualine'('onedark')
     end, {}, 'Failed to load theme onedark-' .. style, 'nvpunk.theme_manager')
 end

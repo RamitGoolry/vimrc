@@ -6,7 +6,7 @@ return function(style)
         -- vim.g.gruvbox_baby_use_original_palette = true
         vim.g.gruvbox_baby_telescope_theme = 0
         vim.cmd[[colorscheme gruvbox-baby]]
-        require'nvpunk.theme_manager.lualine'('gruvbox-baby')
+        reload'nvpunk.theme_manager.lualine'('gruvbox-baby')
     end,
     {}, 'Failed to load theme tokyonight-' .. style, 'nvpunk.theme_manager')
 end

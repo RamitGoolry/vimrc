@@ -18,6 +18,6 @@ return function(style)
             disable_italics = false,
         }
         vim.cmd'colorscheme rose-pine'
-        require'nvpunk.theme_manager.lualine'('auto')
+        reload'nvpunk.theme_manager.lualine'('auto')
     end, {}, 'Failed to load theme onedark-' .. style, 'nvpunk.theme_manager')
 end

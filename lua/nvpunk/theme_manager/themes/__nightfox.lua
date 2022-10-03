@@ -36,7 +36,7 @@ return function(style)
             groups = {},
         }
         vim.cmd('colorscheme ' .. style)
-        require'nvpunk.theme_manager.lualine'(style)
+        reload'nvpunk.theme_manager.lualine'(style)
     end,
     {}, 'Failed to load theme nightfox-' .. style, 'nvpunk.theme_manager')
 end

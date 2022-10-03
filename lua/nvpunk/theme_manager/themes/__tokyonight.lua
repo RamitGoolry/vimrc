@@ -8,7 +8,7 @@ return function(style)
         }
         vim.g.tokyonight_dark_sidebar = true
         vim.cmd[[colorscheme tokyonight]]
-        require'nvpunk.theme_manager.lualine'('tokyonight')
+        reload'nvpunk.theme_manager.lualine'('tokyonight')
     end,
     {}, 'Failed to load theme tokyonight-' .. style, 'nvpunk.theme_manager')
 end

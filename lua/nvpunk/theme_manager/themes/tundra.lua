@@ -40,4 +40,4 @@ require'nvim-tundra'.setup {
 }
 
 vim.cmd[[colorscheme tundra]]
-require'nvpunk.theme_manager.lualine'('auto')  -- no theme for lualine
+reload'nvpunk.theme_manager.lualine'('auto')  -- no theme for lualine

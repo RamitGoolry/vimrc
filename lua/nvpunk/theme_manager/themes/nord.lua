@@ -3,5 +3,5 @@ require'nvpunk.util.try'.call(function()
     vim.g.nord_borders = true
     vim.g.nord_italic = true
     require'nord'.set()
-    require'nvpunk.theme_manager.lualine'('nord')
+    reload'nvpunk.theme_manager.lualine'('nord')
 end, {}, 'Failed to load theme nord', 'nvpunk.theme_manager')

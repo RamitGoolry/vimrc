@@ -3,5 +3,5 @@ require'nvpunk.util.try'.call(function()
         italic_comment = true
     }
     vim.cmd[[colorscheme dracula]]
-    require'nvpunk.theme_manager.lualine'('dracula-nvim')
+    reload'nvpunk.theme_manager.lualine'('dracula-nvim')
 end, {}, 'Failed to load theme dracula', 'nvpunk.theme_manager')

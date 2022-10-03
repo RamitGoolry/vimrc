@@ -51,7 +51,7 @@ return function(style)
         }
         t.load()
         vim.cmd[[colorscheme catppuccin]]
-        require'nvpunk.theme_manager.lualine'('catppuccin')
+        reload'nvpunk.theme_manager.lualine'('catppuccin')
     end,
     {}, 'Failed to load theme catppuccin-' .. style, 'nvpunk.theme_manager')
 end
