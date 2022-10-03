@@ -52,3 +52,6 @@ vim.cmd('filetype plugin indent on')
 
 -- for vim-hugo to stop complaining with markdown
 vim.g.markdown_fenced_languages = {}
+
+-- recognize blueprint files
+vim.cmd'au BufNewFile,BufRead *.blp setf blueprint'
