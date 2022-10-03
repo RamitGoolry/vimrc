@@ -8,11 +8,15 @@ M.buf_has_lsp = function()
     )
 end
 
+local nonfile_bufs = require'nvpunk.util.nonfile_buffers'
+
 --- Checks if current buf has DAP support
 ---@return boolean
 M.buf_has_dap = function()
-    -- TODO
-    return true
+    return not vim.tbl_contains(
+        nonfile_bufs,
+        vim.bo.filetype
+    )
 end
 
 --- Create a context menu
@@ -115,7 +119,6 @@ M.set_filetree_rclick_menu = function()
 end
 
 M.setup_rclick_menu_autocommands = function()
-    return
     vim.api.nvim_create_autocmd(
         {'BufEnter', 'LspAttach'}, {
         callback = function()
