@@ -76,9 +76,8 @@ local preferences_menus = {
                 },
                 function(greeter, _)
                     M.set_greeter(greeter)
-                    vim.notify(
-                        'Changes will be effective from the next restart',
-                        'info', {title = 'nvpunk.preferences'}
+                    require'nvpunk.util.reload'(
+                        'nvpunk.plugins_conf.alpha_conf'
                     )
                 end
             )
