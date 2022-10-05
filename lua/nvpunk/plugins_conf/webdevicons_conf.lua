@@ -46,6 +46,11 @@ require'nvim-web-devicons'.setup{
             icon = '',
             color = '#1c71d8',
             name = 'Blueprint'
+        },
+        ['astro'] = {
+            icon = '',
+            color = '#1c71d8',
+            name = 'Astro'
         }
     },
     default = true
