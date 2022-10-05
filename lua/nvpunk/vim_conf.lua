@@ -36,6 +36,7 @@ local vim_opts = {
     colorcolumn = {80},  -- show the 80 columns mark
     timeoutlen = 500,
     -- hidden = true,  -- allow hidden buffers (mostly for toggleterm)
+    mousescroll = 'ver:1,hor:1'
 }
 
 -- unsure what it does, docs:
