@@ -4,6 +4,7 @@ local configs = {
     'nvpunk.plugins_conf.webdevicons_conf',
     'nvpunk.plugins_conf.highlight_colors_conf',
     'nvpunk.plugins_conf.emmet_conf',
+    'nvpunk.plugins_conf.astro_conf',
     'nvpunk.plugins_conf.treesitter_conf',
     'nvpunk.plugins_conf.mason_conf',
     'nvpunk.lsp',

@@ -15,4 +15,7 @@ return {
     {'sbdchd/neoformat'},
     -- For hugo templating
     {'phelipetls/vim-hugo'},
+
+    -- support for astro
+    {'wuelnerdotexe/vim-astro'}
 }
