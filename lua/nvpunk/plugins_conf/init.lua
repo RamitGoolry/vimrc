@@ -25,6 +25,7 @@ local configs = {
     'nvpunk.plugins_conf.numbertoggle_conf',
     'nvpunk.plugins_conf.ufo_conf',
     'nvpunk.plugins_conf.fidget_conf',
+    'nvpunk.plugins_conf.noice_conf',
     'nvpunk.keymaps',
 }
 

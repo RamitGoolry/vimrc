@@ -66,6 +66,14 @@ local plugins = {
 
     -- nice diffview
     {'sindrets/diffview.nvim'},
+
+    -- replacement for messages, cmdline, popupmenu
+    {
+        'folke/noice.nvim',
+        requires = {
+            'MunifTanjim/nui.nvim',
+        }
+    }
 }
 
 -- information bar on top of windows (used for debug buttons)
