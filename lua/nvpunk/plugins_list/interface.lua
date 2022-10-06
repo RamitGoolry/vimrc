@@ -1,4 +1,4 @@
-local plugins = {
+return {
     -- better buffer line
     {'hoob3rt/lualine.nvim'},
 
@@ -68,17 +68,12 @@ local plugins = {
     {'sindrets/diffview.nvim'},
 
     -- replacement for messages, cmdline, popupmenu
-    {
-        'folke/noice.nvim',
-        requires = {
-            'MunifTanjim/nui.nvim',
-        }
-    }
+    -- {
+    --     'folke/noice.nvim',
+    --     requires = {
+    --         'MunifTanjim/nui.nvim',
+    --     }
+    -- }
+    -- information bar on top of windows (used for debug buttons)
+    -- {'fgheng/winbar.nvim'}
 }
-
--- information bar on top of windows (used for debug buttons)
--- if vim.fn.has('nvim-0.8') == 1 then
---     vim.list_extend(plugins, {'fgheng/winbar.nvim'})
--- end
-
-return plugins
