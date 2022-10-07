@@ -10,5 +10,6 @@ return {
     {'NTBBloodbath/doom-one.nvim'},
     {'sam4llis/nvim-tundra'},
     {'EdenEast/nightfox.nvim'},
-    {'rose-pine/neovim', as = 'rose-pine'}
+    {'rose-pine/neovim', as = 'rose-pine'},
+    {'rebelot/kanagawa.nvim'}
 }

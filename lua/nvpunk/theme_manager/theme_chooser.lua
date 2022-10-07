@@ -9,6 +9,7 @@ local available_themes = {
     'dracula',
     'gruvbox_dark',
     'gruvbox_medium',
+    'kanagawa',
     'monokai',
     'monokai_pro',
     'monokai_ristretto',
