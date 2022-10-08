@@ -15,5 +15,8 @@ return {
     {'phelipetls/vim-hugo'},
 
     -- support for astro
-    {'wuelnerdotexe/vim-astro'}
+    {'wuelnerdotexe/vim-astro'},
+
+    -- support for MDX
+    {'jxnblk/vim-mdx-js'}
 }
