@@ -12,7 +12,7 @@ return function(style)
         t.setup {
             dark_variant = style,
             bold_vert_split = false,
-            dim_nc_background = flase,
+            dim_nc_background = false,
             disable_background = false,
             disable_float_background = false,
             disable_italics = false,

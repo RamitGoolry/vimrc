@@ -6,8 +6,6 @@ return {
     {'neomake/neomake'},
     -- typescript syntax
     {'HerringtonDarkholme/yats.vim'},
-    -- polyglot again because some languages aren't supported by treesitter
-    {'sheerun/vim-polyglot'},
     -- XML, HTML tag autoclosing (requires treesitter)
     -- doesn't work right now
     -- use { 'windwp/nvim-ts-autotag', requires = 'nvim-treesitter/nvim-treesitter' }
