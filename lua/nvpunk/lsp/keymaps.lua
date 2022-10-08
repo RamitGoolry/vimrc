@@ -9,17 +9,21 @@ M.set_lsp_keymaps = function(client, bufnr, extra_keymaps)
 
     -- Set autocommands conditional on server_capabilities
     if client.server_capabilities.documentHighlightProvider then
-        -- TODO convert to lua autogroup/autocmd
-        vim.api.nvim_exec(
-            [[
-              augroup lsp_document_highlight
-                  autocmd! * <buffer>
-                  autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-                  autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-              augroup END
-            ]],
-            false
+        local group = 'lsp_document_highlight'
+        vim.api.nvim_create_augroup(
+            group,
+            { clear = true }
         )
+        vim.api.nvim_create_autocmd('CursorHold', {
+            callback = vim.lsp.buf.document_highlight,
+            buffer = vim.api.nvim_get_current_buf(),
+            group = group,
+        })
+        vim.api.nvim_create_autocmd('CursorMoved', {
+            callback = vim.lsp.buf.clear_references,
+            buffer = vim.api.nvim_get_current_buf(),
+            group = group,
+        })
     end
 
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
