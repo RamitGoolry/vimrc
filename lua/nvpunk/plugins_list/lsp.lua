@@ -2,7 +2,7 @@ return {
     -- install language servers with mason
 
     -- nvim built-in lsp additional stuff
-    -- easier lsp configuration, required by lspsaga
+    -- easier lsp configuration
     {'neovim/nvim-lspconfig'},
 
     -- lua based snippets
@@ -20,8 +20,6 @@ return {
         'hrsh7th/cmp-nvim-lua',
         'lukas-reineke/cmp-under-comparator'
     }},
-    -- diagnostics and code actions?
-    -- use 'glepnir/lspsaga.nvim'
 
     -- code outline (classes, functions, vars...)
     {'stevearc/aerial.nvim'},

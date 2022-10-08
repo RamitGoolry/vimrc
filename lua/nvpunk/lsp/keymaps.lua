@@ -48,7 +48,6 @@ M.set_lsp_keymaps = function(client, bufnr, extra_keymaps)
     bm.nkeymap('[d', vim.diagnostic.goto_prev, 'Prev diagnostic')
     bm.nkeymap(']d', vim.diagnostic.goto_next, 'Next diagnostic')
     -- bm.nkeymap('<leader>q', vim.diagnostic.setloclist)
-    bm.inkeymap('<C-f>', vim.lsp.buf.code_action)
     bm.nkeymap('<leader>ca', vim.lsp.buf.code_action, 'Code actions')
 
     km.wk.register({ ['<leader>v'] = { name = 'Diagnostics Virutal Text' } }, { mode = 'n', buffer = bufnr })
