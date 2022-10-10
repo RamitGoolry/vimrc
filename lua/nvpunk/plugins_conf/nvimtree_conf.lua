@@ -93,6 +93,9 @@ require'nvim-tree'.setup {
     }
 }
 
+local km = require'nvpunk.util.keymapper'
+km.nkeymap('ge', '<cmd>NvimTreeToggle<CR>', 'פּ Toggle Explorer')
+
 -- register shortcuts with whichkey
 -- enable when this (vvv) gets solved and restrict to the NvimTree type
 -- https://github.com/folke/which-key.nvim/issues/281

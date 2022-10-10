@@ -21,3 +21,7 @@ require'nvpunk.dap.dapui_conf'
 
 require'nvpunk.dap.langs.cpp'
 require'nvpunk.dap.langs.python'
+
+-- keymaps
+
+require'nvpunk.dap.keymaps'

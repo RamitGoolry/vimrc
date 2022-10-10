@@ -17,4 +17,18 @@ telescope.setup {
 
 telescope.load_extension('ui-select')
 
--- keymaps for telescope in keymaps.lua
+local km = require'nvpunk.util.keymapper'
+
+km.wk.register({ ['<leader>t'] = { name = ' Telescope' } }, { mode = 'n' })
+km.nkeymap('<leader>tf', function()
+    require'telescope.builtin'.find_files(
+        require'telescope.themes'.get_dropdown { previewer = false }
+    )
+end, 'Open file')
+km.nkeymap('<leader>tg', '<cmd>Telescope live_grep<cr>', 'Live grep')
+km.nkeymap('<leader>tr', '<cmd>Telescope lsp_references<cr>', 'Browse references')
+km.nkeymap('<leader>th', function()
+    require'telescope.builtin'.oldfiles(
+        require'telescope.themes'.get_dropdown { previewer = false }
+    )
+end, 'Recent files')
