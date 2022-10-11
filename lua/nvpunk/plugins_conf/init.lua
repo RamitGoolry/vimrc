@@ -1,5 +1,6 @@
 local configs = {
     'nvpunk.theme_conf',
+    'nvpunk.keymaps',
     'nvpunk.plugins_conf.notify_config',
     'nvpunk.plugins_conf.webdevicons_conf',
     'nvpunk.plugins_conf.highlight_colors_conf',
@@ -27,7 +28,6 @@ local configs = {
     'nvpunk.plugins_conf.ufo_conf',
     'nvpunk.plugins_conf.fidget_conf',
     -- 'nvpunk.plugins_conf.noice_conf',
-    'nvpunk.keymaps',
 }
 
 local try = require'nvpunk.util.try'
