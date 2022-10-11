@@ -248,7 +248,11 @@ M.setup = function()
     if not M.has_vscode_java_test() then
         return M.install_vscode_java_test()
     end
-    M.start_jdtls()
+    require'nvpunk.util.find_jdtls_java'(function(found_exec)
+        java_exec = found_exec or java_exec
+        vim.notify(java_exec)
+        M.start_jdtls()
+    end)
 end
 
 return M
