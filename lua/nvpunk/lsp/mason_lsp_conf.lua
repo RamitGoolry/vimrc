@@ -5,7 +5,7 @@ require'mason-lspconfig'.setup {
         'vuels',
         'yamlls',
         'clangd',
-        'lemminix',
+        'lemminx',
         'ltex',
         'jsonls',
         'vimls',
