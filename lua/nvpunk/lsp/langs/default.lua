@@ -5,7 +5,6 @@ local default_opts = {
     on_attach = function(client, bufnr)
         require'nvpunk.lsp.keymaps'.set_lsp_keymaps(client, bufnr)
         -- require'nvpunk.util.context_menu'.set_lsp_rclick_menu()
-        require'aerial'.on_attach(client, bufnr)
     end,
     root_dir = vim.loop.cwd,
     capabilities = require'nvpunk.lsp.capabilities'.capabilities,
