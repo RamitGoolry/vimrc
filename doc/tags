@@ -7,4 +7,12 @@ nvpunk-ref-nerdfonts	nvpunk.txt	/*nvpunk-ref-nerdfonts*
 nvpunk-ref-terminals	nvpunk.txt	/*nvpunk-ref-terminals*
 nvpunk-references	nvpunk.txt	/*nvpunk-references*
 nvpunk-shortcuts	nvpunk.txt	/*nvpunk-shortcuts*
+nvpunk-shortcuts-diffview	nvpunk.txt	/*nvpunk-shortcuts-diffview*
+nvpunk-shortcuts-editing	nvpunk.txt	/*nvpunk-shortcuts-editing*
+nvpunk-shortcuts-explorer	nvpunk.txt	/*nvpunk-shortcuts-explorer*
+nvpunk-shortcuts-general	nvpunk.txt	/*nvpunk-shortcuts-general*
+nvpunk-shortcuts-git	nvpunk.txt	/*nvpunk-shortcuts-git*
+nvpunk-shortcuts-telescope	nvpunk.txt	/*nvpunk-shortcuts-telescope*
+nvpunk-shortcuts-telescope-prompt	nvpunk.txt	/*nvpunk-shortcuts-telescope-prompt*
+nvpunk-shortcuts-terminal	nvpunk.txt	/*nvpunk-shortcuts-terminal*
 nvpunk.txt	nvpunk.txt	/*nvpunk.txt*

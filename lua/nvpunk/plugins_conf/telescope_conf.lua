@@ -32,3 +32,4 @@ km.nkeymap('<leader>th', function()
         require'telescope.themes'.get_dropdown { previewer = false }
     )
 end, 'Recent files')
+km.nkeymap('<leader>tH', '<cmd>h nvpunk-shortcuts-telescope<cr>', 'Show Shortcuts')

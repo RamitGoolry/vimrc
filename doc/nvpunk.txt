@@ -44,14 +44,14 @@ SHORTCUTS                                                   *nvpunk-shortcuts*
 Here's a non-exaustive list of shortcuts, devided into categories. You can look
 at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 
-## General
+## General                                          *nvpunk-shortcuts-general*
 
 - `<A-m>`         Open context menu
 - `<space>A`      Open the greeter
 - `<space>T`      Toggle diagnostics panel
 - `<space>nd`     Dismiss notifications
 
-## File explorer
+## File explorer                                   *nvpunk-shortcuts-explorer*
 
 - `ge`            Toggle the file explorer
 - `?`             Toggle help
@@ -64,30 +64,49 @@ at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 - `<space>fyp`    Paste file
 - `<space>xo`     Open file/folder with system app
 
-## Terminal
+## Terminal                                        *nvpunk-shortcuts-terminal*
 
 - `<space>/h`     Open horizontal terminal
 - `<space>/v`     Open vertical terminal
 - `<C-\>`         Toggle floating terminal
 - `<Esc><Esc>`    Get out of terminal mode
 
-## Editing
+## Editing                                          *nvpunk-shortcuts-editing*
 
 - `zc`, `zo`        Close, open folds
 - `<A-k>`, `<A-j>`  Move selection up/down
 
-## Telescope
+## Telescope                                      *nvpunk-shortcuts-telescope*
 
 - `<space>tg`     Live grep
 - `<space>tf`     Search for a file
 - `<space>th`     Recent files
 
-## Git
+## Telescope Prompt                        *nvpunk-shortcuts-telescope-prompt*
+
+- `<C-x>`    Go to selected file in a horizontal split
+- `<C-s>`    Go to selected file in a vertical split
+- `<C-t>`    Go to selected file in a new tab
+- `<Tab>`    Toggle selection and move to next selection
+- `<S-Tab>`  Toggle selection and move to prev selection
+- `<C-q>`    Open all items in a quickfix list
+- `<A-q>`    Open selected items in a quickfix list
+- `<C-u>`    Scroll up in the preview window
+- `<C-d>`    Scroll down in the preview window
+
+## Git                                                  *nvpunk-shortcuts-git*
 
 - `<space>g?`     Show git diff for the current line
 - `<space>g]`     Next git hunk
 - `<space>g[`     Previous git hunk
 - `<space>gb`     Git blame current line
+
+## Diff View                                       *nvpunk-shortcuts-diffview*
+
+- `]c`   next difference
+- `[c`   previous difference
+- `do`   diff obtain
+- `dp`   diff put
 
 ==============================================================================
 COMMANDS                                                     *nvpunk-commands* 

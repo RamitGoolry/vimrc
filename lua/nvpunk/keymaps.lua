@@ -80,7 +80,7 @@ km.nkeymap('<leader>?4', '<cmd>DiffviewOpen HEAD^^^^<cr>', 'DiffviewOpen HEAD^^^
 
 km.nkeymap(
     '<leader>?H',
-    '<cmd>lua vim.notify("]c → next difference\\n[c → previous difference\\ndo → diff obtain\\ndp → diff put", "info", {title = "Diff View Shortcuts"})<cr>',
+    '<cmd>h nvpunk-shortcuts-diffview<cr>',
     'Show Shortcuts'
 )
 
