@@ -88,7 +88,7 @@ end
 
 M.set_lsp_rclick_menu = function()
     M.set_rclick_submenu('NvpunkLspMenu', 'LSP         ', {
-        {'Code Actions',                 '<C-f>'},
+        {'Code Actions',                 '<space>ca'},
         {'Go to Declaration',            'gD'},
         {'Go to Definition',             'gd'},
         {'Go to Implementation',         'gI'},
