@@ -10,13 +10,19 @@ end
 
 local nonfile_bufs = require'nvpunk.util.nonfile_buffers'
 
---- Checks if current buf has DAP support
+--- Checks if current buf is a file
 ---@return boolean
-M.buf_has_dap = function()
+M.buf_is_file = function()
     return not vim.tbl_contains(
         nonfile_bufs,
         vim.bo.filetype
     )
+end
+
+--- Checks if current buf has DAP support
+---@return boolean
+M.buf_has_dap = function()
+    return M.buf_is_file()
 end
 
 --- Create a context menu
@@ -118,6 +124,23 @@ M.set_filetree_rclick_menu = function()
     }, function() return vim.bo.filetype == 'NvimTree' end)
 end
 
+M.set_telescope_rclick_menu = function()
+    M.set_rclick_submenu('NvpunkTelescopeMenu', 'Telescope   ', {
+        {'Find File',                    '<space>tf'},
+        {'Live Grep',                    '<space>tg'},
+        {'Recent Files',                 '<space>th'},
+    })
+end
+
+M.set_git_rclick_menu = function()
+    M.set_rclick_submenu('NvpunkGitMenu', 'Git         ', {
+        {'Preview Changes',              '<space>g?'},
+        {'Prev Hunk',                    '<space>g['},
+        {'Next Hunk',                    '<space>g]'},
+        {'Blame Line',                   '<space>gb'},
+    }, M.buf_is_file)
+end
+
 M.setup_rclick_menu_autocommands = function()
     vim.api.nvim_create_autocmd(
         {'BufEnter', 'LspAttach'}, {
@@ -126,6 +149,8 @@ M.setup_rclick_menu_autocommands = function()
             M.set_dap_rclick_menu()
             M.set_java_rclick_menu()
             M.set_filetree_rclick_menu()
+            M.set_telescope_rclick_menu()
+            M.set_git_rclick_menu()
         end
     })
 end
