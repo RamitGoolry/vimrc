@@ -11,5 +11,6 @@ return {
     {'sam4llis/nvim-tundra'},
     {'EdenEast/nightfox.nvim'},
     {'rose-pine/neovim', as = 'rose-pine'},
-    {'rebelot/kanagawa.nvim'}
+    {'rebelot/kanagawa.nvim'},
+    {'kvrohit/mellow.nvim'},
 }

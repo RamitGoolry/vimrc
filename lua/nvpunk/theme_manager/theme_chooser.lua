@@ -10,6 +10,7 @@ local available_themes = {
     'gruvbox_dark',
     'gruvbox_medium',
     'kanagawa',
+    'mellow',
     'monokai',
     'monokai_pro',
     'monokai_ristretto',
