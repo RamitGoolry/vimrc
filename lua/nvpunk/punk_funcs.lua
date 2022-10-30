@@ -38,4 +38,10 @@ vim.api.nvim_create_user_command(
     { nargs = 0 }
 )
 
+vim.api.nvim_create_user_command(
+    'NvpunkHealthcheck',
+    function(_) require'nvpunk.util.healthcheck'() end,
+    { nargs = 0 }
+)
+
 return M

@@ -30,6 +30,7 @@ CONTENTS                                                     *nvpunk-contents*
 NAVIGATION.................................................|nvpunk-navigation|
 SHORTCUTS...................................................|nvpunk-shortcuts|
 COMMANDS.....................................................|nvpunk-commands|
+HEALTHCHECK...............................................|nvpunk-healthcheck| 
 REFERENCES.................................................|nvpunk-references|
 
 ==============================================================================
@@ -111,15 +112,52 @@ at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 ==============================================================================
 COMMANDS                                                     *nvpunk-commands* 
 
+Update Nvpunk and its plugins
 >
     :NvpunkUpdate
 <
-Update Nvpunk and its plugins
 
+Open the preferences menu
 >
     :NvpunkPreferences
 <
-Open the preferences menu
+
+Run a health check for missing system dependencies
+>
+    :NvpunkHealthcheck
+<
+
+==============================================================================
+HEALTHCHECK                                               *nvpunk-healthcheck* 
+
+Nvpunk's built-in health check will look for external dependencies and report
+if they're missing.
+
+## git                                                       *nvpunk-deps-git*
+
+Git is a version control system, it's required to download Nvpunk's plugins.
+
+## npm                                                       *nvpunk-deps-npm*
+
+Npm is the node package manager. It's commonly used to download javascript
+packages. Npm is required to download and install many language servers that
+are in fact written in javascript.
+
+## gcc                                                       *nvpunk-deps-gcc*
+
+GCC is the GNU C compiler. GCC is required to compile treesitter modules, used
+for syntax highlighting.
+
+## python                                                 *nvpunk-deps-python*
+
+Python is required to run certain language servers, as well as for finding an
+appropriate version of Java to run the Java language server.
+
+## java17+                                                *nvpunk-deps-java17*
+
+Java version 17+ is required to run jdtls, the java language server. You still
+need a version equal or greater than 17 even if your java project uses an
+older version of java.
 
 ==============================================================================
 REFERENCES                                                 *nvpunk-references*

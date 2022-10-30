@@ -44,6 +44,11 @@ dashboard.section.buttons.val = {
         ':lua require"nvpunk.punk_funcs".nvpunk_update()<CR>'
     ),
     dashboard.button(
+        'ch',
+        '  Health Check',
+        ':lua require"nvpunk.util.healthcheck"()<CR>'
+    ),
+    dashboard.button(
         'q',
         '  Quit',
         ':qa<CR>'
