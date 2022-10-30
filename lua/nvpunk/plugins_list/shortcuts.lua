@@ -11,8 +11,8 @@ return {
     -- auto insert matching brackets and quotes
     {'windwp/nvim-autopairs'},
 
-    -- many modules, I use mini.surround for surrounding text
-    {'echasnovski/mini.nvim'},
+    -- for surrounding text with delimiters such as brackets and quotes
+    {'echasnovski/mini.surround'},
 
     -- For quickly switching between camel and snake case etc
     {'arthurxavierx/vim-caser'},
