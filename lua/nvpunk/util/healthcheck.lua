@@ -2,6 +2,24 @@ local Job = require'plenary.job'
 local lines = {}
 local BUFNAME = 'NvpunkHealthcheck'
 
+local HEADER_HL = 'NvpunkHealthcheckHeader'
+local GOOD_HL   = 'NvpunkHealthcheckGood'
+local BAD_HL    = 'NvpunkHealthcheckBad'
+
+local function def_hl()
+    vim.api.nvim_set_hl(0, HEADER_HL, {
+        bg = '#f6c177',
+        fg = '#191724',
+        bold = true,
+    })
+    vim.api.nvim_set_hl(0, GOOD_HL, {
+        fg = '#a6d189',
+    })
+    vim.api.nvim_set_hl(0, BAD_HL, {
+        fg = '#eb6f92',
+    })
+end
+
 --- Test if a system command is callable
 ---@param cmd string
 ---@param on_success function
@@ -28,8 +46,8 @@ local Float = require'nvpunk.util.float'
 ---@param ok boolean
 ---@param help_page string
 local function msg(message, ok, help_page)
-    local hl = 'DiagnosticError'
-    if ok then hl = 'DiagnosticInfo' end
+    local hl = BAD_HL
+    if ok then hl = GOOD_HL end
     table.insert(lines, {
         message = message,
         hl = hl,
@@ -62,9 +80,12 @@ local function test_and_log(cmd, message, help_page)
 end
 
 return function()
+    def_hl()
     lines = {}
     table.insert(lines, {message = ''})
-    table.insert(lines, {message = '        Nvpunk Health Check'})
+    table.insert(lines, {message = '                                      ', hl = HEADER_HL})
+    table.insert(lines, {message = '                Nvpunk Health Check   ', hl = HEADER_HL})
+    table.insert(lines, {message = '                                      ', hl = HEADER_HL})
     table.insert(lines, {message = ''})
     table.insert(lines, {message = '        q, <esc>  -  Quit', hl = 'Comment'})
     table.insert(lines, {message = '        <cr>      -  Open help page', hl = 'Comment'})
