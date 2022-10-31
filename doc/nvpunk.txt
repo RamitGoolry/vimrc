@@ -145,8 +145,8 @@ are in fact written in javascript.
 
 ## gcc                                                       *nvpunk-deps-gcc*
 
-GCC is the GNU C compiler. GCC is required to compile treesitter modules, used
-for syntax highlighting.
+GCC is the GNU Compiler Collection. GCC is required to compile treesitter
+modules, used for syntax highlighting.
 
 ## python                                                 *nvpunk-deps-python*
 
