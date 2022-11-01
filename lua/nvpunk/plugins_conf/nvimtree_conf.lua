@@ -23,6 +23,7 @@ require'nvim-tree'.setup {
         },
         highlight_git = true,
         icons = {
+            symlink_arrow = ' ﰴ ',
             show = {
                 folder_arrow = true,
                 folder = true,
