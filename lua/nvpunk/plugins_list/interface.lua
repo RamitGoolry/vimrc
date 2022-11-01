@@ -67,6 +67,9 @@ return {
     -- nice diffview
     {'sindrets/diffview.nvim'},
 
+    -- indentation marks
+    {'lukas-reineke/indent-blankline.nvim'}
+
     -- replacement for messages, cmdline, popupmenu
     -- {
     --     'folke/noice.nvim',

@@ -16,4 +16,6 @@ return {
     'startify',
     'toggleterm',
     'vim',
+    'Nvpunk',
+    'NvpunkHealthcheck',
 }

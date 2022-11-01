@@ -7,18 +7,19 @@ local PREFERENCES_FILE = vim.fn.expand(
 local DEFAULT_PREFERENCES = {
     theme = 'onedark_warmer',
     greeter = 'punk',
+    indent_blankline_enabled = true,
 }
 
---- Verify that the conf is valid and has all keys
+--- Make sure that conf has all keys
 ---@param conf table
-local function conf_valid(conf)
-    if
-        vim.fn.has_key(conf, 'theme') == 1 and
-        vim.fn.has_key(conf, 'greeter') == 1
-    then
-        return true
+---@return table
+local function replace_missing_confs(conf)
+    for k, v in pairs(DEFAULT_PREFERENCES) do
+        if vim.fn.has_key(conf, k) == 0 then
+            conf[k] = v
+        end
     end
-    return false
+    return conf
 end
 
 --- Save conf to PREFERENCES_FILE
@@ -30,9 +31,7 @@ end
 local function load_conf()
     if vim.fn.filereadable(PREFERENCES_FILE) == 1 then
         local conf = vim.json.decode(table.concat(vim.fn.readfile(PREFERENCES_FILE), '\n'))
-        if conf_valid(conf) then
-            return conf
-        end
+        return replace_missing_confs(conf)
     end
     return DEFAULT_PREFERENCES
 end
@@ -59,6 +58,17 @@ M.get_greeter = function()
     return load_conf().greeter
 end
 
+M.get_indent_blankline_enabled = function()
+    return load_conf().indent_blankline_enabled
+end
+
+M.set_indent_blankline_enabled = function(nval)
+    local conf = load_conf()
+    conf.indent_blankline_enabled = nval
+    save_conf(conf)
+    reload'nvpunk.plugins_conf.indent_blankline_conf'
+end
+
 local preferences_menus = {
     {
         label = '  Change Theme',
@@ -82,6 +92,40 @@ local preferences_menus = {
         end
     },
     {
+        label = '  Interface Preferences',
+        func = function()
+            local blankline_enabled = M.get_indent_blankline_enabled()
+            vim.ui.select(
+                {
+                    {
+                        label = (blankline_enabled and 'Disable' or 'Enable')
+                                .. ' Indent Blankline',
+                        func = function()
+                            if blankline_enabled then
+                                M.set_indent_blankline_enabled(false)
+                                vim.schedule(function()
+                                    vim.cmd'IndentBlanklineDisable!'
+                                end)
+                            else
+                                    M.set_indent_blankline_enabled(true)
+                                vim.schedule(function()
+                                    vim.cmd'IndentBlanklineEnable!'
+                                end)
+                            end
+                        end
+                    },
+                },
+                {
+                    prompt = 'Interface Preferences:',
+                    format_item = function(item) return item.label end
+                },
+                function(item, _)
+                    item.func()
+                end
+            )
+        end
+    },
+    {
         label = '  Open Config',
         func = function()
             local changedir = 'cd ' .. vim.fn.stdpath'config'
@@ -96,9 +140,7 @@ M.preferences_menu = function()
         preferences_menus,
         {
             prompt = 'Preferences:',
-            format_item = function(item)
-                return item.label
-            end
+            format_item = function(item) return item.label end
         },
         function(item, _)
             item.func()
