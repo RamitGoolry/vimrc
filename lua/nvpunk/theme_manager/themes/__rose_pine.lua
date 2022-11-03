@@ -1,13 +1,13 @@
 --- Set rose pine theme with specific style
 ---@param style 'main' | 'moon' | 'dawn'
 return function(style)
-    if style == 'dawn' then
-        vim.o.background = 'light'
-        style = 'main'
-    else
-        vim.o.background = 'dark'
-    end
-    require'nvpunk.util.try'.call(function()
+    require'nvpunk.util.try'.load_theme('rose-pine-' .. style, function()
+        if style == 'dawn' then
+            vim.o.background = 'light'
+            style = 'main'
+        else
+            vim.o.background = 'dark'
+        end
         local t = require'rose-pine'
         t.setup {
             dark_variant = style,
@@ -19,5 +19,5 @@ return function(style)
         }
         vim.cmd'colorscheme rose-pine'
         reload'nvpunk.theme_manager.lualine'('auto')
-    end, {}, 'Failed to load theme onedark-' .. style, 'nvpunk.theme_manager')
+    end)
 end

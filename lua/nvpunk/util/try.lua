@@ -29,4 +29,15 @@ M.require = function(module)
     )
 end
 
+--- Try to load theme, show an error notification on fail
+--- If loader is nil, it will call vim.cmd('colorscheme ' .. name)
+---@param name string
+---@param loader? function
+M.load_theme = function(name, loader)
+    if loader == nil then
+        loader = function() vim.cmd('colorscheme ' .. name) end
+    end
+    M.call(loader, {}, 'Failed to load theme ' .. name, 'nvpunk.theme_manager')
+end
+
 return M

@@ -1,7 +1,12 @@
 --- Set catpuccin theme with specific style
 ---@param style 'macchiato' | 'latte' | 'frappe' | 'macchiato' | 'mocha'
 return function(style)
-    require'nvpunk.util.try'.call(function()
+    require'nvpunk.util.try'.load_theme('catpuccin-' .. style, function()
+        if style == 'latte' then
+            vim.o.background = 'light'
+        else
+            vim.o.background = 'dark'
+        end
         vim.g.catppuccin_flavour = style
         local t = require'catppuccin'
         t.setup {
@@ -45,13 +50,12 @@ return function(style)
                 mini = true,
                 vimwiki = false,
                 beacon = false,
-                navic = { enabled = false, custom_bg = 'NONE', },
+                navic = { enabled = false, custom_bg = 'NONE' },
                 overseer = false,
             },
         }
         t.load()
         vim.cmd[[colorscheme catppuccin]]
         reload'nvpunk.theme_manager.lualine'('catppuccin')
-    end,
-    {}, 'Failed to load theme catppuccin-' .. style, 'nvpunk.theme_manager')
+    end)
 end

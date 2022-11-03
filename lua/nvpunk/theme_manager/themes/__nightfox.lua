@@ -1,7 +1,7 @@
 --- Set nightfox theme with specific style
 ---@param style 'nightfox' | 'dayfox' | 'dawnfox' | 'duskfox' | 'nordfox' | 'terafox' | 'carbonfox'
 return function(style)
-    require'nvpunk.util.try'.call(function()
+    require'nvpunk.util.try'.load_theme('nightfox-' .. style, function()
         require('nightfox').setup {
             options = {
                 -- Compiled file's destination location
@@ -37,6 +37,5 @@ return function(style)
         }
         vim.cmd('colorscheme ' .. style)
         reload'nvpunk.theme_manager.lualine'(style)
-    end,
-    {}, 'Failed to load theme nightfox-' .. style, 'nvpunk.theme_manager')
+    end)
 end

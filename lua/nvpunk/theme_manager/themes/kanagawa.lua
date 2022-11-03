@@ -1,4 +1,4 @@
-require'nvpunk.util.try'.call(function()
+require'nvpunk.util.try'.load_theme('kanagawa', function()
     require'kanagawa'.setup {
         undercurl = true,
         commentStyle = { italic = true },
@@ -19,4 +19,4 @@ require'nvpunk.util.try'.call(function()
     }
     vim.cmd'colorscheme kanagawa'
     reload'nvpunk.theme_manager.lualine'('kanagawa')
-end, {}, 'Failed to load theme kanagawa', 'nvpunk.theme_manager')
+end)

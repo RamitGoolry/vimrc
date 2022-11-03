@@ -1,6 +1,7 @@
 from subprocess import STDOUT, Popen, PIPE
 from pathlib import Path
 
+
 def get_version(java_exec: str) -> int:
     out, _ = Popen(
         [java_exec, '-version'], stdout=PIPE, stderr=STDOUT

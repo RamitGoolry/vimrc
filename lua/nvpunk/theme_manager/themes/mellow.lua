@@ -1,4 +1,4 @@
-require'nvpunk.util.try'.call(function()
+require'nvpunk.util.try'.call('mellow', function()
     vim.g.mellow_italic_comments  = true   -- Make comments italic
     vim.g.mellow_italic_keywords  = false  -- Make keywords italic
     vim.g.mellow_italic_booleans  = false  -- Make booleans italic
@@ -12,4 +12,4 @@ require'nvpunk.util.try'.call(function()
     vim.g.mellow_transparent      = false  -- Disable background color
 
     vim.cmd'colorscheme mellow'
-end, {}, 'Failed to load theme mellow', 'nvpunk.theme_manager')
+end)
