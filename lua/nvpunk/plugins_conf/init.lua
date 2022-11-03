@@ -1,5 +1,5 @@
 local configs = {
-    'nvpunk.theme_conf',
+    'nvpunk.theme_manager',
     'nvpunk.keymaps',
     'nvpunk.plugins_conf.notify_config',
     'nvpunk.plugins_conf.webdevicons_conf',

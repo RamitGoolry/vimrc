@@ -47,13 +47,15 @@ M.change_theme = function()
             prompt = 'Choose a theme:',
         },
         function(theme, _)
-            reload(
-                'nvpunk.theme_manager.themes.' .. theme
-            )
-            vim.notify('Switched to theme ' .. theme, 'info', {
-                title = 'nvpunk.theme_manager.theme_chooser'
-            })
-            require'nvpunk.preferences'.set_theme(theme)
+            require'nvpunk.util.try'.load_theme(theme, function()
+                reload(
+                    'nvpunk.theme_manager.themes.' .. theme
+                )
+                vim.notify('Switched to theme ' .. theme, 'info', {
+                    title = 'nvpunk.theme_manager.theme_chooser'
+                })
+                require'nvpunk.preferences'.set_theme(theme)
+            end)
         end
     )
 end
