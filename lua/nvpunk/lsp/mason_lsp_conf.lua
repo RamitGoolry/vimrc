@@ -15,7 +15,8 @@ require'mason-lspconfig'.setup {
         'cssls',
         'cmake',
         'rust_analyzer',
-        'jdtls'
+        'jdtls',
+        'typescript-language-server',
     }
 }
 require'mason-lspconfig'.setup_handlers {
