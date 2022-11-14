@@ -29,6 +29,11 @@ dashboard.section.buttons.val = {
         ':lua require"telescope.builtin".oldfiles(require("telescope.themes").get_dropdown({ previewer = false }))<CR>'
     ),
     dashboard.button(
+        'M',
+        '  Mason Package Manager',
+        ':Mason<CR>'
+    ),
+    dashboard.button(
         'C',
         '  Preferences',
         ':lua require"nvpunk.preferences".preferences_menu()<CR>'
@@ -47,6 +52,11 @@ dashboard.section.buttons.val = {
         'ch',
         '  Health Check',
         ':lua require"nvpunk.util.healthcheck"()<CR>'
+    ),
+    dashboard.button(
+        'H',
+        'ﬤ  Nvpunk Documentation',
+        ':h nvpunk<CR>'
     ),
     dashboard.button(
         'q',
