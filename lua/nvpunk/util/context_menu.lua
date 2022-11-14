@@ -47,10 +47,20 @@ M.clear_menu = function(menu)
     end)
 end
 
---- Escapes spaces
+--- Formats the label of a menu entry to avoid errors
 ---@param label string
+---@return string
 M.format_menu_label = function(label)
-    return string.gsub(label, ' ', [[\ ]])
+    local res = string.gsub(
+        label, ' ', [[\ ]]
+    )
+    res = string.gsub(
+        res, '<', [[\<]]
+    )
+    res = string.gsub(
+        res, '>', [[\>]]
+    )
+    return res
 end
 
 --- Create an entry for the right click menu
@@ -88,56 +98,56 @@ end
 
 M.set_lsp_rclick_menu = function()
     M.set_rclick_submenu('NvpunkLspMenu', 'LSP         ', {
-        {'Code Actions',                 '<space>ca'},
-        {'Go to Declaration',            'gD'},
-        {'Go to Definition',             'gd'},
-        {'Go to Implementation',         'gI'},
-        {'Signature Help',               '<C-k>'},
-        {'Rename',                       '<space>rn'},
-        {'References',                   'gr'},
-        {'Expand Diagnostics',           '<space>e'},
-        {'Auto Format',                  '<space>f'},
+        {'Code Actions           <space>ca', '<space>ca'},
+        {'Go to Declaration             gD',        'gD'},
+        {'Go to Definition              gd',        'gd'},
+        {'Go to Implementation          gI',        'gI'},
+        {'Signature Help             <C-k>',     '<C-k>'},
+        {'Rename                 <space>rn', '<space>rn'},
+        {'References                    gr',        'gr'},
+        {'Expand Diagnostics      <space>e',  '<space>e'},
+        {'Auto Format             <space>f',  '<space>f'},
     }, M.buf_has_lsp)
 end
 
 M.set_java_rclick_menu = function()
     M.set_rclick_submenu('NvpunkJavaMenu', 'Java        ', {
-        {'Test Class',                   '<space>bjc'},
-        {'Test Nearest Method',          '<space>bjn'},
-        {'Refresh Debugger Conf',        '<space>bjr'},
+        {'Test Class            <space>bjc',  '<space>bjc'},
+        {'Test Nearest Method   <space>bjn',  '<space>bjn'},
+        {'Refresh Debugger      <space>bjr',  '<space>bjr'},
     }, function() return vim.bo.filetype == 'java' end)
 end
 
 M.set_dap_rclick_menu = function()
     M.set_rclick_submenu('NvpunkDapMenu', 'Debug       ', {
-        {'Show DAP UI',                  '<space>bu'},
-        {'Toggle Breakpoint',            '<space>bb'},
-        {'Continue',                     '<space>bc'},
-        {'Terminate',                    '<space>bk'},
+        {'Show DAP UI           <space>bu',   '<space>bu'},
+        {'Toggle Breakpoint     <space>bb',   '<space>bb'},
+        {'Continue              <space>bc',   '<space>bc'},
+        {'Terminate             <space>bk',   '<space>bk'},
     }, M.buf_has_dap)
 end
 
 M.set_filetree_rclick_menu = function()
     M.set_rclick_submenu('NvpunkFileTreeMenu', 'File        ', {
-        {'New File',                     '<space>fn'},
-        {'Rename',                       '<F2>'},
+        {'New File              <space>fn',   '<space>fn'},
+        {'Rename                     <F2>',   '<F2>'},
     }, function() return vim.bo.filetype == 'NvimTree' end)
 end
 
 M.set_telescope_rclick_menu = function()
     M.set_rclick_submenu('NvpunkTelescopeMenu', 'Telescope   ', {
-        {'Find File',                    '<space>tf'},
-        {'Live Grep',                    '<space>tg'},
-        {'Recent Files',                 '<space>th'},
+        {'Find File             <space>tf',   '<space>tf'},
+        {'Live Grep             <space>tg',   '<space>tg'},
+        {'Recent Files          <space>th',   '<space>th'},
     })
 end
 
 M.set_git_rclick_menu = function()
     M.set_rclick_submenu('NvpunkGitMenu', 'Git         ', {
-        {'Preview Changes',              '<space>g?'},
-        {'Prev Hunk',                    '<space>g['},
-        {'Next Hunk',                    '<space>g]'},
-        {'Blame Line',                   '<space>gb'},
+        {'Preview Changes       <space>g?',   '<space>g?'},
+        {'Prev Hunk             <space>g[',   '<space>g['},
+        {'Next Hunk             <space>g]',   '<space>g]'},
+        {'Blame Line            <space>gb',   '<space>gb'},
     }, M.buf_is_file)
 end
 
