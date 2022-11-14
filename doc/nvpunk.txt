@@ -28,6 +28,8 @@ For the best experience, you'll need:
 CONTENTS                                                     *nvpunk-contents*
 
 NAVIGATION.................................................|nvpunk-navigation|
+LANGUAGE SERVER...................................................|nvpunk-lsp|
+TREESITTER.................................................|nvpunk-treesitter|
 SHORTCUTS...................................................|nvpunk-shortcuts|
 COMMANDS.....................................................|nvpunk-commands|
 HEALTHCHECK...............................................|nvpunk-healthcheck| 
@@ -37,7 +39,52 @@ REFERENCES.................................................|nvpunk-references|
 NAVIGATION                                                 *nvpunk-navigation*
 
 - Use the buttons in the greeter
-- Press `<space>`, `g` and `z` to explore more functionality
+- Press `<space>`, `g` or `z` to explore more functionality
+- Right click to show the context menu, organized in categories
+
+==============================================================================
+LANGUAGE SERVER                                                   *nvpunk-lsp*
+
+LSP is an open protocol supported by many code editors (including Nvpunk) to
+provide language specific features, including:
+
+- linting,
+- diagnostics,
+- formatting,
+- folding,
+- quick jumps (like go to definition or view references)
+- and a lot more
+
+Nvpunk preinstalls some language servers, to install more language servers, or
+to update the ones you have already installed, you can use the Mason package
+manager with the following command:
+
+>
+    :Mason
+<
+
+Or use the Mason Package Manager button in the greeter.
+
+This will open up the Mason popup. From here you will be able to install,
+remove and update your language servers.
+
+Type `g?` inside the Mason window to get an overview of its specific commands.
+
+==============================================================================
+TREESITTER                                                 *nvpunk-treesitter*
+
+Tree-sitter is an advanced language parsing library used to build syntax trees
+for your code. It’s mostly used for rich syntax higlighting, and by other
+plugins that need to interpret your code as a tree structure.
+
+NvPunk is configured to install all available Tree-sitter modules by default,
+so you should be all set.
+
+To update the installed Tree-sitter modules you can run the following command:
+
+>
+    :TSUpdate
+<
 
 ==============================================================================
 SHORTCUTS                                                   *nvpunk-shortcuts* 
