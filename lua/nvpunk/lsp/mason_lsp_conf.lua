@@ -23,4 +23,5 @@ require'mason-lspconfig'.setup_handlers {
     ['pyright'] = require'nvpunk.lsp.langs.pyright',
     ['sumneko_lua'] = require'nvpunk.lsp.langs.sumneko_lua',
     ['jdtls'] = require'nvpunk.lsp.langs.nvim_jdtls',
+    ['ltex'] = require'nvpunk.lsp.langs.ltex',
 }
