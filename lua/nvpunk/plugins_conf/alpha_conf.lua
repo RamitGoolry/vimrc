@@ -7,62 +7,99 @@ local header = require'nvpunk.plugins_conf.headers'.images[
 dashboard.section.header.val = header.content
 dashboard.section.header.opts.hl = header.hl
 
+local function button(sc, txt, cmd, hl)
+    local b = dashboard.button(sc, txt, cmd)
+    b.opts.hl = hl or 'Title'
+    b.opts.hl_shortcut = 'Comment'
+    return b
+end
+
 dashboard.section.buttons.val = {
-    dashboard.button(
+    button(
         'tf',
         '  Find file',
         ':lua require"telescope.builtin".find_files(require("telescope.themes").get_dropdown({ previewer = false }))<CR>'
     ),
-    dashboard.button(
+    button(
         'ge',
         '  Open explorer',
         ':NvimTreeOpen<CR>'
     ),
-    dashboard.button(
+    button(
         'tg',
         '  Find word',
         ':Telescope live_grep<CR>'
     ),
-    dashboard.button(
+    button(
         'tr',
         '  Recent files',
         ':lua require"telescope.builtin".oldfiles(require("telescope.themes").get_dropdown({ previewer = false }))<CR>'
     ),
-    dashboard.button(
+    { type = 'padding', val = 1 },
+    button(
         'M',
         '  Mason Package Manager',
         ':Mason<CR>'
     ),
-    dashboard.button(
+    button(
         'C',
         '  Preferences',
         ':lua require"nvpunk.preferences".preferences_menu()<CR>'
     ),
-    dashboard.button(
+    button(
         'cu',
         '  Update Plugins',
         ':PackerSync<CR>'
     ),
-    dashboard.button(
+    button(
         'cU',
         '  Update Nvpunk',
         ':lua require"nvpunk.punk_funcs".nvpunk_update()<CR>'
     ),
-    dashboard.button(
+    button(
         'ch',
         '  Health Check',
         ':lua require"nvpunk.util.healthcheck"()<CR>'
     ),
-    dashboard.button(
+    button(
         'H',
         'ﬤ  Nvpunk Documentation',
         ':h nvpunk<CR>'
     ),
-    dashboard.button(
+    { type = 'padding', val = 1 },
+    button(
         'q',
         '  Quit',
-        ':qa<CR>'
+        ':qa<CR>',
+        'DiagnosticError'
     ),
 }
+
+local function get_nvpunk_version()
+    return '#' .. vim.trim(vim.split(
+        vim.api.nvim_exec(
+            '!git -C "' .. vim.fn.stdpath'config' .. '" describe --always',
+            true
+        ),
+    '\r')[2])
+end
+
+local function get_neovim_version()
+    local v = vim.version()
+    return 'v' .. tostring(v.major) .. '.' .. tostring(v.minor) .. '.' .. tostring(v.patch)
+end
+
+dashboard.section.footer.val = ' Nvpunk ' .. get_nvpunk_version() .. '    Neovim ' .. get_neovim_version()
+dashboard.section.footer.opts.hl = 'Comment'
+
+dashboard.config.layout = {
+    { type = 'padding', val = 3 },
+    dashboard.section.header,
+    { type = 'padding', val = 2 },
+    dashboard.section.buttons,
+    { type = 'padding', val = 2 },
+    dashboard.section.footer,
+}
+
 dashboard.section.buttons.opts.spacing = 0
 require'alpha'.setup(dashboard.opts)
