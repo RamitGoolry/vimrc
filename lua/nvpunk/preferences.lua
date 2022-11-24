@@ -8,6 +8,7 @@ local DEFAULT_PREFERENCES = {
     theme = 'onedark_warmer',
     greeter = 'punk',
     indent_blankline_enabled = true,
+    tab_style = 'slant',
 }
 
 --- Make sure that conf has all keys
@@ -69,6 +70,20 @@ M.set_indent_blankline_enabled = function(nval)
     reload'nvpunk.plugins_conf.indent_blankline_conf'
 end
 
+---@return 'slant' | 'padded_slant' | 'thin' | 'thick'
+M.get_tab_style = function()
+    return load_conf().tab_style
+end
+
+---Set tab style
+---@param style 'slant' | 'padded_slant' | 'thin' | 'thick'
+M.set_tab_style = function(style)
+    local conf = load_conf()
+    conf.tab_style = style
+    save_conf(conf)
+    reload'nvpunk.plugins_conf.bufferline_conf'
+end
+
 local preferences_menus = {
     {
         label = '  Change Theme',
@@ -98,8 +113,9 @@ local preferences_menus = {
             vim.ui.select(
                 {
                     {
-                        label = (blankline_enabled and 'Disable' or 'Enable')
-                                .. ' Indent Blankline',
+                        label = '  '..
+                                (blankline_enabled and 'Disable' or 'Enable') ..
+                                ' Indent Blankline',
                         func = function()
                             if blankline_enabled then
                                 M.set_indent_blankline_enabled(false)
@@ -114,14 +130,30 @@ local preferences_menus = {
                             end
                         end
                     },
+                    {
+                        label = '裡 Tab Style',
+                        func = function ()
+                            vim.ui.select(
+                                {
+                                    {label = 'Slant', value = 'slant'},
+                                    {label = 'Padded Slant', value = 'padded_slant'},
+                                    {label = 'Thin', value = 'thin'},
+                                    {label = 'Thick', value = 'thick'},
+                                },
+                                {
+                                    prompt = 'Tab Style:',
+                                    format_item = function(item) return item.label end
+                                },
+                                function(item, _) M.set_tab_style(item.value) end
+                            )
+                        end
+                    },
                 },
                 {
                     prompt = 'Interface Preferences:',
                     format_item = function(item) return item.label end
                 },
-                function(item, _)
-                    item.func()
-                end
+                function(item, _) item.func() end
             )
         end
     },
