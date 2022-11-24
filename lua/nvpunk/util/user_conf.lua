@@ -6,9 +6,7 @@ local USER_CONF_INIT = USER_CONF_DIR .. '/lua/user/init.lua'
 local USER_CONF_PLUGINS = USER_CONF_DIR .. '/lua/user/plugins.lua'
 
 M.export_user_conf_path = function()
-    vim.cmd(
-        'set runtimepath=' .. USER_CONF_DIR
-    )
+    package.path = USER_CONF_DIR .. '/lua/?.lua;' .. package.path
 end
 
 local try_require = require'nvpunk.util.try'.require
