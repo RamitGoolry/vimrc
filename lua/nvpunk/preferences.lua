@@ -9,6 +9,7 @@ local DEFAULT_PREFERENCES = {
     greeter = 'punk',
     indent_blankline_enabled = true,
     tab_style = 'slant',
+    navic_enabled = true,
 }
 
 --- Make sure that conf has all keys
@@ -59,15 +60,30 @@ M.get_greeter = function()
     return load_conf().greeter
 end
 
+---@return boolean
 M.get_indent_blankline_enabled = function()
     return load_conf().indent_blankline_enabled
 end
 
+---@param nval boolean
 M.set_indent_blankline_enabled = function(nval)
     local conf = load_conf()
     conf.indent_blankline_enabled = nval
     save_conf(conf)
     reload'nvpunk.plugins_conf.indent_blankline_conf'
+end
+
+---@return boolean
+M.get_navic_enabled = function()
+    return load_conf().navic_enabled
+end
+
+---@param nval boolean
+M.set_navic_enabled = function(nval)
+    local conf = load_conf()
+    conf.navic_enabled = nval
+    save_conf(conf)
+    reload'nvpunk.plugins_conf.navic_conf'
 end
 
 ---@return 'slant' | 'padded_slant' | 'thin' | 'thick'
@@ -110,6 +126,7 @@ local preferences_menus = {
         label = '  Interface Preferences',
         func = function()
             local blankline_enabled = M.get_indent_blankline_enabled()
+            local navic_enabled = M.get_navic_enabled()
             vim.ui.select(
                 {
                     {
@@ -123,10 +140,22 @@ local preferences_menus = {
                                     vim.cmd'IndentBlanklineDisable!'
                                 end)
                             else
-                                    M.set_indent_blankline_enabled(true)
+                                M.set_indent_blankline_enabled(true)
                                 vim.schedule(function()
                                     vim.cmd'IndentBlanklineEnable!'
                                 end)
+                            end
+                        end
+                    },
+                    {
+                        label = '  '..
+                                (navic_enabled and 'Disable' or 'Enable') ..
+                                ' Navic (breadcrumbs)',
+                        func = function()
+                            if navic_enabled then
+                                M.set_navic_enabled(false)
+                            else
+                                M.set_navic_enabled(true)
                             end
                         end
                     },

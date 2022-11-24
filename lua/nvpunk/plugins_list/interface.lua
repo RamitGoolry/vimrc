@@ -68,7 +68,7 @@ return {
     {'sindrets/diffview.nvim'},
 
     -- indentation marks
-    {'lukas-reineke/indent-blankline.nvim'}
+    {'lukas-reineke/indent-blankline.nvim'},
 
     -- replacement for messages, cmdline, popupmenu
     -- {
@@ -77,6 +77,7 @@ return {
     --         'MunifTanjim/nui.nvim',
     --     }
     -- }
-    -- information bar on top of windows (used for debug buttons)
-    -- {'fgheng/winbar.nvim'}
+
+    -- breadcrumbs
+    {'SmiteshP/nvim-navic'},
 }
