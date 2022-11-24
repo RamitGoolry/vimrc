@@ -33,6 +33,7 @@ TREESITTER.................................................|nvpunk-treesitter|
 SHORTCUTS...................................................|nvpunk-shortcuts|
 COMMANDS.....................................................|nvpunk-commands|
 HEALTHCHECK...............................................|nvpunk-healthcheck| 
+USER CONFIGURATION........................................|nvpunk-user-config|
 REFERENCES.................................................|nvpunk-references|
 
 ==============================================================================
@@ -207,6 +208,38 @@ need a version equal or greater than 17 even if your java project uses an
 older version of java.
 
 ==============================================================================
+USER CONFIGURATION                                        *nvpunk-user-config*
+
+You can add your own lua configuration to Nvpunk. This is for advanced users
+that know how to configure Neovim and want to use Nvpunk as a base.
+
+Inside your `$XDG_CONFIG_HOME` (by default it is `~/.config`), create a
+directory called `nvpunk`, inside that another called `lua`, and inside that
+a final one called `user`. In one command:
+
+>
+    mkdir -p ~/.config/nvpunk/lua/user
+<
+
+Inside the `user` directory you can add two files:
+
+- `init.lua`
+- `plugins.lua`
+
+`plugins.lua` needs to return a table of tables, each subtable is a Packer
+style plugin definition (|nvim-ref-packer|), one you would pass to the `use`
+function. Here is an example of a `plugins.lua` file:
+
+>
+    return {
+        {'vimwiki/vimwiki'},
+        {'someuser/someplugin', branch = 'main', requires = {
+            'someother/plugin'
+        }},
+    }
+<
+
+==============================================================================
 REFERENCES                                                 *nvpunk-references*
 
 ## Keybinds                                              *nvpunk-ref-keybinds*
@@ -231,3 +264,7 @@ LSP specific:
 ## Nerdfonts                                            *nvpunk-ref-nerdfonts*
 
 https://www.nerdfonts.com/
+
+## Packer                                                  *nvpunk-ref-packer*
+
+https://github.com/wbthomason/packer.nvim
