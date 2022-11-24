@@ -12,16 +12,17 @@ M.call = function(func, args, err, context)
     if context == nil then
         context = 'nvpunk.try.call'
     end
-    local ok, _ = pcall(func, unpack(args))
+    local ok, res = pcall(func, unpack(args))
     if not ok then
         vim.notify(err, 'error', {title = context})
     end
+    return res
 end
 
 --- Try to call require; show a notification if it fails
 ---@param module string
 M.require = function(module)
-    M.call(
+    return M.call(
         require,
         {module},
         'Failed to load module ' .. module,
