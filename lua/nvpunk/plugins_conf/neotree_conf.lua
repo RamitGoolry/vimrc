@@ -198,7 +198,7 @@ require'neo-tree'.setup{
                     ))
                 elseif vim.fn.has('macunix') == 1 then
                     vim.api.nvim_command(string.format(
-                        "silent !open -g '%s'", path
+                        "silent !open '%s'", path
                     ))
                 else
                     vim.notify('Operation unsupported')
