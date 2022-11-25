@@ -60,11 +60,12 @@ M.set_lsp_keymaps = function(client, bufnr, extra_keymaps)
 
     -- Set some keybinds conditional on server capabilities
     if client.server_capabilities.documentFormattingProvider then
-        bm.nkeymap('<space>f', vim.lsp.buf.formatting, 'Format')
+        bm.nkeymap('<space>f', function() vim.lsp.buf.format({async = true}) end, 'Format')
     end
-    if client.server_capabilities.documentRangeFormattingProvider then
-        bm.xkeymap('<space>f', vim.lsp.buf.range_formatting, 'Format range')
-    end
+    -- TODO range_formatting is deprecated, use format with range option
+    -- if client.server_capabilities.documentRangeFormattingProvider then
+    --     bm.xkeymap('<space>f', vim.lsp.buf.range_formatting, 'Format range')
+    -- end
 
     if extra_keymaps ~= nil then extra_keymaps(bm) end
 end
