@@ -62,4 +62,22 @@ vim.api.nvim_create_user_command(
     { nargs = 0 }
 )
 
+vim.api.nvim_create_user_command(
+    'NvpunkNewFileDialog',
+    function(_)
+        vim.ui.input(
+            {
+                prompt = 'New file path',
+            },
+            function(txt)
+                if txt == nil then return end
+                txt = vim.trim(txt)
+                if txt == '' then return end
+                vim.cmd('e ' .. txt)
+            end
+        )
+    end,
+    { nargs = 0 }
+)
+
 return M

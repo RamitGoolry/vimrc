@@ -16,9 +16,9 @@ end
 
 dashboard.section.buttons.val = {
     button(
-        'tf',
-        '  Find file',
-        ':lua require"telescope.builtin".find_files(require("telescope.themes").get_dropdown({ previewer = false }))<CR>'
+        'fn',
+        '  New file',
+        ':NvpunkNewFileDialog<CR>'
     ),
     button(
         'ge',
@@ -26,8 +26,13 @@ dashboard.section.buttons.val = {
         ':NvpunkExplorerToggle<CR>'
     ),
     button(
+        'tf',
+        '  Find file',
+        ':lua require"telescope.builtin".find_files(require("telescope.themes").get_dropdown({ previewer = false }))<CR>'
+    ),
+    button(
         'tg',
-        '  Find word',
+        '  Find word',
         ':Telescope live_grep<CR>'
     ),
     button(
