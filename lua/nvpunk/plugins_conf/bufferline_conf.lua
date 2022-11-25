@@ -1,13 +1,5 @@
-local ignored_filetypes = {
-    '',
-    'packer',
-    'TelescopePrompt',
-    'alpha',
-    'NvimTree',
-}
-
 local ignored_filetypes_dict = {}
-for _, f in ipairs(ignored_filetypes) do
+for _, f in ipairs(require'nvpunk.util.nonfile_buffers') do
     ignored_filetypes_dict[f] = true
 end
 
