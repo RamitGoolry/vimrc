@@ -57,7 +57,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-    'NvpunkExplorerOpen',
+    'NvpunkExplorerClose',
     function(_) vim.cmd'Neotree close' end,
     { nargs = 0 }
 )
