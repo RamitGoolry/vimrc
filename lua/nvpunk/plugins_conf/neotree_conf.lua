@@ -192,11 +192,11 @@ require'neo-tree'.setup{
             system_open = function(state)
                 local node = state.tree:get_node()
                 local path = node:get_id()
-                if vim.fn.has('linux') then
+                if vim.fn.has('linux') == 1 then
                     vim.api.nvim_command(string.format(
                         "silent !xdg-open '%s'", path
                     ))
-                elseif vim.fn.has('macunix') then
+                elseif vim.fn.has('macunix') == 1 then
                     vim.api.nvim_command(string.format(
                         "silent !open -g '%s'", path
                     ))
