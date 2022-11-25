@@ -17,14 +17,22 @@ if not status_ok then
     return
 end
 
--- Have packer use a popup window
-packer.init {
+
+local _packer_opts = {
     display = {
+        -- Have packer use a popup window
         open_fn = function()
             return require('packer.util').float { border = 'rounded' }
         end,
     },
 }
+
+if vim.fn.has('macunix') then
+    -- fix PackerSync freezing on mac
+    _packer_opts.max_jobs = 4
+end
+
+packer.init(_packer_opts)
 
 packer.startup(function(use)
     -- Packer can manage itself as an optional plugin
