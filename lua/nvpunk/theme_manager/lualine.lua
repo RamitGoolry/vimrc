@@ -22,12 +22,44 @@ local diagnostics_widget = {
     },
 }
 
+local styles = {
+    powerline = {
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+    },
+    plain = {
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+    },
+    plain_separators = {
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '│', right = '│' },
+    },
+    slant_low = {
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+    },
+    slant_high = {
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+    },
+    round = {
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+    },
+    pixel = {
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+    },
+}
+
 return function(theme)
+    local style = styles[require'nvpunk.preferences'.get_statusline_style()]
     require'lualine'.setup{
         options = {
             theme = theme,
-            section_separators = {'', ''},
-            component_separators = {'│', '│'}
+            section_separators = style.section_separators,
+            component_separators = style.component_separators,
         },
         sections = {
             lualine_a = {'mode'},
@@ -47,7 +79,7 @@ return function(theme)
         },
         tabline = {},
         extensions = {
-            'nvim-tree', 'neo-tree'
+            'neo-tree'
         }
     }
 end

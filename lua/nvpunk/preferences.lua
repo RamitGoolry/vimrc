@@ -10,6 +10,7 @@ local DEFAULT_PREFERENCES = {
     indent_blankline_enabled = true,
     tab_style = 'slant',
     navic_enabled = true,
+    statusline_style = 'plain',
 }
 
 --- Make sure that conf has all keys
@@ -100,6 +101,21 @@ M.set_tab_style = function(style)
     reload'nvpunk.plugins_conf.bufferline_conf'
 end
 
+---@return 'powerline' | 'plain' | 'plain_separators' | 'slant_low' |
+---        'slant_high' | 'round' | 'pixel'
+M.get_statusline_style = function()
+    return load_conf().statusline_style
+end
+
+---@param style 'powerline' | 'plain' | 'plain_separators' | 'slant_low' |
+---             'slant_high' | 'round' | 'pixel'
+M.set_statusline_style = function(style)
+    local conf = load_conf()
+    conf.statusline_style = style
+    save_conf(conf)
+    reload('nvpunk.theme_manager.themes.' .. M.get_theme())
+end
+
 local preferences_menus = {
     {
         label = '  Change Theme',
@@ -174,6 +190,27 @@ local preferences_menus = {
                                     format_item = function(item) return item.label end
                                 },
                                 function(item, _) M.set_tab_style(item.value) end
+                            )
+                        end
+                    },
+                    {
+                        label = '  Statusline Style',
+                        func = function ()
+                            vim.ui.select(
+                                {
+                                    {label = 'Powerline', value = 'powerline'},
+                                    {label = 'Plain', value = 'plain'},
+                                    {label = 'Plain with Separators', value = 'plain_separators'},
+                                    {label = 'Slant Low', value = 'slant_low'},
+                                    {label = 'Slant High', value = 'slant_high'},
+                                    {label = 'Round', value = 'round'},
+                                    {label = 'Pixel', value = 'pixel'},
+                                },
+                                {
+                                    prompt = 'Statusline Style:',
+                                    format_item = function(item) return item.label end
+                                },
+                                function(item, _) M.set_statusline_style(item.value) end
                             )
                         end
                     },
