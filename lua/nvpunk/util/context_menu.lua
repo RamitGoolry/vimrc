@@ -127,11 +127,25 @@ M.set_dap_rclick_menu = function()
     }, M.buf_has_dap)
 end
 
-M.set_filetree_rclick_menu = function()
-    M.set_rclick_submenu('NvpunkFileTreeMenu', 'File        ', {
+-- M.set_nvimtree_rclick_menu = function()
+--     M.set_rclick_submenu('NvpunkFileTreeMenu', 'File        ', {
+--         {'New File              <space>fn',   '<space>fn'},
+--         {'Rename                     <F2>',   '<F2>'},
+--     }, function() return vim.bo.filetype == 'NvimTree' end)
+-- end
+
+M.set_neotree_rclick_menu = function()
+    M.set_rclick_submenu('NvpunkNeoTreeMenu', 'File        ', {
         {'New File              <space>fn',   '<space>fn'},
+        {'New Folder            <space>dn',   '<space>dn'},
         {'Rename                     <F2>',   '<F2>'},
-    }, function() return vim.bo.filetype == 'NvimTree' end)
+        {'Toggle Hidden             <C-h>',   '<C-h>'},
+        {'Split Horizontally            i',   'i'},
+        {'Split Vertically              s',   's'},
+        {'Open in New Tab               t',   't'},
+        {'Git Add               <space>ga',   '<space>ga'},
+        {'Git Unstage           <space>gu',   '<space>gu'},
+    }, function() return vim.bo.filetype == 'neo-tree' end)
 end
 
 M.set_telescope_rclick_menu = function()
@@ -158,7 +172,8 @@ M.setup_rclick_menu_autocommands = function()
             M.set_lsp_rclick_menu()
             M.set_dap_rclick_menu()
             M.set_java_rclick_menu()
-            M.set_filetree_rclick_menu()
+            -- M.set_nvimtree_rclick_menu()
+            M.set_neotree_rclick_menu()
             M.set_telescope_rclick_menu()
             M.set_git_rclick_menu()
         end

@@ -23,7 +23,7 @@ dashboard.section.buttons.val = {
     button(
         'ge',
         '  Open explorer',
-        ':NvimTreeOpen<CR>'
+        ':NvpunkExplorerToggle<CR>'
     ),
     button(
         'tg',

@@ -103,14 +103,15 @@ at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 ## File explorer                                   *nvpunk-shortcuts-explorer*
 
 - `ge`            Toggle the file explorer
-- `?`             Toggle help
+- `?`             Open explorer help
 - `<CR>`          Open file/Expand folder
 - `i`             Open file in horizontal split
 - `s`             Open file in vertical split
 - `<F2>`          Rename file
 - `<space>fn`     New file
 - `<space>fyy`    Copy file
-- `<space>fyp`    Paste file
+- `<space>fdd`    Cut file
+- `<space>fp`     Paste file
 - `<space>xo`     Open file/folder with system app
 
 ## Terminal                                        *nvpunk-shortcuts-terminal*

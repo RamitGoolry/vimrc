@@ -14,7 +14,7 @@ local configs = {
     -- lualine config done by theme manager
     'nvpunk.plugins_conf.bufferline_conf',
     'nvpunk.plugins_conf.comment_conf',
-    'nvpunk.plugins_conf.nvimtree_conf',
+    'nvpunk.plugins_conf.neotree_conf',
     'nvpunk.plugins_conf.whichkey_conf',
     'nvpunk.plugins_conf.telescope_conf',
     'nvpunk.plugins_conf.toggleterm_conf',

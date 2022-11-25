@@ -5,8 +5,11 @@ return {
     -- icons
     {'ryanoasis/vim-devicons'},
 
-    -- file explorer, replaces nerdtree
-    {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'},
+    -- file explorer
+    {'nvim-neo-tree/neo-tree.nvim', requires = {
+        'kyazdani42/nvim-web-devicons', 'MunifTanjim/nui.nvim',
+        's1n7ax/nvim-window-picker'
+    }},
 
     -- git gutter
     {'lewis6991/gitsigns.nvim'},

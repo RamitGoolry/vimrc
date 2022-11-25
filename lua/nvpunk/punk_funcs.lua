@@ -44,4 +44,22 @@ vim.api.nvim_create_user_command(
     { nargs = 0 }
 )
 
+vim.api.nvim_create_user_command(
+    'NvpunkExplorerToggle',
+    function(_) vim.cmd'Neotree toggle' end,
+    { nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+    'NvpunkExplorerOpen',
+    function(_) vim.cmd'Neotree reveal' end,
+    { nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+    'NvpunkExplorerOpen',
+    function(_) vim.cmd'Neotree close' end,
+    { nargs = 0 }
+)
+
 return M

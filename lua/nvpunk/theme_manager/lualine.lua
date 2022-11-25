@@ -47,7 +47,7 @@ return function(theme)
         },
         tabline = {},
         extensions = {
-            'nvim-tree'
+            'nvim-tree', 'neo-tree'
         }
     }
 end

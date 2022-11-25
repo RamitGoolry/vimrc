@@ -189,9 +189,8 @@ local preferences_menus = {
     {
         label = '  Open Config',
         func = function()
-            local changedir = 'cd ' .. vim.fn.stdpath'config'
-            vim.cmd(changedir)
-            vim.cmd[[NvimTreeOpen]]
+            vim.cmd('cd ' .. vim.fn.stdpath'config')
+            vim.cmd'NvpunkExplorerOpen'
         end
     },
 }

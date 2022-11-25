@@ -28,12 +28,13 @@ return function(style)
             gitsigns = true,
             telescope = true,
             nvimtree = true,
+            neotree = true,
             dap = {
                 enabled = true, enable_ui = true,
             },
             which_key = true,
             indent_blankline = {
-                enabled = false,
+                enabled = true,
                 colored_indent_levels = false,
             },
             dashboard = false,
@@ -44,13 +45,15 @@ return function(style)
             lightspeed = false,
             ts_rainbow = false,
             hop = false,
+            mason = true,
             notify = true,
             symbols_outline = true,
             mini = true,
             vimwiki = false,
             beacon = false,
-            navic = { enabled = false, custom_bg = 'NONE' },
+            navic = { enabled = true, custom_bg = 'NONE' },
             overseer = false,
+            aerial = true,
         },
     }
     t.load()

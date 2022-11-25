@@ -3,7 +3,7 @@
 return function(style)
     vim.g.tokyonight_style = style
     vim.g.tokyonight_sidebars = {
-        'NvimTree', 'aerial'
+        'NvimTree', 'aerial', 'neo-tree'
     }
     vim.g.tokyonight_dark_sidebar = true
     vim.cmd[[colorscheme tokyonight]]

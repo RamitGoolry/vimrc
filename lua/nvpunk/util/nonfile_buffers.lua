@@ -2,6 +2,8 @@
 -- created by plugins or by neovim itself
 return {
     'NvimTree',
+    'Nvpunk',
+    'NvpunkHealthcheck',
     'Outline',
     'TelescopePrompt',
     'Trouble',
@@ -10,12 +12,13 @@ return {
     'dashboard',
     'help',
     'lir',
+    'neo-tree',
+    'neo-tree-popup',
     'neogitstatus',
+    'notify',
     'packer',
     'spectre_panel',
     'startify',
     'toggleterm',
     'vim',
-    'Nvpunk',
-    'NvpunkHealthcheck',
 }
