@@ -22,7 +22,9 @@ local _packer_opts = {
     display = {
         -- Have packer use a popup window
         open_fn = function()
-            return require('packer.util').float { border = 'rounded' }
+            return require('packer.util').float {
+                border = require'nvpunk.preferences'.get_window_border()
+            }
         end,
     },
 }

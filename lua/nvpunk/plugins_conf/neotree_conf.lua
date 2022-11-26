@@ -50,7 +50,7 @@ end
 
 require'neo-tree'.setup{
     close_if_last_window = true,
-    popup_border_style = 'rounded',
+    popup_border_style = require'nvpunk.preferences'.get_small_window_border(),
     enable_git_status = true,
     enable_diagnostics = true,
     sort_case_insensitive = true,

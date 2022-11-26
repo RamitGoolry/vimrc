@@ -54,10 +54,12 @@ M.open_win = function(bname)
         relative = 'editor',
         width = win_w, height = win_h,
         row = y, col = x,
+        border = require'nvpunk.preferences'.get_window_border()
     }
     M.wins[bname] = vim.api.nvim_open_win(M.bufs[bname], true, opts)
     vim.api.nvim_win_set_option(M.wins[bname], 'wrap', false)
     vim.api.nvim_win_set_option(M.wins[bname], 'cursorline', true)
+    vim.api.nvim_win_set_option(M.wins[bname], 'winhighlight', 'CursorLine:Visual')
 end
 
 local function make_buf_name(bname)

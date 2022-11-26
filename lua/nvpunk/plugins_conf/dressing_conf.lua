@@ -14,7 +14,7 @@ require('dressing').setup({
 
         -- These are passed to nvim_open_win
         anchor = 'SW',
-        border = 'rounded',
+        border = require'nvpunk.preferences'.get_small_window_border(),
         -- 'editor' and 'win' will default to being centered
         relative = 'cursor',
 
@@ -59,7 +59,7 @@ require('dressing').setup({
         builtin = {
             -- These are passed to nvim_open_win
             anchor = 'NW',
-            border = 'rounded',
+            border = require'nvpunk.preferences'.get_small_window_border(),
             -- 'editor' and 'win' will default to being centered
             relative = 'editor',
 

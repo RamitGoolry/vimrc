@@ -92,7 +92,14 @@ cmp.setup {
         },
     },
     window = {
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered {
+            border = require'nvpunk.preferences'.get_popup_border(),
+            winhighlight = 'Normal:FloatNormal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None'
+        },
+        documentation = cmp.config.window.bordered {
+            border = require'nvpunk.preferences'.get_small_window_border(),
+            winhighlight = 'Normal:FloatNormal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None'
+        },
     },
     experimental = {
         ghost_text = false,

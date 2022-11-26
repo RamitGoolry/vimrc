@@ -8,9 +8,14 @@ local DEFAULT_PREFERENCES = {
     theme = 'onedark_warmer',
     greeter = 'punk',
     indent_blankline_enabled = true,
-    tab_style = 'slant',
+    tab_style = 'slant',  -- 'slant' | 'padded_slant' | 'thin' | 'thick'
     navic_enabled = true,
-    statusline_style = 'plain',
+    statusline_style = 'plain',  -- 'powerline' | 'plain' | 'plain_separators'
+                                 -- | 'slant_low' | 'slant_high' | 'round'
+                                 -- | 'pixel'
+    window_border = 'solid',  -- 'solid' | 'none' | 'single' | 'rounded' | 'double'
+    small_window_border = 'rounded',  -- 'solid' | 'none' | 'single' | 'rounded' | 'double'
+    popup_border = 'none',  -- 'solid' | 'none' | 'single' | 'rounded' | 'double'
 }
 
 --- Make sure that conf has all keys
@@ -116,6 +121,73 @@ M.set_statusline_style = function(style)
     reload('nvpunk.theme_manager.themes.' .. M.get_theme())
 end
 
+---@param border 'solid' | 'none' | 'single' | 'rounded' | 'double'
+---@return table | 'none' | 'single' | 'rounded' | 'double'
+local function get_border_value(border)
+    if border == 'solid' then  -- make the border color the same as the window
+        return {
+            {' ', 'NormalFloat'},
+            {' ', 'NormalFloat'},
+            {' ', 'NormalFloat'},
+            {' ', 'NormalFloat'},
+            {' ', 'NormalFloat'},
+            {' ', 'NormalFloat'},
+            {' ', 'NormalFloat'},
+            {' ', 'NormalFloat'},
+        }
+    end
+    return border  --[[@as table | 'none' | 'single' | 'rounded' | 'double']]
+end
+
+---@return table | 'none' | 'single' | 'rounded' | 'double'
+M.get_window_border = function()
+    return get_border_value(load_conf().window_border)
+end
+
+---@param border 'solid' | 'none' | 'single' | 'rounded' | 'double'
+M.set_window_border = function(border)
+    local conf = load_conf()
+    conf.window_border = border
+    save_conf(conf)
+    -- TODO: reload what needs reloading
+end
+
+---@return table | 'none' | 'single' | 'rounded' | 'double'
+M.get_small_window_border = function()
+    return get_border_value(load_conf().small_window_border)
+end
+
+---@param border 'solid' | 'none' | 'single' | 'rounded' | 'double'
+M.set_small_window_border = function(border)
+    local conf = load_conf()
+    conf.small_window_border = border
+    save_conf(conf)
+    -- TODO: reload what needs reloading
+end
+
+---@return table | 'none' | 'single' | 'rounded' | 'double'
+M.get_popup_border = function()
+    return get_border_value(load_conf().popup_border)
+end
+
+---@param border 'solid' | 'none' | 'single' | 'rounded' | 'double'
+M.set_popup_border = function(border)
+    local conf = load_conf()
+    conf.popup_border = border
+    save_conf(conf)
+    -- TODO: reload what needs reloading
+end
+
+local BORDER_SELECT_OPTS = {
+    {label = 'Padded', value = 'solid'},
+    {label = 'None', value = 'none'},
+    {label = 'Single Stroke', value = 'single'},
+    {label = 'Double Stroke', value = 'double'},
+    {label = 'Rounded', value = 'rounded'},
+}
+
+local function select_format_get_label(item) return item.label end
+
 local preferences_menus = {
     {
         label = '  Change Theme',
@@ -187,7 +259,7 @@ local preferences_menus = {
                                 },
                                 {
                                     prompt = 'Tab Style:',
-                                    format_item = function(item) return item.label end
+                                    format_item = select_format_get_label
                                 },
                                 function(item, _) M.set_tab_style(item.value) end
                             )
@@ -208,16 +280,55 @@ local preferences_menus = {
                                 },
                                 {
                                     prompt = 'Statusline Style:',
-                                    format_item = function(item) return item.label end
+                                    format_item = select_format_get_label
                                 },
                                 function(item, _) M.set_statusline_style(item.value) end
+                            )
+                        end
+                    },
+                    {
+                        label = '  Window Borders',
+                        func = function ()
+                            vim.ui.select(
+                                BORDER_SELECT_OPTS,
+                                {
+                                    prompt = 'Window Borders:',
+                                    format_item = select_format_get_label
+                                },
+                                function(item, _) M.set_window_border(item.value) end
+                            )
+                        end
+                    },
+                    {
+                        label = '  Floating Window Borders',
+                        func = function ()
+                            vim.ui.select(
+                                BORDER_SELECT_OPTS,
+                                {
+                                    prompt = 'Floating Window Borders:',
+                                    format_item = select_format_get_label
+                                },
+                                function(item, _) M.set_small_window_border(item.value) end
+                            )
+                        end
+                    },
+                    {
+                        label = '  Popup Borders',
+                        func = function ()
+                            vim.ui.select(
+                                BORDER_SELECT_OPTS,
+                                {
+                                    prompt = 'Popup Borders:',
+                                    format_item = select_format_get_label
+                                },
+                                function(item, _) M.set_popup_border(item.value) end
                             )
                         end
                     },
                 },
                 {
                     prompt = 'Interface Preferences:',
-                    format_item = function(item) return item.label end
+                    format_item = select_format_get_label
                 },
                 function(item, _) item.func() end
             )
@@ -237,7 +348,7 @@ M.preferences_menu = function()
         preferences_menus,
         {
             prompt = 'Preferences:',
-            format_item = function(item) return item.label end
+            format_item = select_format_get_label
         },
         function(item, _)
             item.func()

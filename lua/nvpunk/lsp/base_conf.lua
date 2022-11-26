@@ -21,7 +21,7 @@ local diagnostic_conf = {
     float = {
         focusable = false,
         style = 'minimal',
-        border = 'rounded',
+        border = require'nvpunk.preferences'.get_small_window_border(),
         source = 'always',
         header = '',
         prefix = ''
@@ -31,12 +31,12 @@ vim.diagnostic.config(diagnostic_conf)
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover, {
-        border = 'rounded',
+        border = require'nvpunk.preferences'.get_small_window_border(),
     }
 )
 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
     vim.lsp.handlers.signature_help, {
-        border = 'rounded',
+        border = require'nvpunk.preferences'.get_small_window_border(),
     }
 )

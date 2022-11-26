@@ -45,7 +45,7 @@ require'gitsigns'.setup {
     max_file_length = 40000,
     preview_config = {
         -- Options passed to nvim_open_win
-        border = 'single',
+        border = require'nvpunk.preferences'.get_small_window_border(),
         style = 'minimal',
         relative = 'cursor',
         row = 0,
