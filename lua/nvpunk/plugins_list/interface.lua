@@ -85,5 +85,5 @@ return {
     {'SmiteshP/nvim-navic'},
 
     -- better quick fix pane
-    {'kevinhwang91/nvim-bqf', ft = 'qf'}
+    {'kevinhwang91/nvim-bqf'}
 }
