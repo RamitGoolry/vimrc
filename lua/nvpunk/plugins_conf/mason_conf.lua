@@ -25,6 +25,7 @@ require('mason').setup {
             -- apply language filter
             apply_language_filter = '<C-f>',
         },
+        border = require'nvpunk.preferences'.get_window_border(),
     },
     max_concurrent_installers = 4,
 }
