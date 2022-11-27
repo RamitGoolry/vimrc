@@ -16,6 +16,7 @@ local DEFAULT_PREFERENCES = {
     window_border = 'solid',  -- 'solid' | 'none' | 'single' | 'rounded' | 'double'
     small_window_border = 'rounded',  -- 'solid' | 'none' | 'single' | 'rounded' | 'double'
     popup_border = 'none',  -- 'solid' | 'none' | 'single' | 'rounded' | 'double'
+    column_mark_enabled = true,
 }
 
 --- Make sure that conf has all keys
@@ -90,6 +91,19 @@ M.set_navic_enabled = function(nval)
     conf.navic_enabled = nval
     save_conf(conf)
     reload'nvpunk.plugins_conf.navic_conf'
+end
+
+---@return boolean
+M.get_column_mark_enabled = function()
+    return load_conf().column_mark_enabled
+end
+
+---@param nval boolean
+M.set_column_mark_enabled = function(nval)
+    local conf = load_conf()
+    conf.column_mark_enabled = nval
+    save_conf(conf)
+    vim.opt.colorcolumn = nval and {80} or {}
 end
 
 ---@return 'slant' | 'padded_slant' | 'thin' | 'thick'
@@ -215,6 +229,7 @@ local preferences_menus = {
         func = function()
             local blankline_enabled = M.get_indent_blankline_enabled()
             local navic_enabled = M.get_navic_enabled()
+            local column_mark_enabled = M.get_column_mark_enabled()
             vim.ui.select(
                 {
                     {
@@ -240,11 +255,15 @@ local preferences_menus = {
                                 (navic_enabled and 'Disable' or 'Enable') ..
                                 ' Navic (breadcrumbs)',
                         func = function()
-                            if navic_enabled then
-                                M.set_navic_enabled(false)
-                            else
-                                M.set_navic_enabled(true)
-                            end
+                            M.set_navic_enabled(not navic_enabled)
+                        end
+                    },
+                    {
+                        label = '  '..
+                                (column_mark_enabled and 'Disable' or 'Enable') ..
+                                ' Column Mark',
+                        func = function()
+                            M.set_column_mark_enabled(not column_mark_enabled)
                         end
                     },
                     {

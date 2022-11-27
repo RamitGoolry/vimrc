@@ -33,7 +33,8 @@ local vim_opts = {
     wrap = true,  -- would want this off, but it's good for markdown and txt...
     -- scrolloff = 8,  -- always keep 8 lines below the cursor
     -- sidescrolloff = 8,  -- similar to above, for hscroll
-    colorcolumn = {80},  -- show the 80 columns mark
+    -- show the 80 columns mark
+    colorcolumn = require'nvpunk.preferences'.get_column_mark_enabled() and {80} or {},
     timeoutlen = 500,
     -- hidden = true,  -- allow hidden buffers (mostly for toggleterm)
     mousescroll = 'ver:3,hor:6'
