@@ -17,8 +17,8 @@
                ⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 
-Neovim distribution for netrunners, cyberspace hackers and interstellar
-cowboys.
+             Neovim distribution for netrunners, cyberspace hackers
+                           and interstellar cowboys.
 
 For the best experience, you'll need:
 
