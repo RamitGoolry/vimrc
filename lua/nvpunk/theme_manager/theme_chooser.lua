@@ -1,6 +1,6 @@
 local M = {}
 
-local available_themes = {
+M.available_themes = {
     'barstrata',
     'catppuccin_frappe',
     'catppuccin_latte',
@@ -40,23 +40,36 @@ local available_themes = {
     'tundra',
 }
 
+---Load specified theme
+---@param theme string
+---@param notify? boolean = true
+---@param save_pref? boolean = true
+M.load_theme = function(theme, notify, save_pref)
+    if notify == nil then notify = true end
+    if save_pref == nil then save_pref = true end
+    vim.cmd'colorscheme default'
+    require'nvpunk.util.try'.load_theme(theme, function()
+        reload(
+            'nvpunk.theme_manager.themes.' .. theme
+        )
+        if notify then
+            vim.notify('Switched to theme ' .. theme, 'info', {
+                title = 'nvpunk.theme_manager.theme_chooser'
+            })
+        end
+        if save_pref then
+            require'nvpunk.preferences'.set_theme(theme)
+        end
+    end)
+end
+
 M.change_theme = function()
     vim.ui.select(
-        available_themes,
+        M.available_themes,
         {
             prompt = 'Choose a theme:',
         },
-        function(theme, _)
-            require'nvpunk.util.try'.load_theme(theme, function()
-                reload(
-                    'nvpunk.theme_manager.themes.' .. theme
-                )
-                vim.notify('Switched to theme ' .. theme, 'info', {
-                    title = 'nvpunk.theme_manager.theme_chooser'
-                })
-                require'nvpunk.preferences'.set_theme(theme)
-            end)
-        end
+        function(theme, _) M.load_theme(theme) end
     )
 end
 

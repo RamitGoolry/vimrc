@@ -220,7 +220,7 @@ local preferences_menus = {
     {
         label = '  Change Theme',
         func = function()
-            require'nvpunk.theme_manager.theme_chooser'.change_theme()
+            require'nvpunk.theme_manager.telescope_theme_chooser'()
         end
     },
     {
