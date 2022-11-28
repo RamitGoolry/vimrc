@@ -17,6 +17,7 @@ local DEFAULT_PREFERENCES = {
     small_window_border = 'rounded',  -- 'solid' | 'none' | 'single' | 'rounded' | 'double'
     popup_border = 'none',  -- 'solid' | 'none' | 'single' | 'rounded' | 'double'
     column_mark_enabled = true,
+    folding_guide_enabled = true,
 }
 
 --- Make sure that conf has all keys
@@ -104,6 +105,19 @@ M.set_column_mark_enabled = function(nval)
     conf.column_mark_enabled = nval
     save_conf(conf)
     vim.opt.colorcolumn = nval and {80} or {}
+end
+
+---@return boolean
+M.get_folding_guide_enabled = function()
+    return load_conf().folding_guide_enabled
+end
+
+---@param nval boolean
+M.set_folding_guide_enabled = function(nval)
+    local conf = load_conf()
+    conf.folding_guide_enabled = nval
+    save_conf(conf)
+    vim.o.foldcolumn = nval and '1' or '0'
 end
 
 ---@return 'slant' | 'padded_slant' | 'thin' | 'thick'
@@ -230,6 +244,7 @@ local preferences_menus = {
             local blankline_enabled = M.get_indent_blankline_enabled()
             local navic_enabled = M.get_navic_enabled()
             local column_mark_enabled = M.get_column_mark_enabled()
+            local folding_guide_enabled = M.get_folding_guide_enabled()
             vim.ui.select(
                 {
                     {
@@ -264,6 +279,14 @@ local preferences_menus = {
                                 ' Column Mark',
                         func = function()
                             M.set_column_mark_enabled(not column_mark_enabled)
+                        end
+                    },
+                    {
+                        label = '  '..
+                                (folding_guide_enabled and 'Disable' or 'Enable') ..
+                                ' Folding Guide',
+                        func = function()
+                            M.set_folding_guide_enabled(not folding_guide_enabled)
                         end
                     },
                     {
@@ -332,7 +355,7 @@ local preferences_menus = {
                         end
                     },
                     {
-                        label = '  Popup Borders',
+                        label = '  Popup Borders',
                         func = function ()
                             vim.ui.select(
                                 BORDER_SELECT_OPTS,
