@@ -6,7 +6,7 @@ return {
     {'ryanoasis/vim-devicons'},
 
     -- file explorer
-    {'nvim-neo-tree/neo-tree.nvim', requires = {
+    {'nvim-neo-tree/neo-tree.nvim', branch = 'main', requires = {
         'kyazdani42/nvim-web-devicons', 'MunifTanjim/nui.nvim',
         's1n7ax/nvim-window-picker'
     }},
