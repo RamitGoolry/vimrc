@@ -68,8 +68,11 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
         { name = 'luasnip' },
+        { name = 'calc' },
         { name = 'buffer' },
         { name = 'path' },
+        { name = 'emoji' },
+        { name = 'nerdfont' },
     },
     formatting = {
         -- icons in completions
@@ -106,13 +109,14 @@ cmp.setup {
     },
 }
 
-require'cmp'.setup.cmdline(':', {
+cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'cmdline' }
     }
 })
-require'cmp'.setup.cmdline('/', {
+
+cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'buffer' }

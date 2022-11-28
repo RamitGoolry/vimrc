@@ -18,7 +18,10 @@ return {
         'hrsh7th/cmp-cmdline',
         'saadparwaiz1/cmp_luasnip',
         'hrsh7th/cmp-nvim-lua',
-        'lukas-reineke/cmp-under-comparator'
+        'lukas-reineke/cmp-under-comparator',
+        'hrsh7th/cmp-calc',
+        'hrsh7th/cmp-emoji',
+        'chrisgrieser/cmp-nerdfont'
     }},
 
     -- code outline (classes, functions, vars...)
