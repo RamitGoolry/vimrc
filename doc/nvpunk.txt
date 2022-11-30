@@ -223,10 +223,14 @@ a final one called `user`. In one command:
     mkdir -p ~/.config/nvpunk/lua/user
 <
 
-Inside the `user` directory you can add two files:
+Inside the `user` directory you can add the following files:
 
 - `init.lua`
 - `plugins.lua`
+- `themes.lua`
+
+`init.lua` will be called after the Nvpunk configuration is loaded. You can
+load any configuration override or other custom configuration code in here.
 
 `plugins.lua` needs to return a table of tables, each subtable is a Packer
 style plugin definition (|nvim-ref-packer|), one you would pass to the `use`
@@ -238,6 +242,32 @@ function. Here is an example of a `plugins.lua` file:
         {'someuser/someplugin', branch = 'main', requires = {
             'someother/plugin'
         }},
+    }
+<
+
+`themes.lua` needs to return a table, each element of the table can either be
+a string representing a colorscheme that can then be loaded as is, or a
+function with a key that will be run to apply the theme. This can be useful in
+case a particular user-provided theme (installed by adding it to `plugins.lua`)
+requires extra configuration. Here is an example of a `themes.lua` file:
+
+>
+    return {
+        'blue',
+        'delek',
+        my_custom_theme = function()
+            require'my_custom_theme'.setup {
+                italic_comments = true,
+            }
+            vim.cmd'colorscheme my_custom_theme'
+        end,
+        my_other_theme = function()
+            local t = require'my_other_theme'
+            t.setup {
+                some_config_opt = 'foo',
+            }
+            t.apply()
+        end,
     }
 <
 
