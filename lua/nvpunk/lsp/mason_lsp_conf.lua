@@ -1,21 +1,22 @@
 require'mason-lspconfig'.setup {
     ensure_installed = {
         'bashls',
-        'pyright',
-        'vuels',
-        'yamlls',
         'clangd',
+        'cmake',
+        'cssls',
+        'emmet_ls',
+        'html',
+        'jdtls',
+        'jsonls',
         'lemminx',
         'ltex',
-        'jsonls',
-        'vimls',
-        'html',
-        'emmet_ls',
-        'sumneko_lua',
-        'cssls',
-        'cmake',
+        'pyright',
         'rust_analyzer',
-        'jdtls'
+        'sumneko_lua',
+        'tsserver',
+        'vimls',
+        'vuels',
+        'yamlls',
     }
 }
 require'mason-lspconfig'.setup_handlers {
