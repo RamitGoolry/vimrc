@@ -6,6 +6,7 @@ nvpunk-deps-git	nvpunk.txt	/*nvpunk-deps-git*
 nvpunk-deps-java17	nvpunk.txt	/*nvpunk-deps-java17*
 nvpunk-deps-npm	nvpunk.txt	/*nvpunk-deps-npm*
 nvpunk-deps-python	nvpunk.txt	/*nvpunk-deps-python*
+nvpunk-deps-rg	nvpunk.txt	/*nvpunk-deps-rg*
 nvpunk-healthcheck	nvpunk.txt	/*nvpunk-healthcheck*
 nvpunk-lsp	nvpunk.txt	/*nvpunk-lsp*
 nvpunk-navigation	nvpunk.txt	/*nvpunk-navigation*

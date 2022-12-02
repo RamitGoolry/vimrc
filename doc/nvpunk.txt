@@ -209,6 +209,12 @@ Java version 17+ is required to run jdtls, the java language server. You still
 need a version equal or greater than 17 even if your java project uses an
 older version of java.
 
+## ripgrep                                                    *nvpunk-deps-rg*
+
+Ripgrep is a line-oriented search tool that recursively searches the current
+directory for a regex pattern. Ripgrep is used by the Telescope live grep
+functionality and it's therefore a requirement for Nvpunk.
+
 ==============================================================================
 USER CONFIGURATION                                        *nvpunk-user-config*
 

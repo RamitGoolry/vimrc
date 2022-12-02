@@ -103,4 +103,5 @@ return function()
             msg_success('[java17] Java 17+', 'nvpunk-deps-java17')
         end
     end)
+    test_and_log('rg', '[rg] Ripgrep search tool', 'nvpunk-deps-rg')
 end
