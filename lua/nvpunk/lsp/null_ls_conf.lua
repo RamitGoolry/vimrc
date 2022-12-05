@@ -1,4 +1,14 @@
+local mason_null_ls = require'mason-null-ls'
 local null_ls = require'null-ls'
+
+mason_null_ls.setup {
+    ensure_installed = {
+        'stylua', 'jq', 'prettier', 'alex'
+    },
+    automatic_installation = true,
+    automatic_setup = true,
+}
+
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
@@ -21,3 +31,5 @@ null_ls.setup {
         new_client.offset_encoding = 'utf-8'
     end
 }
+
+mason_null_ls.setup_handlers()
