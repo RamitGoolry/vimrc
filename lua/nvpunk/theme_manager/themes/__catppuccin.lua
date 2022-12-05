@@ -6,15 +6,29 @@ return function(style)
     else
         vim.o.background = 'dark'
     end
-    vim.g.catppuccin_flavour = style
     local t = require'catppuccin'
     t.setup {
+        flavour = style,
         dim_inactive = {
-            enabled = true,
+            enabled = false,
             shade = 'dark',
             percentage = 0.15
         },
         term_colors = true,
+        styles = {
+            comments = { "italic" },
+            conditionals = { "italic" },
+            loops = {},
+            functions = {},
+            keywords = {},
+            strings = {},
+            variables = {},
+            numbers = {},
+            booleans = {},
+            properties = {},
+            types = {},
+            operators = {},
+        },
         integrations = {
             treesitter = true,
             native_lsp = {
@@ -56,7 +70,7 @@ return function(style)
             aerial = true,
         },
     }
-    t.load()
-    vim.cmd[[colorscheme catppuccin]]
+    vim.cmd'colorscheme catppuccin'
+    vim.cmd('Catppuccin ' .. style)
     reload'nvpunk.theme_manager.lualine'('catppuccin')
 end

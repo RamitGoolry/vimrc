@@ -35,6 +35,7 @@ local builtin_themes = {
     'rose_pine_dawn',
     'rose_pine_moon',
     'tokyonight_day',
+    'tokyonight_moon',
     'tokyonight_night',
     'tokyonight_storm',
     'tundra',
