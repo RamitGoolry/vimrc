@@ -212,22 +212,35 @@ M.images = {
             '⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
         },
         hl = 'DevIconZsh'
+    },
+    lambda = {
+        content = {
+            '████        ',
+            '   █       ',
+            '    █      ',
+            '    ██     ',
+            '   ██    ',
+            '  █  █   ',
+            ' █    ████',
+        },
+        hl = 'DevIconSvg'
+    },
+    haskell = {
+        content = {
+            '██         ',
+            ' ██        ',
+            '  ██       ',
+            '   ███████',
+            '   ███     ',
+            '  ██████',
+            ' ██  █   ',
+            '██    █  ',
+        },
+        hl = 'DevIconHs'
     }
 }
 
-M.headers = {
-    'apex',
-    'arasaka',
-    'arasaka_notype',
-    'edgerunner',
-    'gabmus',
-    'kaiser',
-    'nvpunk',
-    'punk',
-    'robots',
-    'samurai',
-    'squid',
-    'titanfall',
-}
+M.headers = vim.tbl_keys(M.images)
+table.sort(M.headers)
 
 return M
