@@ -89,3 +89,4 @@ km.nkeymap(
 ----------
 
 require'nvpunk.util.context_menu'.setup_rclick_menu_autocommands()
+km.nkeymap('<A-m>', '<cmd>popup PopUp<cr>', 'Open Context Menu')

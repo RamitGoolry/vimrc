@@ -42,7 +42,7 @@ NAVIGATION                                                 *nvpunk-navigation*
 
 - Use the buttons in the greeter
 - Press `<space>`, `g` or `z` to explore more functionality
-- Right click to show the context menu, organized in categories
+- Right click or press `<A-m>` to show the categorized context menu
 
 ==============================================================================
 LANGUAGE SERVER                                                   *nvpunk-lsp*
@@ -97,6 +97,7 @@ at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 ## General                                          *nvpunk-shortcuts-general*
 
 - `<RightMouse>`  Open context menu
+- `<A-m>`         Open context menu
 - `<space>A`      Open the greeter
 - `<space>T`      Toggle diagnostics panel
 - `<space>nd`     Dismiss notifications
