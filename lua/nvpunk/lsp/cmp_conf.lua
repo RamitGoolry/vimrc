@@ -6,8 +6,6 @@ local has_words_before = function()
     )[1]:sub(col, col):match("%s") == nil
 end
 
---------------------
-
 local cmp = require'cmp'
 local luasnip = require'luasnip'
 
@@ -78,6 +76,7 @@ cmp.setup {
         -- icons in completions
         format = require'lspkind'.cmp_format{
             mode = 'symbol_text',
+            preset = 'codicons',
             maxwidth = 50
         }
     },
