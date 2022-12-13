@@ -85,5 +85,16 @@ return {
     {'SmiteshP/nvim-navic'},
 
     -- better quick fix pane
-    {'kevinhwang91/nvim-bqf'}
+    {'kevinhwang91/nvim-bqf'},
+
+    -- Copilot : AI Assisted Development
+    {'github/copilot.vim'},
+
+    -- Goto Preview
+    {
+      'rmagatti/goto-preview',
+      config = function()
+            require('goto-preview').setup {}
+      end
+    }
 }
