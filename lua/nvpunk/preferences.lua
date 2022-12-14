@@ -403,4 +403,12 @@ vim.api.nvim_create_user_command(
     { nargs = 0 }
 )
 
+vim.api.nvim_create_user_command(
+    'Theme', function(_) 
+        require('nvpunk.theme_manager.telescope_theme_chooser')()
+    end,
+    { nargs = 0 }
+)
+
 return M
+

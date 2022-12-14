@@ -7,9 +7,8 @@ local km = require'nvpunk.util.keymapper'
 ----------
 
 --Remap space as leader key
-km.keymap('', '<Space>', '<Nop>')
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = ';'
+vim.g.maplocalleader = ';'
 
 ----------
 ---------- Personal shortcuts
@@ -29,6 +28,15 @@ km.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')
 -- local screenshot_sequence = "<Esc>:let scrotfname=@% . '.img/' . strftime('%FT%H_%M_%S') . '.png'<CR>:execute '!mkdir -p ' . @% . '.img'<CR>:execute '!gnome-screenshot -a -f \"' . scrotfname . '\"'<CR>:execute 'normal! a' . scrotfname<CR><Esc>"
 
 -- km.inkeymap('<A-S>', screenshot_sequence, {noremap = true, silent = true})
+
+-- Toggle File explorer
+km.nkeymap('<leader>n', '<cmd>NvpunkExplorerToggle<cr>')
+
+-- Keymaps for Goto Preview
+km.nkeymap('<leader>pd', '<cmd>lua require("goto-preview").goto_preview_definition()<cr>')
+km.nkeymap('<leader>pt', '<cmd>lua require("goto-preview").goto_preview_type_implementation()<cr>')
+km.nkeymap('<leader>pi', '<cmd>lua require("goto-preview").goto_preview_implementation()<cr>')
+km.nkeymap('<leader>pr', '<cmd>lua require("goto-preview").goto_preview_references()<cr>')
 
 ----------
 ---------- Tweaks to defaults

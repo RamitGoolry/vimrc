@@ -94,7 +94,10 @@ return {
     {
       'rmagatti/goto-preview',
       config = function()
-            require('goto-preview').setup {}
+            require('goto-preview').setup {
+                height = 25;
+                width = 120;
+            }
       end
     }
 }
