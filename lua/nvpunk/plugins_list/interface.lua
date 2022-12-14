@@ -22,6 +22,15 @@ return {
         end,
     },
 
+    -- treesitter based context
+    {
+        'nvim-treesitter/nvim-treesitter-context',
+        run = function()
+            require('nvim-treesitter-context').setup{}
+            vim.cmd [[TSContextEnable]]
+        end
+    },
+
     -- rainbow delimiters (brackets etc)
     -- use 'p00f/nvim-ts-rainbow'
 
@@ -87,7 +96,7 @@ return {
     -- better quick fix pane
     {'kevinhwang91/nvim-bqf'},
 
-    -- Copilot : AI Assisted Development
+    -- Copilot : AI Assisted Development (Disabled by default)
     {'github/copilot.vim'},
 
     -- Goto Preview
@@ -99,5 +108,8 @@ return {
                 width = 120;
             }
       end
-    }
+    },
+
+    -- NERDCommenter : Easy commenting
+    {'preservim/nerdcommenter'}
 }
