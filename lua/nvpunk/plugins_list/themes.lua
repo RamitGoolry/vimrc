@@ -13,5 +13,7 @@ return {
     {'rose-pine/neovim', as = 'rose-pine'},
     {'rebelot/kanagawa.nvim'},
     {'kvrohit/mellow.nvim'},
-    {'w3barsi/barstrata.nvim'}
+    {'w3barsi/barstrata.nvim'},
+    {'sainnhe/sonokai'},
+    {'nyoom-engineering/oxocarbon.nvim'}
 }

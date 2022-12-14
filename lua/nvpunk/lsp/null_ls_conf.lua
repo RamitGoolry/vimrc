@@ -24,7 +24,7 @@ null_ls.setup {
         formatting.black,
         formatting.prettier,
         -- diagnostics.eslint,
-        diagnostics.flake8,
+        -- diagnostics.flake8,
         -- null_ls.builtins.completion.spell,
     },
     on_init = function(new_client, _)
