@@ -29,6 +29,7 @@ local configs = {
     'nvpunk.plugins_conf.fidget_conf',
     'nvpunk.plugins_conf.indent_blankline_conf',
     'nvpunk.plugins_conf.bqf_conf',
+    'nvpunk.plugins_conf.copilot'
     -- 'nvpunk.plugins_conf.noice_conf',
 }
 
