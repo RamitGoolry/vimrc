@@ -24,8 +24,8 @@ local vim_opts = {
     updatetime = 300,  -- faster completion
     writebackup = false,
     expandtab = true,  -- use spaces instead of tabulations
-    shiftwidth = 4,  -- tab = 4 spaces
-    tabstop = 4,  -- if there are tabulations, show them as 4 spaces
+    shiftwidth = 2,  -- tab = 4 spaces
+    tabstop = 2,  -- if there are tabulations, show them as 4 spaces
     cursorline = true,  -- highlight cursor line
     number = true,
     relativenumber = true,
@@ -37,7 +37,9 @@ local vim_opts = {
     colorcolumn = require'nvpunk.preferences'.get_column_mark_enabled() and {80} or {},
     timeoutlen = 500,
     -- hidden = true,  -- allow hidden buffers (mostly for toggleterm)
-    mousescroll = 'ver:3,hor:6'
+    mousescroll = 'ver:3,hor:6',
+
+    --  
 }
 
 -- unsure what it does, docs:
