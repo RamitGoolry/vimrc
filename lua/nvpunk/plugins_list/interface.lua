@@ -32,7 +32,7 @@ return {
     },
 
     -- rainbow delimiters (brackets etc)
-    -- use 'p00f/nvim-ts-rainbow'
+    -- { 'p00f/nvim-ts-rainbow' },
 
     -- better tabline
     {
@@ -113,6 +113,9 @@ return {
     -- NERDCommenter : Easy commenting
     {'preservim/nerdcommenter'},
 
-    -- Undotree
-    {'mbbill/undotree'}
+    -- Undotree : Code History
+    {'mbbill/undotree'},
+
+    -- Harpoon : Fast file navigation
+    {'ThePrimeagen/harpoon'}
 }

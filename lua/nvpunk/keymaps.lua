@@ -70,11 +70,20 @@ km.nkeymap('<leader>T', '<cmd>TroubleToggle<cr>', 'Trouble')
 km.nkeymap('<leader>u', '<cmd>UndotreeToggle<cr>', 'Undo Tree')
 
 ----------
+---------- Harpoon
+----------
+
+km.keymap('n', '<leader>a', '<cmd>lua require("harpoon.mark").add_file()<cr>', 'Harpoon Add File')
+km.keymap('n', '<leader>;', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', 'Harpoon Quick Menu')
+km.keymap('n', '<C-n>', '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoon to next file')
+km.keymap('n', '<C-p>', '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Harpoon to previous file')
+
+----------
 ---------- View Splitter
 ----------
 
-km.nkeymap('<leader>%', '<cmd>vsplit<cr>')
-km.nkeymap('<leader>"', '<cmd>split<cr>')
+km.nkeymap('<leader>%', '<cmd>vsplit<cr>', 'ﲖ Vertical Split')
+km.nkeymap('<leader>"', '<cmd>split<cr>', 'ﲐ Horizontal Split')
 
 ----------
 ---------- Terminal splitter

@@ -5,9 +5,6 @@ return {
     -- great html shortcuts
     {'mattn/emmet-vim'},
 
-    -- comment shortcuts
-    {'numToStr/Comment.nvim'},
-
     -- auto insert matching brackets and quotes
     {'windwp/nvim-autopairs'},
 
