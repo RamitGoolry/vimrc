@@ -111,5 +111,8 @@ return {
     },
 
     -- NERDCommenter : Easy commenting
-    {'preservim/nerdcommenter'}
+    {'preservim/nerdcommenter'},
+
+    -- Undotree
+    {'mbbill/undotree'}
 }

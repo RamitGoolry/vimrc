@@ -62,13 +62,27 @@ km.tkeymap('<Esc><Esc>', '<C-\\><C-n>')
 
 km.nkeymap('<leader>T', '<cmd>TroubleToggle<cr>', 'Trouble')
 
+
+----------
+---------- Undo Tree
+----------
+
+km.nkeymap('<leader>u', '<cmd>UndotreeToggle<cr>', 'Undo Tree')
+
+----------
+---------- View Splitter
+----------
+
+km.nkeymap('<leader>%', '<cmd>vsplit<cr>')
+km.nkeymap('<leader>"', '<cmd>split<cr>')
+
 ----------
 ---------- Terminal splitter
 ----------
 
 km.wk.register({ ['<leader>/'] = { name = ' Term Split' } })
-km.nkeymap('<leader>/v', '<cmd>vs<cr><cmd>terminal<cr>', 'ﲖ Vertical')
-km.nkeymap('<leader>/h', '<cmd>sp<cr><cmd>terminal<cr>', 'ﲐ Horizontal')
+km.nkeymap('<leader>/%', '<cmd>vs<cr><cmd>terminal<cr>', 'ﲖ Vertical')
+km.nkeymap('<leader>/"', '<cmd>sp<cr><cmd>terminal<cr>', 'ﲐ Horizontal')
 
 ----------
 ---------- Diff View

@@ -32,15 +32,15 @@ cmp.setup {
         -- ['<CR>'] = cmp.mapping.confirm({select=false}),
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
         ['<Tab>'] = cmp.mapping(function(fallback)
-            local copilot_keys = vim.fn['copilot#Accept']()
+            --local copilot_keys = vim.fn['copilot#Accept']()
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
-            elseif copilot_keys ~= '' and type(copilot_keys) == 'string' then
-                vim.api.nvim_feedkeys(copilot_keys, 'i', true)
             elseif has_words_before() then
                 cmp.complete()
+            --elseif copilot_keys ~= "" and then
+                --vim.api.nvim_feedkeys(copilot_keys, 'i', true)
             else
                 -- The fallback function sends a already mapped key.
                 -- In this case, it's probably `<Tab>`.
