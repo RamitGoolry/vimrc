@@ -117,5 +117,15 @@ return {
     {'mbbill/undotree'},
 
     -- Harpoon : Fast file navigation
-    {'ThePrimeagen/harpoon'}
+    {'ThePrimeagen/harpoon'},
+
+    -- ChatGPT : Chatbot inside Neovim
+    {
+      "jackMort/ChatGPT.nvim", 
+      requires = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
+    }
 }

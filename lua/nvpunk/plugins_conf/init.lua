@@ -13,7 +13,6 @@ local configs = {
     'nvpunk.plugins_conf.aerial_conf',
     -- lualine config done by theme manager
     'nvpunk.plugins_conf.bufferline_conf',
-    'nvpunk.plugins_conf.comment_conf',
     'nvpunk.plugins_conf.neotree_conf',
     'nvpunk.plugins_conf.whichkey_conf',
     'nvpunk.plugins_conf.telescope_conf',
@@ -29,8 +28,10 @@ local configs = {
     'nvpunk.plugins_conf.fidget_conf',
     'nvpunk.plugins_conf.indent_blankline_conf',
     'nvpunk.plugins_conf.bqf_conf',
-    'nvpunk.plugins_conf.copilot'
+    'nvpunk.plugins_conf.copilot',
     -- 'nvpunk.plugins_conf.noice_conf',
+    --'nvpunk.plugins_conf.undotree'
+    'nvpunk.plugins_conf.chatgpt'
 }
 
 local try = require'nvpunk.util.try'
