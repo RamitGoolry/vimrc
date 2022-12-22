@@ -9,7 +9,7 @@ return {
     {'windwp/nvim-autopairs'},
 
     -- for surrounding text with delimiters such as brackets and quotes
-    {'echasnovski/mini.surround'},
+    {'tpope/vim-surround'},
 
     -- For quickly switching between camel and snake case etc
     {'arthurxavierx/vim-caser'},

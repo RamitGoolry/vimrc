@@ -19,7 +19,6 @@ local configs = {
     'nvpunk.plugins_conf.toggleterm_conf',
     'nvpunk.plugins_conf.gitsigns_conf',
     'nvpunk.plugins_conf.alpha_conf',
-    'nvpunk.plugins_conf.mini_surround_conf',
     'nvpunk.plugins_conf.dressing_conf',
     'nvpunk.plugins_conf.navic_conf',
     'nvpunk.dap',
@@ -31,7 +30,7 @@ local configs = {
     'nvpunk.plugins_conf.copilot',
     -- 'nvpunk.plugins_conf.noice_conf',
     --'nvpunk.plugins_conf.undotree'
-    'nvpunk.plugins_conf.chatgpt'
+    --'nvpunk.plugins_conf.chatgpt_conf'
 }
 
 local try = require'nvpunk.util.try'
