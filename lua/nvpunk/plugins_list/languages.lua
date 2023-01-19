@@ -18,5 +18,11 @@ return {
     {'wuelnerdotexe/vim-astro'},
 
     -- support for MDX
-    {'jxnblk/vim-mdx-js'}
+    {'jxnblk/vim-mdx-js'},
+    
+    -- GraphQL Support
+    {'jparise/vim-graphql'},
+
+    -- Typescript Twoslash Queries for quick type inference
+    {'marilari88/twoslash-queries.nvim'}
 }

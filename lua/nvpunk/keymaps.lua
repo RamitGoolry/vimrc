@@ -16,6 +16,12 @@ vim.g.maplocalleader = ';'
 
 km.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')
 
+
+-- Copilot Keymaps
+km.nkeymap('<leader>Ce', '<cmd>Copilot enable<cr>', 'Enable Copilot')
+km.nkeymap('<leader>Cd', '<cmd>Copilot disable<cr>', 'Disable Copilot')
+
+
 -- Alt ^ wraps selection in <sup>whatever</sup>
 -- Alt _ wraps selection in <sub>whatever</sub>
 -- km.vkeymap('<A-^>', 'c<sup><Esc>pa</sup><Esc>')
@@ -33,10 +39,10 @@ km.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')
 km.nkeymap('<leader>n', '<cmd>NvpunkExplorerToggle<cr>')
 
 -- Keymaps for Goto Preview
-km.nkeymap('<leader>pd', '<cmd>lua require("goto-preview").goto_preview_definition()<cr>')
-km.nkeymap('<leader>pt', '<cmd>lua require("goto-preview").goto_preview_type_implementation()<cr>')
-km.nkeymap('<leader>pi', '<cmd>lua require("goto-preview").goto_preview_implementation()<cr>')
-km.nkeymap('<leader>pr', '<cmd>lua require("goto-preview").goto_preview_references()<cr>')
+km.nkeymap('<leader>pd', '<cmd>lua require("goto-preview").goto_preview_definition()<cr>', 'Open definition preview')
+km.nkeymap('<leader>pt', '<cmd>lua require("goto-preview").goto_preview_type_implementation()<cr>', 'Open type preview')
+km.nkeymap('<leader>pi', '<cmd>lua require("goto-preview").goto_preview_implementation()<cr>', 'Open implementation preview')
+km.nkeymap('<leader>pr', '<cmd>lua require("goto-preview").goto_preview_references()<cr>', 'Open references preview')
 
 ----------
 ---------- Tweaks to defaults

@@ -25,4 +25,5 @@ require'mason-lspconfig'.setup_handlers {
     ['sumneko_lua'] = require'nvpunk.lsp.langs.sumneko_lua',
     ['jdtls'] = require'nvpunk.lsp.langs.nvim_jdtls',
     ['ltex'] = require'nvpunk.lsp.langs.ltex',
+    ['tsserver'] = require'nvpunk.lsp.langs.tsserver'
 }

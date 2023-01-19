@@ -24,7 +24,7 @@ local vim_opts = {
     updatetime = 300,  -- faster completion
     writebackup = false,
     expandtab = true,  -- use spaces instead of tabulations
-    shiftwidth = 2,  -- tab = 4 spaces
+    shiftwidth = 2,  -- tab = 2 spaces
     tabstop = 2,  -- if there are tabulations, show them as 4 spaces
     cursorline = true,  -- highlight cursor line
     number = true,
@@ -38,7 +38,8 @@ local vim_opts = {
     timeoutlen = 500,
     -- hidden = true,  -- allow hidden buffers (mostly for toggleterm)
     mousescroll = 'ver:3,hor:6',
-
+    autoindent = true,
+    smartindent=true
     --  
 }
 
