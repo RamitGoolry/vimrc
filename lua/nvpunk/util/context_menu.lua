@@ -98,70 +98,70 @@ end
 
 M.set_lsp_rclick_menu = function()
     M.set_rclick_submenu('NvpunkLspMenu', 'LSP         ', {
-        {'Code Actions           <space>ca', '<space>ca'},
+        {'Code Actions                 ;ca', ';ca'},
         {'Go to Declaration             gD',        'gD'},
         {'Go to Definition              gd',        'gd'},
         {'Go to Implementation          gI',        'gI'},
         {'Signature Help             <C-k>',     '<C-k>'},
-        {'Rename                 <space>rn', '<space>rn'},
+        {'Rename                       ;rn',       ';rn'},
         {'References                    gr',        'gr'},
-        {'Expand Diagnostics      <space>e',  '<space>e'},
-        {'Auto Format             <space>f',  '<space>f'},
+        {'Expand Diagnostics            ;e',        ';e'},
+        {'Auto Format                   ;f',        ';f'},
     }, M.buf_has_lsp)
 end
 
 M.set_java_rclick_menu = function()
     M.set_rclick_submenu('NvpunkJavaMenu', 'Java        ', {
-        {'Test Class            <space>bjc',  '<space>bjc'},
-        {'Test Nearest Method   <space>bjn',  '<space>bjn'},
-        {'Refresh Debugger      <space>bjr',  '<space>bjr'},
+        {'Test Class                  ;bjc',      ';bjc'},
+        {'Test Nearest Method         ;bjn',      ';bjn'},
+        {'Refresh Debugger            ;bjr',      ';bjr'},
     }, function() return vim.bo.filetype == 'java' end)
 end
 
 M.set_dap_rclick_menu = function()
     M.set_rclick_submenu('NvpunkDapMenu', 'Debug       ', {
-        {'Show DAP UI           <space>bu',   '<space>bu'},
-        {'Toggle Breakpoint     <space>bb',   '<space>bb'},
-        {'Continue              <space>bc',   '<space>bc'},
-        {'Terminate             <space>bk',   '<space>bk'},
+        {'Show DAP UI                 ;bu',   '      ;bu'},
+        {'Toggle Breakpoint           ;bb',   '      ;bb'},
+        {'Continue                    ;bc',   '      ;bc'},
+        {'Terminate                   ;bk',   '      ;bk'},
     }, M.buf_has_dap)
 end
 
 -- M.set_nvimtree_rclick_menu = function()
 --     M.set_rclick_submenu('NvpunkFileTreeMenu', 'File        ', {
---         {'New File              <space>fn',   '<space>fn'},
+--         {'New File                    ;fn',   '      ;fn'},
 --         {'Rename                     <F2>',   '<F2>'},
 --     }, function() return vim.bo.filetype == 'NvimTree' end)
 -- end
 
 M.set_neotree_rclick_menu = function()
     M.set_rclick_submenu('NvpunkNeoTreeMenu', 'File        ', {
-        {'New File              <space>fn',   '<space>fn'},
-        {'New Folder            <space>dn',   '<space>dn'},
+        {'New File                    ;fn',   ';fn'},
+        {'New Folder                  ;dn',   ';dn'},
         {'Rename                     <F2>',   '<F2>'},
         {'Toggle Hidden             <C-h>',   '<C-h>'},
         {'Split Horizontally            i',   'i'},
         {'Split Vertically              s',   's'},
         {'Open in New Tab               t',   't'},
-        {'Git Add               <space>ga',   '<space>ga'},
-        {'Git Unstage           <space>gu',   '<space>gu'},
+        {'Git Add                     ;ga',   ';ga'},
+        {'Git Unstage                 ;gu',   ';gu'},
     }, function() return vim.bo.filetype == 'neo-tree' end)
 end
 
 M.set_telescope_rclick_menu = function()
     M.set_rclick_submenu('NvpunkTelescopeMenu', 'Telescope   ', {
-        {'Find File             <space>tf',   '<space>tf'},
-        {'Live Grep             <space>tg',   '<space>tg'},
-        {'Recent Files          <space>th',   '<space>th'},
+        {'Find File                   ;tf',   ';tf'},
+        {'Live Grep                   ;tg',   ';tg'},
+        {'Recent Files                ;th',   ';th'},
     })
 end
 
 M.set_git_rclick_menu = function()
     M.set_rclick_submenu('NvpunkGitMenu', 'Git         ', {
-        {'Preview Changes       <space>g?',   '<space>g?'},
-        {'Prev Hunk             <space>g[',   '<space>g['},
-        {'Next Hunk             <space>g]',   '<space>g]'},
-        {'Blame Line            <space>gb',   '<space>gb'},
+        {'Preview Changes             ;g?',   ';g?'},
+        {'Prev Hunk                   ;g[',   ';g['},
+        {'Next Hunk                   ;g]',   ';g]'},
+        {'Blame Line                  ;gb',   ';gb'},
     }, M.buf_is_file)
 end
 

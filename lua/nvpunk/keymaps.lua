@@ -6,7 +6,7 @@ local km = require'nvpunk.util.keymapper'
 ---------- Leader
 ----------
 
---Remap space as leader key
+--Remap semicolon as leader key
 vim.g.mapleader = ';'
 vim.g.maplocalleader = ';'
 

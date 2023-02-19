@@ -14,6 +14,9 @@ return {
     -- git gutter
     {'lewis6991/gitsigns.nvim'},
 
+    -- git blame
+    {'APZelos/blamer.nvim'},
+
     -- treesitter based syntax highlighting
     {
         'nvim-treesitter/nvim-treesitter',

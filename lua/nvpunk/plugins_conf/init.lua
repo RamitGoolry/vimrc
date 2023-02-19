@@ -11,6 +11,7 @@ local configs = {
     'nvpunk.lsp',
     'nvpunk.plugins_conf.autopairs_conf',
     'nvpunk.plugins_conf.aerial_conf',
+     'nvpunk.plugins_conf.blamer_conf',
     -- lualine config done by theme manager
     'nvpunk.plugins_conf.bufferline_conf',
     'nvpunk.plugins_conf.neotree_conf',
@@ -22,7 +23,6 @@ local configs = {
     'nvpunk.plugins_conf.dressing_conf',
     'nvpunk.plugins_conf.navic_conf',
     'nvpunk.dap',
-    'nvpunk.plugins_conf.numbertoggle_conf',
     'nvpunk.plugins_conf.ufo_conf',
     'nvpunk.plugins_conf.fidget_conf',
     'nvpunk.plugins_conf.indent_blankline_conf',
