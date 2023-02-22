@@ -29,13 +29,23 @@ M.set_lsp_keymaps = function(client, bufnr, extra_keymaps)
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings
+    --
+    bm.nkeymap('tD', function()
+      vim.cmd 'tab split'
+      vim.lsp.buf.declaration()
+    end, 'Tab split definition')
+
+    bm.nkeymap('td', function()
+      vim.cmd 'tab split'
+      vim.lsp.buf.definition()
+    end, 'Tab split definition')
 
     bm.nkeymap('gD', function()
-        vim.cmd'tab split'
+        --vim.cmd'tab split'
         vim.lsp.buf.declaration()
     end, 'Declaration')
     bm.nkeymap('gd', function()
-        vim.cmd'tab split'
+        --vim.cmd'tab split'
         vim.lsp.buf.definition()
     end, 'Definition')
     bm.nkeymap('K', vim.lsp.buf.hover)
