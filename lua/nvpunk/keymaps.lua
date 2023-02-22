@@ -14,20 +14,19 @@ vim.g.maplocalleader = ';'
 ---------- Personal shortcuts
 ----------
 
-km.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')
+-- RapidReturn Keymaps
 
+km.nkeymap('<leader>rs', '<cmd>lua require("rapid_return").save()<cr>', '💾 Save Cursor')
+km.nkeymap('<leader>rr', '<cmd>lua require("rapid_return").rewind()<cr>', '⏪ Rewind Cursor')
+km.nkeymap('<leader>rf', '<cmd>lua require("rapid_return").forward()<cr>', '⏩ Forward Cursor')
+km.nkeymap('<leader>rc', '<cmd>lua require("rapid_return").clear()<cr>', 'Clear All Cursors')
+
+
+km.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')
 
 -- Copilot Keymaps
 km.nkeymap('<leader>Ce', '<cmd>Copilot enable<cr>', 'Enable Copilot')
 km.nkeymap('<leader>Cd', '<cmd>Copilot disable<cr>', 'Disable Copilot')
-
-
--- Alt ^ wraps selection in <sup>whatever</sup>
--- Alt _ wraps selection in <sub>whatever</sub>
--- km.vkeymap('<A-^>', 'c<sup><Esc>pa</sup><Esc>')
--- km.vkeymap('<A-_>', 'c<sub><Esc>pa</sub><Esc>')
--- km.inkeymap('<A-^>', '<Esc>s<sup><Esc>pa</sup>')
--- km.inkeymap('<A-_>', '<Esc>s<sub><Esc>pa</sub>')
 
 -- Alt S takes a screenshot and saves in a folder called by the filename.img
 -- with the name as datetime and inserts it in the text
@@ -43,6 +42,7 @@ km.nkeymap('<leader>pd', '<cmd>lua require("goto-preview").goto_preview_definiti
 km.nkeymap('<leader>pt', '<cmd>lua require("goto-preview").goto_preview_type_implementation()<cr>', 'Open type preview')
 km.nkeymap('<leader>pi', '<cmd>lua require("goto-preview").goto_preview_implementation()<cr>', 'Open implementation preview')
 km.nkeymap('<leader>pr', '<cmd>lua require("goto-preview").goto_preview_references()<cr>', 'Open references preview')
+
 
 ----------
 ---------- Tweaks to defaults

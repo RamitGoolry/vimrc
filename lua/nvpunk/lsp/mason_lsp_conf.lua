@@ -12,7 +12,6 @@ require'mason-lspconfig'.setup {
         'ltex',
         'pyright',
         'rust_analyzer',
-        'sumneko_lua',
         'tsserver',
         'vimls',
         'vuels',
@@ -22,7 +21,6 @@ require'mason-lspconfig'.setup {
 require'mason-lspconfig'.setup_handlers {
     require'nvpunk.lsp.langs.default'.setup,
     ['pyright'] = require'nvpunk.lsp.langs.pyright',
-    ['sumneko_lua'] = require'nvpunk.lsp.langs.sumneko_lua',
     ['jdtls'] = require'nvpunk.lsp.langs.nvim_jdtls',
     ['ltex'] = require'nvpunk.lsp.langs.ltex',
     ['tsserver'] = require'nvpunk.lsp.langs.tsserver'

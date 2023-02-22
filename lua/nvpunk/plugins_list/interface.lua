@@ -118,4 +118,8 @@ return {
 
     -- Harpoon : Fast file navigation
     {'ThePrimeagen/harpoon'},
+
+    -- RapidReturn : Stack based return jumps
+    --{'~/Desktop/Code/RapidReturn'}
+    {'RamitGoolry/RapidReturn'}
 }
