@@ -16,10 +16,11 @@ vim.g.maplocalleader = ';'
 
 -- RapidReturn Keymaps
 
-km.nkeymap('rs', '<cmd>lua require("rapid_return").save()<cr>', '💾 Save Cursor')
-km.nkeymap('rr', '<cmd>lua require("rapid_return").rewind()<cr>', '⏪ Rewind Cursor')
-km.nkeymap('rf', '<cmd>lua require("rapid_return").forward()<cr>', '⏩ Forward Cursor')
-km.nkeymap('rc', '<cmd>lua require("rapid_return").clear()<cr>', 'Clear All Cursors')
+km.nkeymap('rs', '<cmd>lua require("rapid_return").cmd.save()<cr>', '💾 Save Cursor')
+km.nkeymap('rr', '<cmd>lua require("rapid_return").cmd.rewind()<cr>', '⏪ Rewind Cursor')
+km.nkeymap('rf', '<cmd>lua require("rapid_return").cmd.forward()<cr>', '⏩ Forward Cursor')
+km.nkeymap('rc', '<cmd>lua require("rapid_return").cmd.clear()<cr>', 'Clear All Cursors')
+km.nkeymap('ruh', '<cmd>lua require("rapid_return").ui.history()<cr>', 'Clear All Cursors')
 
 
 km.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')
