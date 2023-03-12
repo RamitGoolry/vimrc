@@ -10,7 +10,7 @@ local builtin_themes = {
     'dracula',
     'gruvbox_dark',
     'gruvbox_medium',
-    'kanagawa',
+    --'kanagawa',
     'mellow',
     'monokai',
     'monokai_pro',
