@@ -61,9 +61,6 @@ return {
     -- use telescope as a selector for code actions and more things
     {'nvim-telescope/telescope-ui-select.nvim'},
 
-    -- toggle-able terminal (ctrl backslash)
-    {'akinsho/toggleterm.nvim'},
-
     -- greeter
     {'goolord/alpha-nvim', branch = 'main'},
 
@@ -120,6 +117,6 @@ return {
     {'ThePrimeagen/harpoon'},
 
     -- RapidReturn : Stack based return jumps
-    --{'~/Desktop/Code/RapidReturn'}
-    {'RamitGoolry/RapidReturn'}
+    {'~/Desktop/Code/RapidReturn'}
+    --{'RamitGoolry/RapidReturn'}
 }

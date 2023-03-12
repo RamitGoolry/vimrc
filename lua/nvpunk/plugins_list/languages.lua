@@ -24,5 +24,5 @@ return {
     {'jparise/vim-graphql'},
 
     -- Typescript Twoslash Queries for quick type inference
-    {'marilari88/twoslash-queries.nvim'}
+    --{'marilari88/twoslash-queries.nvim'}
 }
