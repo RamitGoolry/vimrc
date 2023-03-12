@@ -17,7 +17,6 @@ local configs = {
     'nvpunk.plugins_conf.neotree_conf',
     'nvpunk.plugins_conf.whichkey_conf',
     'nvpunk.plugins_conf.telescope_conf',
-    'nvpunk.plugins_conf.toggleterm_conf',
     'nvpunk.plugins_conf.gitsigns_conf',
     'nvpunk.plugins_conf.alpha_conf',
     'nvpunk.plugins_conf.dressing_conf',
@@ -30,7 +29,6 @@ local configs = {
     'nvpunk.plugins_conf.copilot',
     -- 'nvpunk.plugins_conf.noice_conf',
     --'nvpunk.plugins_conf.undotree'
-    --'nvpunk.plugins_conf.chatgpt_conf'
 }
 
 local try = require'nvpunk.util.try'
