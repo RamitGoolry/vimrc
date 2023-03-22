@@ -98,10 +98,11 @@ end
 
 M.set_lsp_rclick_menu = function()
     M.set_rclick_submenu('NvpunkLspMenu', 'LSP         ', {
-        {'Code Actions                 ;ca', ';ca'},
+        {'Code Actions                 ;ca',       ';ca'},
         {'Go to Declaration             gD',        'gD'},
         {'Go to Definition              gd',        'gd'},
-        {'Go to Implementation          gI',        'gI'},
+        {'Go to Implementation          gi',        'gi'},
+        {'Go to References              gr',        'gr'},
         {'Signature Help             <C-k>',     '<C-k>'},
         {'Rename                       ;rn',       ';rn'},
         {'References                    gr',        'gr'},
@@ -109,6 +110,16 @@ M.set_lsp_rclick_menu = function()
         {'Auto Format                   ;f',        ';f'},
     }, M.buf_has_lsp)
 end
+
+M.set_preview_rclick_menu = function()
+  M.set_rclick_submenu("NvpunkPreviewMenu", "Preview     ", {
+    {'Definition                     ;pd',  ';pd'},
+    {'Type Implementation            ;pt',  ';pt'},
+    {'Implementation                 ;pi',  ';pi'},
+    {'References                     ;pr',  ';pr'},
+  }, M.buf_has_lsp)
+end
+
 
 M.set_java_rclick_menu = function()
     M.set_rclick_submenu('NvpunkJavaMenu', 'Java        ', {
@@ -170,9 +181,9 @@ M.setup_rclick_menu_autocommands = function()
         {'BufEnter', 'LspAttach'}, {
         callback = function()
             M.set_lsp_rclick_menu()
+            M.set_preview_rclick_menu()
             M.set_dap_rclick_menu()
             M.set_java_rclick_menu()
-            -- M.set_nvimtree_rclick_menu()
             M.set_neotree_rclick_menu()
             M.set_telescope_rclick_menu()
             M.set_git_rclick_menu()

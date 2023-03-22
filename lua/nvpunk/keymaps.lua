@@ -39,11 +39,10 @@ km.nkeymap('<leader>Cd', '<cmd>Copilot disable<cr>', 'Disable Copilot')
 km.nkeymap('<leader>n', '<cmd>NvpunkExplorerToggle<cr>')
 
 -- Keymaps for Goto Preview
-km.nkeymap('<leader>pd', '<cmd>lua require("goto-preview").goto_preview_definition()<cr>', 'Open definition preview')
-km.nkeymap('<leader>pt', '<cmd>lua require("goto-preview").goto_preview_type_implementation()<cr>', 'Open type preview')
-km.nkeymap('<leader>pi', '<cmd>lua require("goto-preview").goto_preview_implementation()<cr>', 'Open implementation preview')
-km.nkeymap('<leader>pr', '<cmd>lua require("goto-preview").goto_preview_references()<cr>', 'Open references preview')
-
+km.nkeymap('<leader>pd', '<cmd>lua require("goto-preview").goto_preview_definition()<cr>', 'Open Definition Preview')
+km.nkeymap('<leader>pt', '<cmd>lua require("goto-preview").goto_preview_type_implementation()<cr>', 'Open Type Preview')
+km.nkeymap('<leader>pi', '<cmd>lua require("goto-preview").goto_preview_implementation()<cr>', 'Open Implementation Preview')
+km.nkeymap('<leader>pr', '<cmd>lua require("goto-preview").goto_preview_references()<cr>', 'Open References Preview')
 
 ----------
 ---------- Tweaks to defaults
