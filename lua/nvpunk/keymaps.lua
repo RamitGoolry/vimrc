@@ -18,6 +18,7 @@ vim.g.maplocalleader = ';'
 
 km.nkeymap('rs', '<cmd>lua require("rapid_return").cmd.save()<cr>', '💾 Save Cursor')
 km.nkeymap('rr', '<cmd>lua require("rapid_return").cmd.rewind()<cr>', '⏪ Rewind Cursor')
+km.nkeymap('rR', '<cmd>lua require("rapid_return").cmd.rewind_all()<cr>', '⏪ Rewind All Cursors')
 km.nkeymap('rf', '<cmd>lua require("rapid_return").cmd.forward()<cr>', '⏩ Forward Cursor')
 km.nkeymap('rc', '<cmd>lua require("rapid_return").cmd.clear()<cr>', 'Clear All Cursors')
 km.nkeymap('ruh', '<cmd>lua require("rapid_return").ui.history()<cr>', 'Clear All Cursors')

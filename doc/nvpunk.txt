@@ -1,7 +1,5 @@
 ==============================================================================
 ------------------------------------------------------------------------------
-*nvpunk.txt*
-*nvpunk*
 
                                  NVPUNK MANUAL
                                  
@@ -41,7 +39,7 @@ REFERENCES.................................................|nvpunk-references|
 NAVIGATION                                                 *nvpunk-navigation*
 
 - Use the buttons in the greeter
-- Press `<space>`, `g` or `z` to explore more functionality
+- Press `;`, `g` or `z` to explore more functionality
 - Right click or press `<A-m>` to show the categorized context menu
 
 ==============================================================================
@@ -97,10 +95,9 @@ at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 ## General                                          *nvpunk-shortcuts-general*
 
 - `<RightMouse>`  Open context menu
-- `<A-m>`         Open context menu
-- `<space>A`      Open the greeter
-- `<space>T`      Toggle diagnostics panel
-- `<space>nd`     Dismiss notifications
+- `;A`      Open the greeter
+- `;T`      Toggle diagnostics panel
+- `;nd`     Dismiss notifications
 
 ## File explorer                                   *nvpunk-shortcuts-explorer*
 
@@ -110,17 +107,15 @@ at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 - `i`             Open file in horizontal split
 - `s`             Open file in vertical split
 - `<F2>`          Rename file
-- `<space>fn`     New file
-- `<space>fyy`    Copy file
-- `<space>fdd`    Cut file
-- `<space>fp`     Paste file
-- `<space>xo`     Open file/folder with system app
+- `;fn`     New file
+- `;fyy`    Copy file
+- `;fdd`    Cut file
+- `;fp`     Paste file
 
 ## Terminal                                        *nvpunk-shortcuts-terminal*
 
-- `<space>/h`     Open horizontal terminal
-- `<space>/v`     Open vertical terminal
-- `<C-\>`         Toggle floating terminal
+- `;/%`     Open horizontal terminal
+- `;/"`     Open vertical terminal
 - `<Esc><Esc>`    Get out of terminal mode
 
 ## Editing                                          *nvpunk-shortcuts-editing*
@@ -130,9 +125,10 @@ at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 
 ## Telescope                                      *nvpunk-shortcuts-telescope*
 
-- `<space>tg`     Live grep
-- `<space>tf`     Search for a file
-- `<space>th`     Recent files
+- `;tg`     Live grep
+- `;tf`     Search for a file
+- `;th`     Recent files
+- `;tr`     Use Telescope for find references through the LSP
 
 ## Telescope Prompt                        *nvpunk-shortcuts-telescope-prompt*
 
@@ -148,10 +144,9 @@ at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 
 ## Git                                                  *nvpunk-shortcuts-git*
 
-- `<space>g?`     Show git diff for the current line
-- `<space>g]`     Next git hunk
-- `<space>g[`     Previous git hunk
-- `<space>gb`     Git blame current line
+- `;g?`     Show git diff for the current line
+- `;g]`     Next git hunk
+- `;g[`     Previous git hunk
 
 ## Diff View                                       *nvpunk-shortcuts-diffview*
 
@@ -159,6 +154,14 @@ at the keybinds file(s) to browse all the shortcuts: |nvpunk-ref-keybinds|
 - `[c`   previous difference
 - `do`   diff obtain
 - `dp`   diff put
+
+# RapidReturn
+
+- `rs`    Push cursor location to stack
+- `rr`    Pop cursor location from stack
+- `rR`    Pop all the way to the bottom of the stack
+- `rc`    Clear stack
+- `ruh`   View cursor history UI
 
 ==============================================================================
 COMMANDS                                                     *nvpunk-commands* 

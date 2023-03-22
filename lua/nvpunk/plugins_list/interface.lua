@@ -102,7 +102,7 @@ return {
       config = function()
             require('goto-preview').setup {
                 height = 25;
-                width = 120;
+                width = 100;
             }
       end
     },
@@ -117,6 +117,6 @@ return {
     {'ThePrimeagen/harpoon'},
 
     -- RapidReturn : Stack based return jumps
-    {'~/Desktop/Code/RapidReturn'}
-    --{'RamitGoolry/RapidReturn'}
+    --{'~/Desktop/Code/RapidReturn'}
+    {'RamitGoolry/RapidReturn'}
 }

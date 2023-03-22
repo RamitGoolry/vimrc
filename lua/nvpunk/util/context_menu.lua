@@ -103,11 +103,10 @@ M.set_lsp_rclick_menu = function()
     {'Go to Definition              gd',        'gd'},
     {'Go to Implementation          gi',        'gi'},
     {'Go to References              gr',        'gr'},
-    {'Signature Help             <C-k>',     '<C-k>'},
+    --{'Signature Help             <C-k>',     '<C-k>'},
     {'Rename                       ;rn',       ';rn'},
-    {'References                    gr',        'gr'},
-    {'Expand Diagnostics            ;e',        ';e'},
-    {'Auto Format                   ;f',        ';f'},
+    --{'Expand Diagnostics            ;e',        ';e'},
+    --{'Auto Format                   ;f',        ';f'},
   }, M.buf_has_lsp)
 end
 
@@ -130,12 +129,12 @@ end
 --end
 
 M.set_dap_rclick_menu = function()
-    M.set_rclick_submenu('NvpunkDapMenu', 'Debug       ', {
-        {'Show DAP UI                 ;bu',   '      ;bu'},
-        {'Toggle Breakpoint           ;bb',   '      ;bb'},
-        {'Continue                    ;bc',   '      ;bc'},
-        {'Terminate                   ;bk',   '      ;bk'},
-    }, M.buf_has_dap)
+  M.set_rclick_submenu('NvpunkDapMenu', 'Debug       ', {
+    {'Show DAP UI                 ;bu',   '      ;bu'},
+    {'Toggle Breakpoint           ;bb',   '      ;bb'},
+    {'Continue                    ;bc',   '      ;bc'},
+    {'Terminate                   ;bk',   '      ;bk'},
+  }, M.buf_has_dap)
 end
 
 -- M.set_nvimtree_rclick_menu = function()
@@ -146,26 +145,27 @@ end
 -- end
 
 M.set_neotree_rclick_menu = function()
-    M.set_rclick_submenu('NvpunkNeoTreeMenu', 'File        ', {
-        {'New File                    ;fn',   ';fn'},
-        {'New Folder                  ;dn',   ';dn'},
-        {'Rename                     <F2>',   '<F2>'},
-        {'Toggle Hidden             <C-h>',   '<C-h>'},
-        {'Split Horizontally            i',   'i'},
-        {'Split Vertically              s',   's'},
-        {'Open in New Tab               t',   't'},
-        {'Git Add                     ;ga',   ';ga'},
-        {'Git Unstage                 ;gu',   ';gu'},
-    }, function() return vim.bo.filetype == 'neo-tree' end)
+  M.set_rclick_submenu('NvpunkNeoTreeMenu', 'File        ', {
+    {'New File                    ;fn',   ';fn'},
+    {'New Folder                  ;dn',   ';dn'},
+    {'Rename                     <F2>',   '<F2>'},
+    {'Toggle Hidden             <C-h>',   '<C-h>'},
+    {'Split Horizontally            i',   'i'},
+    {'Split Vertically              s',   's'},
+    {'Open in New Tab               t',   't'},
+    {'Git Add                     ;ga',   ';ga'},
+    {'Git Unstage                 ;gu',   ';gu'},
+  }, function() return vim.bo.filetype == 'neo-tree' end)
 end
 
 M.set_telescope_rclick_menu = function()
-    M.set_rclick_submenu('NvpunkTelescopeMenu', 'Telescope   ', {
-        {'Find File                   ;tf',   ';tf'},
-        {'Live Grep                   ;tg',   ';tg'},
-        {'Recent Files                ;th',   ';th'},
-        {'LSP References              ;tr',   ';tr'},
-    })
+  M.set_rclick_submenu('NvpunkTelescopeMenu', 'Telescope   ', {
+    {'Find File                   ;tf',   ';tf'},
+    {'Live Grep                   ;tg',   ';tg'},
+    {'Recent Files                ;th',   ';th'},
+    {'RapidReturn Stack           ruh',   'ruh'},
+    {'LSP References              ;tr',   ';tr'},
+  })
 end
 
 M.set_git_rclick_menu = function()
