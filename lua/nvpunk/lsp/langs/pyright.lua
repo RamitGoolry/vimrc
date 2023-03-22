@@ -11,7 +11,7 @@ return function()
         settings = {
             python = {
                 analysis = {
-                    stubPath = gistubgen_out_path
+                    --stubPath = gistubgen_out_path
                 }
             }
         }
