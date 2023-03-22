@@ -97,18 +97,18 @@ M.set_rclick_submenu = function(menu_name, submenu_label, items, bindif)
 end
 
 M.set_lsp_rclick_menu = function()
-    M.set_rclick_submenu('NvpunkLspMenu', 'LSP         ', {
-        {'Code Actions                 ;ca',       ';ca'},
-        {'Go to Declaration             gD',        'gD'},
-        {'Go to Definition              gd',        'gd'},
-        {'Go to Implementation          gi',        'gi'},
-        {'Go to References              gr',        'gr'},
-        {'Signature Help             <C-k>',     '<C-k>'},
-        {'Rename                       ;rn',       ';rn'},
-        {'References                    gr',        'gr'},
-        {'Expand Diagnostics            ;e',        ';e'},
-        {'Auto Format                   ;f',        ';f'},
-    }, M.buf_has_lsp)
+  M.set_rclick_submenu('NvpunkLspMenu', 'LSP         ', {
+    {'Code Actions                 ;ca',       ';ca'},
+    {'Go to Declaration             gD',        'gD'},
+    {'Go to Definition              gd',        'gd'},
+    {'Go to Implementation          gi',        'gi'},
+    {'Go to References              gr',        'gr'},
+    {'Signature Help             <C-k>',     '<C-k>'},
+    {'Rename                       ;rn',       ';rn'},
+    {'References                    gr',        'gr'},
+    {'Expand Diagnostics            ;e',        ';e'},
+    {'Auto Format                   ;f',        ';f'},
+  }, M.buf_has_lsp)
 end
 
 M.set_preview_rclick_menu = function()
@@ -121,13 +121,13 @@ M.set_preview_rclick_menu = function()
 end
 
 
-M.set_java_rclick_menu = function()
-    M.set_rclick_submenu('NvpunkJavaMenu', 'Java        ', {
-        {'Test Class                  ;bjc',      ';bjc'},
-        {'Test Nearest Method         ;bjn',      ';bjn'},
-        {'Refresh Debugger            ;bjr',      ';bjr'},
-    }, function() return vim.bo.filetype == 'java' end)
-end
+--M.set_java_rclick_menu = function()
+    --M.set_rclick_submenu('NvpunkJavaMenu', 'Java        ', {
+        --{'Test Class                  ;bjc',      ';bjc'},
+        --{'Test Nearest Method         ;bjn',      ';bjn'},
+        --{'Refresh Debugger            ;bjr',      ';bjr'},
+    --}, function() return vim.bo.filetype == 'java' end)
+--end
 
 M.set_dap_rclick_menu = function()
     M.set_rclick_submenu('NvpunkDapMenu', 'Debug       ', {
@@ -145,25 +145,26 @@ end
 --     }, function() return vim.bo.filetype == 'NvimTree' end)
 -- end
 
-M.set_neotree_rclick_menu = function()
-    M.set_rclick_submenu('NvpunkNeoTreeMenu', 'File        ', {
-        {'New File                    ;fn',   ';fn'},
-        {'New Folder                  ;dn',   ';dn'},
-        {'Rename                     <F2>',   '<F2>'},
-        {'Toggle Hidden             <C-h>',   '<C-h>'},
-        {'Split Horizontally            i',   'i'},
-        {'Split Vertically              s',   's'},
-        {'Open in New Tab               t',   't'},
-        {'Git Add                     ;ga',   ';ga'},
-        {'Git Unstage                 ;gu',   ';gu'},
-    }, function() return vim.bo.filetype == 'neo-tree' end)
-end
+--M.set_neotree_rclick_menu = function()
+    --M.set_rclick_submenu('NvpunkNeoTreeMenu', 'File        ', {
+        --{'New File                    ;fn',   ';fn'},
+        --{'New Folder                  ;dn',   ';dn'},
+        --{'Rename                     <F2>',   '<F2>'},
+        --{'Toggle Hidden             <C-h>',   '<C-h>'},
+        --{'Split Horizontally            i',   'i'},
+        --{'Split Vertically              s',   's'},
+        --{'Open in New Tab               t',   't'},
+        --{'Git Add                     ;ga',   ';ga'},
+        --{'Git Unstage                 ;gu',   ';gu'},
+    --}, function() return vim.bo.filetype == 'neo-tree' end)
+--end
 
 M.set_telescope_rclick_menu = function()
     M.set_rclick_submenu('NvpunkTelescopeMenu', 'Telescope   ', {
         {'Find File                   ;tf',   ';tf'},
         {'Live Grep                   ;tg',   ';tg'},
         {'Recent Files                ;th',   ';th'},
+        {'LSP References              ;tr',   ';tr'},
     })
 end
 
@@ -172,7 +173,6 @@ M.set_git_rclick_menu = function()
         {'Preview Changes             ;g?',   ';g?'},
         {'Prev Hunk                   ;g[',   ';g['},
         {'Next Hunk                   ;g]',   ';g]'},
-        {'Blame Line                  ;gb',   ';gb'},
     }, M.buf_is_file)
 end
 
@@ -183,8 +183,6 @@ M.setup_rclick_menu_autocommands = function()
             M.set_lsp_rclick_menu()
             M.set_preview_rclick_menu()
             M.set_dap_rclick_menu()
-            M.set_java_rclick_menu()
-            M.set_neotree_rclick_menu()
             M.set_telescope_rclick_menu()
             M.set_git_rclick_menu()
         end
