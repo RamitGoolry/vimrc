@@ -34,6 +34,8 @@ return {
         end
     },
 
+    { 'nvim-treesitter/playground' },
+
     -- rainbow delimiters (brackets etc)
     -- { 'p00f/nvim-ts-rainbow' },
 
@@ -102,7 +104,7 @@ return {
       config = function()
             require('goto-preview').setup {
                 height = 25;
-                width = 100;
+                width = 40;
             }
       end
     },
