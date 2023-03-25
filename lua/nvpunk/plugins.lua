@@ -31,7 +31,7 @@ local _packer_opts = {
 
 if vim.fn.has('macunix') == 1 then
     -- fix PackerSync freezing on mac
-    _packer_opts.max_jobs = 4
+    _packer_opts.max_jobs = 8
 end
 
 packer.init(_packer_opts)
