@@ -14,6 +14,9 @@ vim.g.maplocalleader = ';'
 ---------- Personal shortcuts
 ----------
 
+-- Quick new tab
+km.nkeymap('tt', '<cmd>tabnew<cr>', 'Create new tab')
+
 -- RapidReturn Keymaps
 
 km.nkeymap('rs', '<cmd>lua require("rapid_return").cmd.save()<cr>', '💾 Save Cursor')
@@ -21,7 +24,7 @@ km.nkeymap('rr', '<cmd>lua require("rapid_return").cmd.rewind()<cr>', '⏪ Rewin
 km.nkeymap('rR', '<cmd>lua require("rapid_return").cmd.rewind_all()<cr>', '⏪ Rewind All Cursors')
 km.nkeymap('rf', '<cmd>lua require("rapid_return").cmd.forward()<cr>', '⏩ Forward Cursor')
 km.nkeymap('rc', '<cmd>lua require("rapid_return").cmd.clear()<cr>', 'Clear All Cursors')
-km.nkeymap('ruh', '<cmd>lua require("rapid_return").ui.history()<cr>', 'Clear All Cursors')
+km.nkeymap('ruh', '<cmd>lua require("rapid_return").ui.history()<cr>', 'Show Cursor History')
 
 
 km.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')

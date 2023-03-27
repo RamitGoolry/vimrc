@@ -33,12 +33,22 @@ M.set_lsp_keymaps = function(client, bufnr, extra_keymaps)
     bm.nkeymap('tD', function()
       vim.cmd 'tab split'
       vim.lsp.buf.declaration()
-    end, 'Tab split definition')
+    end, 'New Tab : Goto Declaration')
 
     bm.nkeymap('td', function()
       vim.cmd 'tab split'
       vim.lsp.buf.definition()
-    end, 'Tab split definition')
+    end, 'New Tab : Goto Definition')
+
+    bm.nkeymap('ti', function()
+      vim.cmd 'tab split'
+      vim.lsp.buf.implementation()
+    end, 'New Tab : Goto Implementation')
+
+    bm.nkeymap('tr', function()
+      vim.cmd 'tab split'
+      vim.lsp.buf.references()
+    end, 'New Tab : Goto References')
 
     bm.nkeymap('gD', vim.lsp.buf.declaration, 'Declaration')
     bm.nkeymap('gd', vim.lsp.buf.definition, 'Definition')
