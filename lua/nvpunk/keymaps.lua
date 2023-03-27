@@ -45,6 +45,13 @@ km.nkeymap('<leader>pt', '<cmd>lua require("goto-preview").goto_preview_type_imp
 km.nkeymap('<leader>pi', '<cmd>lua require("goto-preview").goto_preview_implementation()<cr>', 'Open Implementation Preview')
 km.nkeymap('<leader>pr', '<cmd>lua require("goto-preview").goto_preview_references()<cr>', 'Open References Preview')
 
+-- Keys to resize a window. Their original keymaps absolutely suck
+-- TODO Only apply if you are in a goto preview window
+km.nkeymap("<S-left>", "<C-w><")
+km.nkeymap("<S-right>", "<C-w>>")
+km.nkeymap("<S-up>", "<C-w>-")
+km.nkeymap("<S-down>", "<C-w>+")
+
 ----------
 ---------- Tweaks to defaults
 ----------
