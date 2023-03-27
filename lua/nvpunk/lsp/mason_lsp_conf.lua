@@ -4,6 +4,7 @@ require'mason-lspconfig'.setup {
         'clangd',
         'cssls',
         'emmet_ls',
+        'gopls',
         'html',
         'jdtls',
         'jsonls',
@@ -22,5 +23,7 @@ require'mason-lspconfig'.setup_handlers {
     ['jdtls'] = require'nvpunk.lsp.langs.nvim_jdtls',
     ['ltex'] = require'nvpunk.lsp.langs.ltex',
     ['tsserver'] = require'nvpunk.lsp.langs.tsserver',
-    ['lua_ls'] = require'nvpunk.lsp.langs.lua_ls'
+    ['lua_ls'] = require'nvpunk.lsp.langs.lua_ls',
+    ['gopls'] = require'nvpunk.lsp.langs.gopls',
+    ['rust_analyzer'] = require'nvpunk.lsp.langs.rust_analyzer'
 }
