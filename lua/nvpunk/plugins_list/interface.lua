@@ -100,8 +100,8 @@ return {
 
     -- Goto Preview
     {
-      --'rmagatti/goto-preview',
-      '~/Desktop/Code/goto-preview',
+      'rmagatti/goto-preview',
+      --'~/Desktop/Code/goto-preview',
       config = function()
             require('goto-preview').setup {
                 height = 20;
