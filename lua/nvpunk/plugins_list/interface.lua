@@ -104,8 +104,8 @@ return {
       '~/Desktop/Code/goto-preview',
       config = function()
             require('goto-preview').setup {
-                height = 25;
-                width = 100;
+                height = 20;
+                width = 80;
             }
       end
     },
