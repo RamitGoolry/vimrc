@@ -121,5 +121,8 @@ return {
 
     -- RapidReturn : Stack based return jumps
     --{'~/Desktop/Code/RapidReturn'}
-    {'RamitGoolry/RapidReturn'}
+    {'RamitGoolry/RapidReturn'},
+
+    -- Todo Comments : Highight TODOs and other keywords
+    {'folke/todo-comments.nvim'}
 }
