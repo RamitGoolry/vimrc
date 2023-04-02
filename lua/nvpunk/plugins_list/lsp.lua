@@ -42,4 +42,7 @@ return {
 
     -- show language server starting progress in the lower left corner
     {'j-hui/fidget.nvim'},
+
+    -- Symbols outline for a file
+    {'simrat39/symbols-outline.nvim'},
 }
