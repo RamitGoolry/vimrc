@@ -96,6 +96,12 @@ km.keymap('n', '<C-n>', '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoo
 km.keymap('n', '<C-p>', '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Harpoon to previous file')
 
 ----------
+---------- Symbols Outline
+----------
+
+km.keymap('n', '<leader>so', '<cmd>SymbolsOutline<cr>', 'Symbols Outline')
+
+----------
 ---------- View Splitter
 ----------
 
