@@ -17,6 +17,12 @@ return {
     -- git blame
     {'APZelos/blamer.nvim'},
 
+    -- generate git permalinks
+    {
+      'ruifm/gitlinker.nvim',
+      requires = 'nvim-lua/plenary.nvim',
+    },
+
     -- treesitter based syntax highlighting
     {
         'nvim-treesitter/nvim-treesitter',

@@ -14,6 +14,9 @@ vim.g.maplocalleader = ';'
 ---------- Personal shortcuts
 ----------
 
+-- Git Linker : Copy Link
+km.nkeymap('<leader>gy', '<cmd>lua require("gitlinker").get_buf_range_url("n")', 'Copy Git Permalink')
+
 -- Quick new tab
 km.nkeymap('tt', '<cmd>tabnew<cr>', 'Create new tab')
 
