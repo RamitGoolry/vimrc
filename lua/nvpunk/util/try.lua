@@ -22,14 +22,6 @@ end
 --- Try to call require; show a notification if it fails
 ---@param module string
 M.require = function(module)
-<<<<<<< Updated upstream
-    return M.call(
-        require,
-        {module},
-        'Failed to load module ' .. module,
-        'nvpunk.try.require'
-    )
-=======
     --return M.call(
         --require,
         --{module},
@@ -38,6 +30,9 @@ M.require = function(module)
     --)
 	return require(module)
 >>>>>>> Stashed changes
+=======
+    --return require(module)
+>>>>>>> 2a2c54fa131e23847cbc36190c7232bdc4d77bcb
 end
 
 --- Try to load theme, show an error notification on fail

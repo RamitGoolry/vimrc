@@ -18,7 +18,9 @@ vim.g.maplocalleader = ';'
 km.nkeymap('<leader>gy', '<cmd>lua require("gitlinker").get_buf_range_url("n")', 'Copy Git Permalink')
 
 -- Quick new tab
-km.nkeymap('tt', '<cmd>tabnew<cr>', 'Create new tab')
+km.nkeymap('tt', '<cmd>tabnew<cr>', 'Create new Tab')
+km.nkeymap('tn', '<cmd>tabnext<cr>', 'Next Tab')
+km.nkeymap('tp', '<cmd>tabprevious<cr>', 'Previous Tab')
 
 -- RapidReturn Keymaps
 

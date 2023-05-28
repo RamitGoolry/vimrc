@@ -24,13 +24,14 @@ local vim_opts = {
     undofile = false,  -- disable persistent undos
     updatetime = 300,  -- faster completion
     writebackup = false,
-    expandtab = true,  -- use spaces instead of tabulations
-    shiftwidth = 2,  -- tab = 2 spaces
-    tabstop = 2,  -- if there are tabulations, show them as 4 spaces
+    expandtab = false,  -- use spaces instead of tabulations
+    shiftwidth = 4,  -- tab = 2 spaces
+    tabstop = 4,  -- if there are tabulations, show them as 4 spaces
     cursorline = true,  -- highlight cursor line
-    number = true,
-    relativenumber = true,
     signcolumn = 'yes:2',  -- always show sign column (git gutter?)
+	number = true,
+	relativenumber = true,
+	--statuscolumn = '%l %r ',
     wrap = true,  -- would want this off, but it's good for markdown and txt...
     -- scrolloff = 8,  -- always keep 8 lines below the cursor
     -- sidescrolloff = 8,  -- similar to above, for hscroll

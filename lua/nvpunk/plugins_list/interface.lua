@@ -11,6 +11,9 @@ return {
         's1n7ax/nvim-window-picker'
     }},
 
+	-- Fugitive : Git Wrapper
+	{'tpope/vim-fugitive'},
+
     -- git gutter
     {'lewis6991/gitsigns.nvim'},
 
@@ -130,5 +133,16 @@ return {
     {'RamitGoolry/RapidReturn'},
 
     -- Todo Comments : Highight TODOs and other keywords
-    {'folke/todo-comments.nvim'}
+    {'folke/todo-comments.nvim'},
+
+    -- TrueZen : Distraction Free Mode
+    {
+      "Pocco81/true-zen.nvim",
+      config = function()
+         require("true-zen").setup {
+          -- your config goes here
+          -- or just leave it empty :)
+         }
+      end,
+    }
 }
