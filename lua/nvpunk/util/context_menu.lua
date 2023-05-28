@@ -173,6 +173,7 @@ M.set_git_rclick_menu = function()
         {'Preview Changes             ;g?',   ';g?'},
         {'Prev Hunk                   ;g[',   ';g['},
         {'Next Hunk                   ;g]',   ';g]'},
+        {'Copy Permalink              ;gy',   ';gy'},
     }, M.buf_is_file)
 end
 

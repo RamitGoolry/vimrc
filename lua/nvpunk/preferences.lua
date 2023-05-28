@@ -8,7 +8,7 @@ local DEFAULT_PREFERENCES = {
     theme = 'onedark_warmer',
     greeter = 'punk',
     indent_blankline_enabled = true,
-    tab_style = 'slant',  -- 'slant' | 'padded_slant' | 'thin' | 'thick'
+    tab_style = 'thick',  -- 'slant' | 'padded_slant' | 'thin' | 'thick'
     navic_enabled = true,
     statusline_style = 'plain',  -- 'powerline' | 'plain' | 'plain_separators'
                                  -- | 'slant_low' | 'slant_high' | 'round'

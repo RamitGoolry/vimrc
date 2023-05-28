@@ -18,6 +18,7 @@ local configs = {
     'nvpunk.plugins_conf.whichkey_conf',
     'nvpunk.plugins_conf.telescope_conf',
     'nvpunk.plugins_conf.gitsigns_conf',
+    'nvpunk.plugins_conf.gitlinker_conf',
     'nvpunk.plugins_conf.alpha_conf',
     'nvpunk.plugins_conf.dressing_conf',
     'nvpunk.plugins_conf.navic_conf',

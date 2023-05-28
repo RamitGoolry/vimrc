@@ -28,6 +28,7 @@ M.require = function(module)
         'Failed to load module ' .. module,
         'nvpunk.try.require'
     )
+    --return require(module)
 end
 
 --- Try to load theme, show an error notification on fail
