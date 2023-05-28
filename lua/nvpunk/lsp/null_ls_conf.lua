@@ -5,7 +5,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 mason_null_ls.setup {
     ensure_installed = {
-        'stylua', 'jq', 'prettier', 'alex'
+        'stylua', 'prettier', 'alex'
     },
     automatic_installation = true,
     automatic_setup = true,
