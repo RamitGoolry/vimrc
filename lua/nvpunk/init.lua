@@ -16,8 +16,7 @@ vim.cmd([[
   command! Goiferr call append(line('.'), ['if err != nil {', '   return err, nil', '}'])
 ]])
 
--- Use Harpoon to load up all files
--- Step 1 : Check if vim has any commands passed to it
+-- Harpoon opens all tabs on start
 if vim.fn.argc() == 0 then
 	local harpoon = require('harpoon.mark')
 	local length = harpoon.get_length()

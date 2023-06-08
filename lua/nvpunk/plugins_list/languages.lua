@@ -25,7 +25,4 @@ return {
 
     -- Typescript Twoslash Queries for quick type inference
     --{'marilari88/twoslash-queries.nvim'}
-
-    -- Rust Tools
-    {'simrat39/rust-tools.nvim'}
 }
