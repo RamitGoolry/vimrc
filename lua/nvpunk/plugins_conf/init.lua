@@ -32,7 +32,6 @@ local configs = {
 	'nvpunk.plugins_conf.todo_comments_conf',
 	-- 'nvpunk.plugins_conf.noice_conf',
 	--'nvpunk.plugins_conf.undotree'
-	'nvpunk.plugins_conf.inlay_hints',
 }
 
 local try = require('nvpunk.util.try')

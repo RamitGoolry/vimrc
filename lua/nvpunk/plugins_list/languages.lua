@@ -24,7 +24,7 @@ return {
 	{ 'jparise/vim-graphql' },
 
 	-- Typescript Twoslash Queries for quick type inference
-	--{'marilari88/twoslash-queries.nvim'}
+	{ 'marilari88/twoslash-queries.nvim' },
 	--
-	{ 'lvimuser/lsp-inlayhints.nvim' },
+	{ 'simrat39/rust-tools.nvim' },
 }
