@@ -30,6 +30,7 @@ local configs = {
 	'nvpunk.plugins_conf.copilot',
 	'nvpunk.plugins_conf.symbols_outline_conf',
 	'nvpunk.plugins_conf.todo_comments_conf',
+	'nvpunk.plugins_conf.chatgpt_conf',
 	-- 'nvpunk.plugins_conf.noice_conf',
 	--'nvpunk.plugins_conf.undotree'
 }

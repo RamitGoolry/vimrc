@@ -1,6 +1,6 @@
 -- lsp/buffer specific keymaps in lsp/keymaps.lua
 
-local km = require'nvpunk.util.keymapper'
+local km = require('nvpunk.util.keymapper')
 
 ----------
 ---------- Leader
@@ -15,7 +15,11 @@ vim.g.maplocalleader = ';'
 ----------
 
 -- Git Linker : Copy Link
-km.nkeymap('<leader>gy', '<cmd>lua require("gitlinker").get_buf_range_url("n")', 'Copy Git Permalink')
+km.nkeymap(
+	'<leader>gy',
+	'<cmd>lua require("gitlinker").get_buf_range_url("n")',
+	'Copy Git Permalink'
+)
 
 -- Quick new tab
 km.nkeymap('tt', '<cmd>tabnew<cr>', 'Create new Tab')
@@ -24,13 +28,36 @@ km.nkeymap('tp', '<cmd>tabprevious<cr>', 'Previous Tab')
 
 -- RapidReturn Keymaps
 
-km.nkeymap('rs', '<cmd>lua require("rapid_return").cmd.save()<cr>', '💾 Save Cursor')
-km.nkeymap('rr', '<cmd>lua require("rapid_return").cmd.rewind()<cr>', '⏪ Rewind Cursor')
-km.nkeymap('rR', '<cmd>lua require("rapid_return").cmd.rewind_all()<cr>', '⏪ Rewind All Cursors')
-km.nkeymap('rf', '<cmd>lua require("rapid_return").cmd.forward()<cr>', '⏩ Forward Cursor')
-km.nkeymap('rc', '<cmd>lua require("rapid_return").cmd.clear()<cr>', 'Clear All Cursors')
-km.nkeymap('ruh', '<cmd>lua require("rapid_return").ui.history()<cr>', 'Show Cursor History')
-
+km.nkeymap(
+	'rs',
+	'<cmd>lua require("rapid_return").cmd.save()<cr>',
+	'💾 Save Cursor'
+)
+km.nkeymap(
+	'rr',
+	'<cmd>lua require("rapid_return").cmd.rewind()<cr>',
+	'⏪ Rewind Cursor'
+)
+km.nkeymap(
+	'rR',
+	'<cmd>lua require("rapid_return").cmd.rewind_all()<cr>',
+	'⏪ Rewind All Cursors'
+)
+km.nkeymap(
+	'rf',
+	'<cmd>lua require("rapid_return").cmd.forward()<cr>',
+	'⏩ Forward Cursor'
+)
+km.nkeymap(
+	'rc',
+	'<cmd>lua require("rapid_return").cmd.clear()<cr>',
+	'Clear All Cursors'
+)
+km.nkeymap(
+	'ruh',
+	'<cmd>lua require("rapid_return").ui.history()<cr>',
+	'Show Cursor History'
+)
 
 km.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')
 
@@ -48,17 +75,32 @@ km.nkeymap('<leader>Cd', '<cmd>Copilot disable<cr>', 'Disable Copilot')
 km.nkeymap('<leader>n', '<cmd>NvpunkExplorerToggle<cr>')
 
 -- Keymaps for Goto Preview
-km.nkeymap('<leader>pd', '<cmd>lua require("goto-preview").goto_preview_definition()<cr>', 'Open Definition Preview')
-km.nkeymap('<leader>pt', '<cmd>lua require("goto-preview").goto_preview_type_implementation()<cr>', 'Open Type Preview')
-km.nkeymap('<leader>pi', '<cmd>lua require("goto-preview").goto_preview_implementation()<cr>', 'Open Implementation Preview')
-km.nkeymap('<leader>pr', '<cmd>lua require("goto-preview").goto_preview_references()<cr>', 'Open References Preview')
+km.nkeymap(
+	'<leader>pd',
+	'<cmd>lua require("goto-preview").goto_preview_definition()<cr>',
+	'Open Definition Preview'
+)
+km.nkeymap(
+	'<leader>pt',
+	'<cmd>lua require("goto-preview").goto_preview_type_implementation()<cr>',
+	'Open Type Preview'
+)
+km.nkeymap(
+	'<leader>pi',
+	'<cmd>lua require("goto-preview").goto_preview_implementation()<cr>',
+	'Open Implementation Preview'
+)
+km.nkeymap(
+	'<leader>pr',
+	'<cmd>lua require("goto-preview").goto_preview_references()<cr>',
+	'Open References Preview'
+)
 
 -- Keys to resize a window. Their original keymaps absolutely suck
--- TODO Only apply if you are in a goto preview window
-km.nkeymap("<S-left>", "<C-w><")
-km.nkeymap("<S-right>", "<C-w>>")
-km.nkeymap("<S-up>", "<C-w>-")
-km.nkeymap("<S-down>", "<C-w>+")
+km.nkeymap('<S-left>', '<C-w><')
+km.nkeymap('<S-right>', '<C-w>>')
+km.nkeymap('<S-up>', '<C-w>-')
+km.nkeymap('<S-down>', '<C-w>+')
 
 ----------
 ---------- Tweaks to defaults
@@ -70,7 +112,7 @@ km.vkeymap('>', '>gv')
 
 -- move selection
 km.vkeymap('<A-k>', ':m \'<-2<CR>gv=gv')
-km.vkeymap('<A-j>', ':m \'>+1<CR>gv=gv')  -- this doesn't seem to work
+km.vkeymap('<A-j>', ':m \'>+1<CR>gv=gv') -- this doesn't seem to work
 
 -- pasting in visual mode doesn't overwrite the clipboard content
 km.vkeymap('p', '"_dP')
@@ -84,7 +126,6 @@ km.tkeymap('<Esc><Esc>', '<C-\\><C-n>')
 
 km.nkeymap('<leader>T', '<cmd>TroubleToggle<cr>', 'Trouble')
 
-
 ----------
 ---------- Undo Tree
 ----------
@@ -95,10 +136,30 @@ km.nkeymap('<leader>u', '<cmd>UndotreeToggle<cr>', 'Undo Tree')
 ---------- Harpoon
 ----------
 
-km.keymap('n', '<leader>;', '<cmd>lua require("harpoon.mark").add_file()<cr>', 'Harpoon Add File')
-km.keymap('n', '<leader>h', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', 'Harpoon Quick Menu')
-km.keymap('n', '<C-n>', '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoon to next file')
-km.keymap('n', '<C-p>', '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Harpoon to previous file')
+km.keymap(
+	'n',
+	'<leader>;',
+	'<cmd>lua require("harpoon.mark").add_file()<cr>',
+	'Harpoon Add File'
+)
+km.keymap(
+	'n',
+	'<leader>h',
+	'<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>',
+	'Harpoon Quick Menu'
+)
+km.keymap(
+	'n',
+	'<C-n>',
+	'<cmd>lua require("harpoon.ui").nav_next()<cr>',
+	'Harpoon to next file'
+)
+km.keymap(
+	'n',
+	'<C-p>',
+	'<cmd>lua require("harpoon.ui").nav_prev()<cr>',
+	'Harpoon to previous file'
+)
 
 ----------
 ---------- Symbols Outline
@@ -134,18 +195,26 @@ km.nkeymap('<leader>?f', '<cmd>DiffviewToggleFiles<cr>', 'DiffviewToggleFiles')
 km.nkeymap('<leader>?0', '<cmd>DiffviewOpen HEAD<cr>', 'DiffviewOpen HEAD')
 km.nkeymap('<leader>?1', '<cmd>DiffviewOpen HEAD^<cr>', 'DiffviewOpen HEAD^')
 km.nkeymap('<leader>?2', '<cmd>DiffviewOpen HEAD^^<cr>', 'DiffviewOpen HEAD^^')
-km.nkeymap('<leader>?3', '<cmd>DiffviewOpen HEAD^^^<cr>', 'DiffviewOpen HEAD^^^')
-km.nkeymap('<leader>?4', '<cmd>DiffviewOpen HEAD^^^^<cr>', 'DiffviewOpen HEAD^^^^')
+km.nkeymap(
+	'<leader>?3',
+	'<cmd>DiffviewOpen HEAD^^^<cr>',
+	'DiffviewOpen HEAD^^^'
+)
+km.nkeymap(
+	'<leader>?4',
+	'<cmd>DiffviewOpen HEAD^^^^<cr>',
+	'DiffviewOpen HEAD^^^^'
+)
 
 km.nkeymap(
-    '<leader>?H',
-    '<cmd>h nvpunk-shortcuts-diffview<cr>',
-    'Show Shortcuts'
+	'<leader>?H',
+	'<cmd>h nvpunk-shortcuts-diffview<cr>',
+	'Show Shortcuts'
 )
 
 ----------
 ---------- Context Menu
 ----------
 
-require'nvpunk.util.context_menu'.setup_rclick_menu_autocommands()
+require('nvpunk.util.context_menu').setup_rclick_menu_autocommands()
 km.nkeymap('<A-m>', '<cmd>popup PopUp<cr>', 'Open Context Menu')
