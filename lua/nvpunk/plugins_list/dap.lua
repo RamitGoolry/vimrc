@@ -10,7 +10,7 @@ return {
 	},
 	{
 		'nvim-neotest/neotest',
-		requires = {
+		dependencies = {
 			'nvim-lua/plenary.nvim',
 			'nvim-treesitter/nvim-treesitter',
 			'antoinemadec/FixCursorHold.nvim',
@@ -41,7 +41,7 @@ return {
 	},
 	{
 		'theHamsta/nvim-dap-virtual-text',
-		requires = {
+		dependencies = {
 			'mfussenegger/nvim-dap',
 			'nvim-treesitter/nvim-treesitter',
 		},

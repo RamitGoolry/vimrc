@@ -8,7 +8,7 @@ return {
 	-- lua based snippets
 	{
 		'L3MON4D3/LuaSnip',
-		requires = {
+		dependencies = {
 			'rafamadriz/friendly-snippets',
 		},
 	},
@@ -16,7 +16,7 @@ return {
 	-- completion
 	{
 		'hrsh7th/nvim-cmp',
-		requires = {
+		dependencies = {
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',

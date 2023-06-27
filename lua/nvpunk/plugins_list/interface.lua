@@ -9,7 +9,7 @@ return {
 	{
 		'nvim-neo-tree/neo-tree.nvim',
 		branch = 'main',
-		requires = {
+		dependencies = {
 			'kyazdani42/nvim-web-devicons',
 			'MunifTanjim/nui.nvim',
 			's1n7ax/nvim-window-picker',
@@ -28,7 +28,7 @@ return {
 	-- generate git permalinks
 	{
 		'ruifm/gitlinker.nvim',
-		requires = 'nvim-lua/plenary.nvim',
+		dependencies = 'nvim-lua/plenary.nvim',
 	},
 
 	-- treesitter based syntax highlighting
@@ -56,7 +56,7 @@ return {
 	-- better tabline
 	{
 		'akinsho/bufferline.nvim',
-		requires = 'kyazdani42/nvim-web-devicons',
+		dependencies = 'kyazdani42/nvim-web-devicons',
 	},
 
 	-- color preview
@@ -89,7 +89,7 @@ return {
 	-- pretty and better folding
 	{
 		'kevinhwang91/nvim-ufo',
-		requires = 'kevinhwang91/promise-async',
+		dependencies = 'kevinhwang91/promise-async',
 	},
 
 	-- nice diffview
@@ -101,7 +101,7 @@ return {
 	-- replacement for messages, cmdline, popupmenu
 	-- {
 	--     'folke/noice.nvim',
-	--     requires = {
+	--     dependencies = {
 	--         'MunifTanjim/nui.nvim',
 	--     }
 	-- }
@@ -156,7 +156,7 @@ return {
 
 	{
 		'jackMort/ChatGPT.nvim',
-		requires = {
+		dependencies = {
 			'MunifTanjim/nui.nvim',
 			'nvim-lua/plenary.nvim',
 			'nvim-telescope/telescope.nvim',
