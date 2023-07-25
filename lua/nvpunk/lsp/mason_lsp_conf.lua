@@ -1,19 +1,14 @@
 require('mason-lspconfig').setup({
 	ensure_installed = {
 		'bashls',
-		'cssls',
-		'emmet_ls',
 		'gopls',
 		'html',
-		'jdtls',
 		'jsonls',
 		'ltex',
 		'pyright',
 		'rust_analyzer',
 		'tsserver',
 		'vimls',
-		'vuels',
-		'yamlls',
 	},
 })
 require('mason-lspconfig').setup_handlers({

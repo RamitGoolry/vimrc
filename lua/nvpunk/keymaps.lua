@@ -120,6 +120,12 @@ km.vkeymap('p', '"_dP')
 -- esc goes to normal mode in terminal windows
 km.tkeymap('<Esc><Esc>', '<C-\\><C-n>')
 
+-- ChatGPT Keymaps
+km.vkeymap(
+	'<leader>e',
+	'<cmd>lua require("chatgpt").edit_with_instructions()<cr>'
+)
+
 ----------
 ---------- Trouble
 ----------

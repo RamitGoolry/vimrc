@@ -9,7 +9,6 @@ mason_null_ls.setup({
 		'prettier',
 		'alex',
 		'gofmt',
-		'gofmt',
 		'rustfmt',
 	},
 	automatic_installation = true,
@@ -30,14 +29,16 @@ null_ls.setup({
 			},
 		}),
 		formatting.black,
-		formatting.prettier,
+		formatting.prettier.with({
+			extra_args = { '--config', '.prettierrc' },
+		}),
 		diagnostics.eslint,
 		formatting.gofmt,
 		formatting.goimports,
 		formatting.rustfmt,
 		--formatting.golangci_lint,
 		-- diagnostics.flake8,
-		-- null_ls.builtins.completion.spell,
+		null_ls.builtins.completion.spell,
 	},
 	on_init = function(new_client, _)
 		new_client.offset_encoding = 'utf-8'
