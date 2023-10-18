@@ -3,15 +3,15 @@ local lspconfig = require('lspconfig')
 lspconfig.gopls.setup({
 	settings = {
 		gopls = {
-			hints = {
-				assignVariableTypes = true,
-				compositeLiteralFields = true,
-				compositeLiteralTypes = true,
-				constantValues = true,
-				functionTypeParameters = true,
-				parameterNames = true,
-				rangeVariableTypes = true,
+			analyses = {
+				unusedparams = true,
+				nilness = true,
+				unusedwrite = true,
+				useany = true,
 			},
+			experimentalPostfixCompletions = true,
+			staticcheck = true,
+			gofumpt = true,
 		},
 	},
 })

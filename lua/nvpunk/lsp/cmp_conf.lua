@@ -33,11 +33,11 @@ cmp.setup({
 			end
 		end),
 		-- ['<CR>'] = cmp.mapping.confirm({select=false}),
-		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+		--['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 		['<Tab>'] = cmp.mapping(function(fallback)
 			local copilot_keys = vim.fn['copilot#Accept']()
 			if copilot_keys ~= '' then
-				vim.api.nvim_feedkeys(copilot_keys, 'i', true)
+				vim.api.nvim.feedkeys(copilot_keys, 'i', true)
 			elseif cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -63,6 +63,7 @@ cmp.setup({
 				luasnip.jump(-1)
 			end
 		end, { 'i', 's' }),
+
 		-- close completion menu on esc...
 		-- ['<Esc>'] = cmp.mapping(function(fallback)
 		--     -- ...if visible...

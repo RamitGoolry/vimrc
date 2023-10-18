@@ -78,7 +78,7 @@ return {
 	{ 'nvim-telescope/telescope-ui-select.nvim' },
 
 	-- greeter
-	{ 'goolord/alpha-nvim', branch = 'main' },
+	{ 'goolord/alpha-nvim',                     branch = 'main' },
 
 	-- pretty notifications
 	{ 'rcarriga/nvim-notify' },
@@ -96,15 +96,15 @@ return {
 	{ 'sindrets/diffview.nvim' },
 
 	-- indentation marks
-	{ 'lukas-reineke/indent-blankline.nvim' },
+	{ 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
 
 	-- replacement for messages, cmdline, popupmenu
-	-- {
-	--     'folke/noice.nvim',
-	--     dependencies = {
-	--         'MunifTanjim/nui.nvim',
-	--     }
-	-- }
+	{
+		'folke/noice.nvim',
+		dependencies = {
+			'MunifTanjim/nui.nvim',
+		},
+	},
 
 	-- breadcrumbs
 	{ 'SmiteshP/nvim-navic' },
@@ -112,7 +112,7 @@ return {
 	-- better quick fix pane
 	{ 'kevinhwang91/nvim-bqf' },
 
-	-- Copilot : AI Assisted Development (Disabled by default)
+	-- Copilot : AI Assisted Development
 	{ 'github/copilot.vim' },
 
 	-- Goto Preview

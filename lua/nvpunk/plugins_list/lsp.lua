@@ -3,7 +3,9 @@ return {
 
 	-- nvim built-in lsp additional stuff
 	-- easier lsp configuration
-	{ 'neovim/nvim-lspconfig' },
+	{
+		'neovim/nvim-lspconfig',
+	},
 
 	-- lua based snippets
 	{
@@ -47,7 +49,7 @@ return {
 	{ 'mfussenegger/nvim-jdtls' },
 
 	-- show language server starting progress in the lower left corner
-	{ 'j-hui/fidget.nvim', tag = 'legacy' },
+	{ 'j-hui/fidget.nvim',              tag = 'legacy' },
 
 	-- Symbols outline for a file
 	{ 'simrat39/symbols-outline.nvim' },

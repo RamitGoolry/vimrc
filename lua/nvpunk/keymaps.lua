@@ -65,6 +65,8 @@ km.nkeymap('<leader>A', '<CMD>Alpha<CR>', ' Open Greeter')
 km.nkeymap('<leader>Ce', '<cmd>Copilot enable<cr>', 'Enable Copilot')
 km.nkeymap('<leader>Cd', '<cmd>Copilot disable<cr>', 'Disable Copilot')
 
+km.nkeymap('<Esc><Esc>', '<cmd>nohlsearch<cr>', 'Clear Search Highlight')
+
 -- Alt S takes a screenshot and saves in a folder called by the filename.img
 -- with the name as datetime and inserts it in the text
 -- local screenshot_sequence = "<Esc>:let scrotfname=@% . '.img/' . strftime('%FT%H_%M_%S') . '.png'<CR>:execute '!mkdir -p ' . @% . '.img'<CR>:execute '!gnome-screenshot -a -f \"' . scrotfname . '\"'<CR>:execute 'normal! a' . scrotfname<CR><Esc>"
@@ -125,6 +127,8 @@ km.vkeymap(
 	'<leader>e',
 	'<cmd>lua require("chatgpt").edit_with_instructions()<cr>'
 )
+-- Space space
+km.nkeymap('<Space><Space>', '<cmd>ChatGPT<cr>')
 
 ----------
 ---------- Trouble
@@ -224,3 +228,6 @@ km.nkeymap(
 
 require('nvpunk.util.context_menu').setup_rclick_menu_autocommands()
 km.nkeymap('<A-m>', '<cmd>popup PopUp<cr>', 'Open Context Menu')
+
+----------
+---------- Window moving for goto-preview

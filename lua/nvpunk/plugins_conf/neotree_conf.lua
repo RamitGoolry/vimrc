@@ -31,20 +31,20 @@ vim.fn.sign_define('DiagnosticSignHint', {
 
 -- shim for non existing highlight groups
 local _hl_groups = {
-	{ new = 'NeoTreeIndentMarker', rep = 'WinSeparator' },
-	{ new = 'NeoTreeExpander', rep = 'NvimTreeFolderIcon' },
+	{ new = 'NeoTreeIndentMarker',  rep = 'WinSeparator' },
+	{ new = 'NeoTreeExpander',      rep = 'NvimTreeFolderIcon' },
 	-- { new = 'NeoTreeFileIcon', rep = '' } ,
-	{ new = 'NeoTreeModified', rep = 'NvimTreeGitDirty' },
-	{ new = 'NeoTreeFileName', rep = 'NvimTreeNormal' },
-	{ new = 'NeoTreeGitConflict', rep = 'NvimTreeGitDirty' },
-	{ new = 'NeoTreeGitUnstaged', rep = 'NvimTreeGitDirty' },
-	{ new = 'NeoTreeGitUntracked', rep = 'NvimTreeGitNew' },
-	{ new = 'NeoTreeGitRenamed', rep = 'NvimTreeGitRenamed' },
-	{ new = 'NeoTreeGitStaged', rep = 'NvimTreeGitStaged' },
+	{ new = 'NeoTreeModified',      rep = 'NvimTreeGitDirty' },
+	{ new = 'NeoTreeFileName',      rep = 'NvimTreeNormal' },
+	{ new = 'NeoTreeGitConflict',   rep = 'NvimTreeGitDirty' },
+	{ new = 'NeoTreeGitUnstaged',   rep = 'NvimTreeGitDirty' },
+	{ new = 'NeoTreeGitUntracked',  rep = 'NvimTreeGitNew' },
+	{ new = 'NeoTreeGitRenamed',    rep = 'NvimTreeGitRenamed' },
+	{ new = 'NeoTreeGitStaged',     rep = 'NvimTreeGitStaged' },
 	{ new = 'NeoTreeWindowsHidden', rep = 'NvimTreeGitIgnored' },
-	{ new = 'NeoTreeDotfile', rep = 'NvimTreeGitIgnored' },
-	{ new = 'NeoTreeHiddenByName', rep = 'NvimTreeGitIgnored' },
-	{ new = 'NeoTreeGitIgnored', rep = 'NvimTreeGitIgnored' },
+	{ new = 'NeoTreeDotfile',       rep = 'NvimTreeGitIgnored' },
+	{ new = 'NeoTreeHiddenByName',  rep = 'NvimTreeGitIgnored' },
+	{ new = 'NeoTreeGitIgnored',    rep = 'NvimTreeGitIgnored' },
 }
 for _, v in ipairs(_hl_groups) do
 	if vim.fn.hlexists(v.new) == 0 then
@@ -173,7 +173,9 @@ require('neo-tree').setup({
 				-- '.null-ls_*',
 			},
 		},
-		follow_current_file = true,
+		follow_current_file = {
+			enabled = true,
+		},
 		group_empty_dirs = false,
 		hijack_netrw_behavior = 'open_default',
 		use_libuv_file_watcher = true,
@@ -212,7 +214,9 @@ require('neo-tree').setup({
 		},
 	},
 	buffers = {
-		follow_current_file = true, -- This will find and focus the file in the active buffer every
+		follow_current_file = {
+			enabled = true,
+		},                  -- This will find and focus the file in the active buffer every
 		-- time the current file is changed while the tree is open.
 		group_empty_dirs = false, -- when true, empty folders will be grouped together
 		show_unloaded = true,

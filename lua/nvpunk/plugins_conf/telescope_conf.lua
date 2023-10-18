@@ -31,10 +31,11 @@ km.nkeymap('<leader>ff', function()
 	)
 end, 'Open file')
 km.nkeymap('<leader>fg', '<cmd>Telescope live_grep<cr>', 'Live grep')
+km.nkeymap('<leader>tr', '<cmd>Telescope lsp_references<cr>', '🔭 References')
 km.nkeymap(
-	'<leader>tr',
-	'<cmd>Telescope lsp_references<cr>',
-	'Browse references'
+	'<leader>ti',
+	'<cmd>Telescope lsp_implementations<cr>',
+	'🔭 Implementations'
 )
 km.nkeymap('<leader>fh', function()
 	require('telescope.builtin').oldfiles(
