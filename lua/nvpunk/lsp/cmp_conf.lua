@@ -3,10 +3,10 @@ local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0
 		and vim.api
-		.nvim_buf_get_lines(0, line - 1, line, true)[1]
-		:sub(col, col)
-		:match('%s')
-		== nil
+				.nvim_buf_get_lines(0, line - 1, line, true)[1]
+				:sub(col, col)
+				:match('%s')
+			== nil
 end
 
 local cmp = require('cmp')
@@ -35,10 +35,7 @@ cmp.setup({
 		-- ['<CR>'] = cmp.mapping.confirm({select=false}),
 		--['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 		['<Tab>'] = cmp.mapping(function(fallback)
-			local copilot_keys = vim.fn['copilot#Accept']()
-			if copilot_keys ~= '' then
-				vim.api.nvim_feedkeys(copilot_keys, 'i', true)
-			elseif cmp.visible() then
+			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
@@ -50,17 +47,10 @@ cmp.setup({
 				fallback()
 			end
 		end, { 'i', 's' }),
-		['<C-Tab>'] = cmp.mapping(function()
+		['<S-Tab>'] = cmp.mapping(function()
 			local copilot_keys = vim.fn['copilot#Accept']()
 			if copilot_keys ~= '' then
 				vim.api.nvim_feedkeys(copilot_keys, 'i', true)
-			end
-		end, { 'i', 's' }),
-		['<S-Tab>'] = cmp.mapping(function()
-			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
-				luasnip.jump(-1)
 			end
 		end, { 'i', 's' }),
 
