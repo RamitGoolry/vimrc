@@ -4,7 +4,6 @@ require('mason-lspconfig').setup({
 		'gopls',
 		'html',
 		'jsonls',
-		'ltex',
 		'pyright',
 		'rust_analyzer',
 		'tsserver',
