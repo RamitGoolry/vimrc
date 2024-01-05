@@ -27,4 +27,6 @@ return {
 	{ 'marilari88/twoslash-queries.nvim' },
 	--
 	{ 'simrat39/rust-tools.nvim' },
+
+	{ 'towolf/vim-helm',                 ft = 'helm' },
 }

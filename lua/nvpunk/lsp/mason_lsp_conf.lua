@@ -18,5 +18,7 @@ require('mason-lspconfig').setup_handlers({
 	['ltex'] = require('nvpunk.lsp.langs.ltex'),
 	['tsserver'] = require('nvpunk.lsp.langs.tsserver'),
 	['lua_ls'] = require('nvpunk.lsp.langs.lua_ls'),
+	['helm_ls'] = require('nvpunk.lsp.langs.helm_ls'),
+	['yamlls'] = require('nvpunk.lsp.langs.yamlls'),
 	--['rust_analyzer'] = require'nvpunk.lsp.langs.rust_analyzer'
 })
